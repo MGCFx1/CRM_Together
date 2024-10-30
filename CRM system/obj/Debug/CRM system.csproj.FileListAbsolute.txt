@@ -1,0 +1,10 @@
+C:\Users\Ragab\source\repos\CRM system\CRM system\bin\Debug\CRM system.exe
+C:\Users\Ragab\source\repos\CRM system\CRM system\bin\Debug\CRM system.exe.config
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM system.csproj.AssemblyReference.cache
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM_system.Login.resources
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM_system.Properties.Resources.resources
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM system.csproj.GenerateResource.cache
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM system.csproj.CoreCompileInputs.cache
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM system.exe
+C:\Users\Ragab\source\repos\CRM system\CRM system\obj\Debug\CRM system.pdb
+C:\Users\Ragab\source\repos\CRM system\CRM system\bin\Debug\CRM system.pdb
