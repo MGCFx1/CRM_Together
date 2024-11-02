@@ -39,7 +39,9 @@ namespace CRM_system
 
         private void label5_Click(object sender, EventArgs e)
         {
-          
+            SignUp sForm = new SignUp();
+            sForm.Show();
+            this.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

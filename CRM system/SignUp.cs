@@ -60,7 +60,10 @@ namespace CRM_system
 
         private void register_login_Click(object sender, EventArgs e)
         {
-           
+            Login sForm = new Login();
+            sForm.Show();
+            this.Hide();
+
         }
     }
 }
