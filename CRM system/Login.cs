@@ -56,5 +56,16 @@ namespace CRM_system
         {
 
         }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_close_Click(object sender, EventArgs e)
+        {
+            // Closes the application
+            Application.Exit();
+        }
     }
 }
