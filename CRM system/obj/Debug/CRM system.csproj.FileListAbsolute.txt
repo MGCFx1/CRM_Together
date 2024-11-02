@@ -19,3 +19,4 @@ C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.csproj.Cor
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.exe
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.pdb
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.SignUp.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Landing_Page.resources

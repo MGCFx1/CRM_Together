@@ -250,7 +250,7 @@
             this.register_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.register_login.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register_login.ForeColor = System.Drawing.Color.Gray;
-            this.register_login.Location = new System.Drawing.Point(342, 354);
+            this.register_login.Location = new System.Drawing.Point(344, 360);
             this.register_login.Name = "register_login";
             this.register_login.Size = new System.Drawing.Size(66, 19);
             this.register_login.TabIndex = 8;
@@ -262,7 +262,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(193, 354);
+            this.label4.Location = new System.Drawing.Point(195, 360);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 19);
             this.label4.TabIndex = 7;
@@ -270,15 +270,17 @@
             // 
             // Signup_btn
             // 
-            this.Signup_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
+            this.Signup_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.Signup_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Signup_btn.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Signup_btn.ForeColor = System.Drawing.Color.Black;
-            this.Signup_btn.Location = new System.Drawing.Point(223, 318);
+            this.Signup_btn.ForeColor = System.Drawing.Color.White;
+            this.Signup_btn.Image = ((System.Drawing.Image)(resources.GetObject("Signup_btn.Image")));
+            this.Signup_btn.Location = new System.Drawing.Point(223, 311);
             this.Signup_btn.Name = "Signup_btn";
-            this.Signup_btn.Size = new System.Drawing.Size(161, 33);
+            this.Signup_btn.Size = new System.Drawing.Size(161, 46);
             this.Signup_btn.TabIndex = 5;
-            this.Signup_btn.Text = "Sign Up";
+            this.Signup_btn.Text = "        Sign Up";
+            this.Signup_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Signup_btn.UseVisualStyleBackColor = false;
             // 
             // signup_password

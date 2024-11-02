@@ -205,6 +205,19 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="login_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAGBSURBVDhPlZTbKsRRFMbHpTJm4hXkfCOX7kSEK0m8hDBi
+        CK8g5GUkPIBySJFDiVw43nHHT2t8o73X/OfgV/+LWd9e315777UmlaoC0Ax0AR1Ao9drQibrwAWlnAJr
+        QNbnJQJMA29KPgc2gBlgFtgMNnkFpnx+BLCixZfAgNeLAEMy/gbyXi9gu8lsD0h73WP3CezKdNKLWeAd
+        uAIaIrECMrVKX4BMKCyouuEoI0Br+hLidnxjNQz2lL0LAdwAn0l3qzs/8fGKAC3Ag0wHnWavb6SLPXcA
+        HNXw3SvRTLsDwznF2+1Hk17WJyd9VqHxAXQGhvOKt/2VXQ2gFXiUWb/TtmT4225Ab/RKCQB3SWbSrN2O
+        w0BOO4xGKwOAxTJtM6Lc5TCY0Wze/ucfRQNh1T2VTBcwoTE6jLq+DDLbV8641wtoGmzBtY5S59cYwJgq
+        s7U5r0eo0mfdiyVtq89ssx1NjGHHTK7Mo+PkgTPgSwaGVWT9uFRyZ7ViidawGr16r3t+AGG4iB+/o9/l
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAATgAAABmCAYAAABfjI1ZAAAABGdBTUEAALGPC/xhBQAADwdJREFUeF7t

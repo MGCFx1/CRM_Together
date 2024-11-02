@@ -81,7 +81,7 @@
             this.login_register.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_register.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_register.ForeColor = System.Drawing.Color.Gray;
-            this.login_register.Location = new System.Drawing.Point(159, 328);
+            this.login_register.Location = new System.Drawing.Point(173, 331);
             this.login_register.Name = "login_register";
             this.login_register.Size = new System.Drawing.Size(77, 19);
             this.login_register.TabIndex = 8;
@@ -93,11 +93,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(40, 328);
+            this.label4.Location = new System.Drawing.Point(54, 331);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Don\'t have account?";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // login_show
             // 
@@ -115,15 +116,17 @@
             // 
             // login_btn
             // 
-            this.login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
+            this.login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
             this.login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_btn.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_btn.ForeColor = System.Drawing.Color.Black;
+            this.login_btn.ForeColor = System.Drawing.Color.White;
+            this.login_btn.Image = ((System.Drawing.Image)(resources.GetObject("login_btn.Image")));
             this.login_btn.Location = new System.Drawing.Point(75, 272);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(161, 33);
+            this.login_btn.Size = new System.Drawing.Size(161, 46);
             this.login_btn.TabIndex = 5;
-            this.login_btn.Text = "Sign In";
+            this.login_btn.Text = "        Login";
+            this.login_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
