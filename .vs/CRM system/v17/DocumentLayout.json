@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Ragab\\Documents\\CRM_Together\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -43,8 +43,7 @@
               "ViewState": "AgIAABkAAAAAAAAAAAAtwCsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T13:11:15.916Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -59,10 +58,6 @@
               "WhenOpened": "2024-11-02T19:56:17.223Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -85,8 +80,7 @@
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Login.cs [Design]",
               "RelativeToolTip": "CRM system\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T13:09:11.11Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-30T13:09:11.11Z"
             },
             {
               "$type": "Document",
