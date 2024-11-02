@@ -18,4 +18,4 @@ C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.csproj.Gen
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.csproj.CoreCompileInputs.cache
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.exe
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.pdb
-C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Sign_Up.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.SignUp.resources
