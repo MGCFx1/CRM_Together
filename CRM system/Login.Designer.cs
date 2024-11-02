@@ -50,7 +50,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(799, 543);
             this.pictureBox1.TabIndex = 0;
@@ -119,12 +119,13 @@
             this.login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_btn.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.ForeColor = System.Drawing.Color.Black;
-            this.login_btn.Location = new System.Drawing.Point(99, 271);
+            this.login_btn.Location = new System.Drawing.Point(75, 272);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(99, 33);
+            this.login_btn.Size = new System.Drawing.Size(161, 33);
             this.login_btn.TabIndex = 5;
             this.login_btn.Text = "Sign In";
             this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // login_password
             // 
@@ -187,11 +188,13 @@
             this.login_close.AutoSize = true;
             this.login_close.BackColor = System.Drawing.Color.White;
             this.login_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.login_close.Location = new System.Drawing.Point(763, 9);
+            this.login_close.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_close.Location = new System.Drawing.Point(746, 22);
             this.login_close.Name = "login_close";
-            this.login_close.Size = new System.Drawing.Size(23, 28);
+            this.login_close.Size = new System.Drawing.Size(22, 28);
             this.login_close.TabIndex = 2;
             this.login_close.Text = "X";
+            this.login_close.Click += new System.EventHandler(this.login_close_Click);
             // 
             // Login
             // 
