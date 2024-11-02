@@ -66,8 +66,16 @@ namespace CRM_system
 
         private void login_close_Click(object sender, EventArgs e)
         {
-            // Closes the application
-            Application.Exit();
+            // Display a confirmation dialog
+            var result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                // If the user clicks Yes, close the application
+                Application.Exit();
+            }
+            // If the user clicks No, do nothing and return to the application
         }
 
         private void label4_Click(object sender, EventArgs e)
