@@ -20,3 +20,6 @@ C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.exe
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.pdb
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.SignUp.resources
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Landing_Page.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.csproj.Up2Date

@@ -53,13 +53,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.signup_email = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.login_close = new System.Windows.Forms.Label();
             this.Signup_close = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,6 +132,7 @@
             // 
             this.get_started_label.AutoSize = true;
             this.get_started_label.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.get_started_label.ForeColor = System.Drawing.Color.White;
             this.get_started_label.Location = new System.Drawing.Point(21, 14);
             this.get_started_label.Name = "get_started_label";
             this.get_started_label.Size = new System.Drawing.Size(110, 28);
@@ -238,6 +239,7 @@
             // 
             this.Register_Name.AutoSize = true;
             this.Register_Name.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Register_Name.ForeColor = System.Drawing.SystemColors.Window;
             this.Register_Name.Location = new System.Drawing.Point(22, 53);
             this.Register_Name.Name = "Register_Name";
             this.Register_Name.Size = new System.Drawing.Size(73, 23);
@@ -317,17 +319,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Email Address";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(799, 543);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // login_close
             // 
             this.login_close.AutoSize = true;
@@ -360,7 +351,7 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(255, 40);
+            this.pictureBox2.Location = new System.Drawing.Point(269, 24);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(312, 102);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -368,10 +359,21 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(799, 543);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 540);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Signup_close);
@@ -387,8 +389,8 @@
             this.Load += new System.EventHandler(this.SignUp_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,7 +407,6 @@
         private System.Windows.Forms.TextBox signup_email;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label get_started_label;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label login_close;
         private System.Windows.Forms.Label Signup_close;
         private System.Windows.Forms.TextBox signup_fullname;
@@ -424,5 +425,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox signup_address2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -43,7 +43,7 @@ namespace CRM_system
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            using (Pen pen = new Pen(Color.White, 10)) // White colourr, 10 pixels wide
+            using (Pen pen = new Pen(Color.Black, 10)) // black colourr, 10 pixels wide
             {
                 e.Graphics.DrawLine(pen, 10, 10, 200, 10); // Draw line from (10, 10) to (200, 10)
             }
@@ -67,6 +67,26 @@ namespace CRM_system
             SignUp sForm = new SignUp();
             sForm.Show();
             this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonColorButton1_SelectedColorChanged(object sender, ComponentFactory.Krypton.Toolkit.ColorEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
