@@ -23,3 +23,5 @@ C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Landing_Pa
 C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
 C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.csproj.Up2Date
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Users_Dashboard.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\Guna.UI2.dll
