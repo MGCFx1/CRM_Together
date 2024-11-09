@@ -16,7 +16,7 @@ namespace CRM_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Users_Dashboard());
+            Application.Run(new SignUp());
 
         }
     }

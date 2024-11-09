@@ -245,6 +245,7 @@
             this.Register_Name.Size = new System.Drawing.Size(73, 23);
             this.Register_Name.TabIndex = 9;
             this.Register_Name.Text = "Full Name";
+            this.Register_Name.Click += new System.EventHandler(this.Register_Name_Click);
             // 
             // register_login
             // 

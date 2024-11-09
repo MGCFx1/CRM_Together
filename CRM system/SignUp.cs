@@ -73,5 +73,10 @@ namespace CRM_system
             this.Hide();
 
         }
+
+        private void Register_Name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
