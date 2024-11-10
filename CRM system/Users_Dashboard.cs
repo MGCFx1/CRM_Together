@@ -12,6 +12,13 @@ namespace CRM_system
 {
     public partial class Users_Dashboard : Form
     {
+        dashboard_form dashboard;
+        Memberships_Form memberships;
+        Events_Forms events;
+        eLearning_Form eLearning;
+        Contacts_Form contacts;
+        Accounts_Forms accounts;
+
         bool sidebarExpand;
         public Users_Dashboard()
         {
@@ -43,6 +50,9 @@ namespace CRM_system
                 {
                     sidebarExpand = true;
                     sidebarTimer.Stop();
+
+                
+
                 }
             }
 
@@ -70,6 +80,132 @@ namespace CRM_system
                 Application.Exit();
             }
             // If the user clicks No, do nothing and return to the application
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnDashboard_Click(object sender, EventArgs e)
+        {
+            if (dashboard == null)
+            {
+                dashboard = new dashboard_form();
+                dashboard.FormClosed += Dashboard_FormClosed;
+                dashboard.MdiParent = this;
+                dashboard.Show();
+            }
+            else {
+            dashboard.Activate();
+
+            }
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dashboard = null;
+        }
+
+        private void pnMemberships_Click(object sender, EventArgs e)
+        {
+            if (memberships == null)
+            {
+                memberships = new Memberships_Form();
+                memberships.FormClosed += Memberships_FormClosed;
+                memberships.MdiParent = this;
+                memberships.Show();
+            }
+            else
+            {
+                memberships.Activate();
+            }
+        }
+
+        private void Memberships_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            memberships = null;
+        }
+
+        private void PnEvents_Click(object sender, EventArgs e)
+        {
+            if (events == null)
+            {
+                events = new Events_Forms();
+                events.FormClosed += Events_FormClosed;
+                events.MdiParent = this;
+                events.Show();
+            }
+            else
+            {
+                events.Activate();
+            }
+        }
+
+        private void Events_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            events = null;
+        }
+
+        private void PneLearning_Click(object sender, EventArgs e)
+        {
+            if (eLearning == null)
+            {
+                eLearning = new eLearning_Form();
+                eLearning.FormClosed += ELearning_FormClosed;
+                eLearning.MdiParent = this;
+                eLearning.Show();
+            }
+            else
+            { 
+                eLearning.Activate(); 
+            }
+        }
+
+        private void ELearning_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            eLearning = null;
+        }
+
+        private void pnContacts_Click(object sender, EventArgs e)
+        {
+            if (contacts == null)
+            {
+                contacts = new Contacts_Form();
+                contacts.FormClosed += Contacts_FormClosed;
+                contacts.MdiParent = this;
+                contacts.Show();
+            }    
+            else
+            {
+                contacts.Activate();
+            }
+        }
+
+        private void Contacts_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            contacts = null;
+        }
+
+        private void pnAccount_Click(object sender, EventArgs e)
+        {
+            if (accounts == null)
+            {
+                accounts = new Accounts_Forms();
+                accounts.FormClosed += Accounts_FormClosed;
+                accounts.MdiParent = this;
+                accounts.Show();
+
+            }
+            else
+            {
+                accounts.Activate();
+            }    
+        }
+
+        private void Accounts_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            accounts = null;
         }
     }
 }

@@ -24,4 +24,9 @@ C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\ComponentFactory.Kryp
 C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM system.csproj.Up2Date
 C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Users_Dashboard.resources
-C:\Users\Ragab\Documents\CRM_Together\CRM system\bin\Debug\Guna.UI2.dll
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Accounts_Forms.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Contacts_Form.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.dashboard_form.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.eLearning_Form.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Events_Forms.resources
+C:\Users\Ragab\Documents\CRM_Together\CRM system\obj\Debug\CRM_system.Memberships_Form.resources

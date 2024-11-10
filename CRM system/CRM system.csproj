@@ -36,9 +36,6 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>..\..\..\Downloads\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -55,11 +52,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounts_Forms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts_Forms.Designer.cs">
+      <DependentUpon>Accounts_Forms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contacts_Form.Designer.cs">
+      <DependentUpon>Contacts_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard_form.Designer.cs">
+      <DependentUpon>dashboard_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eLearning_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eLearning_Form.Designer.cs">
+      <DependentUpon>eLearning_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events_Forms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Events_Forms.Designer.cs">
+      <DependentUpon>Events_Forms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Landing_Page.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Landing_Page.Designer.cs">
       <DependentUpon>Landing_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Memberships_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Memberships_Form.Designer.cs">
+      <DependentUpon>Memberships_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -81,11 +114,29 @@
     <Compile Include="Users_Dashboard.Designer.cs">
       <DependentUpon>Users_Dashboard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accounts_Forms.resx">
+      <DependentUpon>Accounts_Forms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contacts_Form.resx">
+      <DependentUpon>Contacts_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard_form.resx">
+      <DependentUpon>dashboard_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eLearning_Form.resx">
+      <DependentUpon>eLearning_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Events_Forms.resx">
+      <DependentUpon>Events_Forms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Landing_Page.resx">
       <DependentUpon>Landing_Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memberships_Form.resx">
+      <DependentUpon>Memberships_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,7 +154,6 @@
     <EmbeddedResource Include="Users_Dashboard.resx">
       <DependentUpon>Users_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
