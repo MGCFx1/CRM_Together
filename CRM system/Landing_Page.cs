@@ -74,7 +74,7 @@ namespace CRM_system
 
         }
 
-        private void kryptonColorButton1_SelectedColorChanged(object sender, ComponentFactory.Krypton.Toolkit.ColorEventArgs e)
+        private void kryptonColorButton1_SelectedColorChanged(object sender, EventArgs e)
         {
 
         }
