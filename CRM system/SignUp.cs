@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace CRM_system
 {
+
     public partial class SignUp : Form
     {
+        private DB.UserQueries query;
+
         public SignUp()
         {
             InitializeComponent();
+            query = new DB.UserQueries();
         }
 
         private void SignUp_Load(object sender, EventArgs e)
@@ -76,6 +80,16 @@ namespace CRM_system
 
         private void Register_Name_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Signup_btn_Click(object sender, EventArgs e)
+        {
+            string name = signup_fullname.Text;
+            string email = signup_email.Text;
+            string password = signup_password.Text;
+
+            query.InsertNewUser(name, email, password);
 
         }
     }
