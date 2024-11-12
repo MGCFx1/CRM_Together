@@ -12,9 +12,11 @@ namespace CRM_system
 {
     public partial class Landing_Page : Form
     {
+        private DB.UserQueries query;
         public Landing_Page()
         {
             InitializeComponent();
+            query = new DB.UserQueries();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -69,22 +71,7 @@ namespace CRM_system
             this.Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonColorButton1_SelectedColorChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonButton1_Click(object sender, EventArgs e)
         {
 
         }
