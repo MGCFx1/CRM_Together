@@ -3,48 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\Ragab\\Documents\\CRM_Together\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\accounts_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\accounts_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\landing_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\landing_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\elearning_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\elearning_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\landing_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\landing_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\memberships_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\memberships_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\contacts_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\contacts_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\events_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\events_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\memberships_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\memberships_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|c:\\users\\ragab\\documents\\crm_together\\crm system\\dashboard_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\dashboard_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\accounts_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\accounts_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\memberships_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\memberships_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\users_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\elearning_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\elearning_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\contacts_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\contacts_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\events_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\events_forms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\memberships_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\memberships_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|C:\\Users\\Ragab\\Documents\\CRM_Together\\crm system\\dashboard_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351A7F63-3EBA-42D1-8442-FB914E414FCA}|CRM system\\CRM system.csproj|solutionrelative:crm system\\dashboard_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +74,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Login.cs",
               "RelativeDocumentMoniker": "CRM system\\Login.cs",
@@ -72,17 +92,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SignUp.cs",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\SignUp.cs",
               "RelativeDocumentMoniker": "CRM system\\SignUp.cs",
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\SignUp.cs",
               "RelativeToolTip": "CRM system\\SignUp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAtwJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T19:56:17.223Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Program.cs",
+              "RelativeDocumentMoniker": "CRM system\\Program.cs",
+              "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Program.cs",
+              "RelativeToolTip": "CRM system\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:47:08.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Landing_Page.cs",
+              "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Landing_Page.cs",
+              "RelativeDocumentMoniker": "CRM system\\Landing_Page.cs",
+              "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Landing_Page.cs",
+              "RelativeToolTip": "CRM system\\Landing_Page.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAjwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:37:55.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SignUp.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\SignUp.cs",
+              "RelativeDocumentMoniker": "CRM system\\SignUp.cs",
+              "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\SignUp.cs [Design]",
+              "RelativeToolTip": "CRM system\\SignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T21:46:32.587Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Landing_Page.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Landing_Page.cs",
+              "RelativeDocumentMoniker": "CRM system\\Landing_Page.cs",
+              "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Landing_Page.cs [Design]",
+              "RelativeToolTip": "CRM system\\Landing_Page.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T21:46:38.322Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -98,7 +168,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Login.cs",
+              "RelativeDocumentMoniker": "CRM system\\Login.cs",
+              "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Login.cs [Design]",
+              "RelativeToolTip": "CRM system\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T21:46:37.424Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Accounts_Forms.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Accounts_Forms.cs",
               "RelativeDocumentMoniker": "CRM system\\Accounts_Forms.cs",
@@ -110,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Memberships_Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Memberships_Form.cs",
               "RelativeDocumentMoniker": "CRM system\\Memberships_Form.cs",
@@ -122,56 +208,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "Users_Dashboard.cs",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Users_Dashboard.cs",
               "RelativeDocumentMoniker": "CRM system\\Users_Dashboard.cs",
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Users_Dashboard.cs",
               "RelativeToolTip": "CRM system\\Users_Dashboard.cs",
-              "ViewState": "AgIAAK8AAAAAAAAAAAD4v88AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAD4v1sAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T18:48:39.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "eLearning_Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\eLearning_Form.cs",
               "RelativeDocumentMoniker": "CRM system\\eLearning_Form.cs",
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\eLearning_Form.cs [Design]",
               "RelativeToolTip": "CRM system\\eLearning_Form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T18:56:32.875Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-10T18:56:32.875Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Contacts_Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Contacts_Form.cs",
               "RelativeDocumentMoniker": "CRM system\\Contacts_Form.cs",
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Contacts_Form.cs [Design]",
               "RelativeToolTip": "CRM system\\Contacts_Form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T18:56:59.162Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-10T18:56:59.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Events_Forms.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Events_Forms.cs",
               "RelativeDocumentMoniker": "CRM system\\Events_Forms.cs",
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Events_Forms.cs [Design]",
               "RelativeToolTip": "CRM system\\Events_Forms.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T18:54:14.739Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-10T18:54:14.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Memberships_Form.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\Memberships_Form.Designer.cs",
               "RelativeDocumentMoniker": "CRM system\\Memberships_Form.Designer.cs",
@@ -183,20 +266,15 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "dashboard_form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\dashboard_form.cs",
               "RelativeDocumentMoniker": "CRM system\\dashboard_form.cs",
               "ToolTip": "C:\\Users\\Ragab\\Documents\\CRM_Together\\CRM system\\dashboard_form.cs [Design]",
               "RelativeToolTip": "CRM system\\dashboard_form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T18:51:19.87Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-10T18:51:19.87Z"
             }
           ]
         }

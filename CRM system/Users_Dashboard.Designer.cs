@@ -61,7 +61,7 @@
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(44)))));
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel5);
             this.sidebar.Controls.Add(this.panel6);
@@ -223,7 +223,7 @@
             this.panel2.Controls.Add(this.pnContacts);
             this.panel2.Location = new System.Drawing.Point(3, 324);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 143);
+            this.panel2.Size = new System.Drawing.Size(211, 145);
             this.panel2.TabIndex = 1;
             // 
             // pnContacts
@@ -248,7 +248,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.pnAccount);
-            this.panel7.Location = new System.Drawing.Point(3, 473);
+            this.panel7.Location = new System.Drawing.Point(3, 475);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(211, 52);
             this.panel7.TabIndex = 2;
@@ -262,10 +262,10 @@
             this.pnAccount.ForeColor = System.Drawing.Color.White;
             this.pnAccount.Image = ((System.Drawing.Image)(resources.GetObject("pnAccount.Image")));
             this.pnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pnAccount.Location = new System.Drawing.Point(0, 3);
+            this.pnAccount.Location = new System.Drawing.Point(-2, 6);
             this.pnAccount.Name = "pnAccount";
             this.pnAccount.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.pnAccount.Size = new System.Drawing.Size(214, 45);
+            this.pnAccount.Size = new System.Drawing.Size(214, 49);
             this.pnAccount.TabIndex = 1;
             this.pnAccount.Text = "              Account";
             this.pnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

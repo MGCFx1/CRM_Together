@@ -88,5 +88,10 @@ namespace CRM_system
         {
 
         }
+
+        private void Landing_Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
