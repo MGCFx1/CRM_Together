@@ -112,7 +112,7 @@ namespace CRM_system
 
         private void signup_password_TextChanged(object sender, EventArgs e)
         {
-
+            signup_password.PasswordChar = '*';
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -161,6 +161,35 @@ namespace CRM_system
         }
 
         private void Signup_Interest_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signup_pswrd_showhide_Click(object sender, EventArgs e)
+        {
+            // Toggle password visibility
+            if (signup_password.PasswordChar == '*')
+            {
+                signup_pswrd_hide.BringToFront();
+                signup_password.PasswordChar = '\0'; // Show password
+                
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Toggle password visibility
+            if (signup_password.PasswordChar == '\0')
+            {
+                signup_pswrd_show.BringToFront();
+                signup_password.PasswordChar = '*'; // Show password
+
+            }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

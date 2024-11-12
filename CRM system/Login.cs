@@ -34,7 +34,14 @@ namespace CRM_system
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (login_show.Checked)
+            {
+                login_password.PasswordChar = '\0'; // Show password
+            }
+            else
+            {
+                login_password.PasswordChar = '*'; // Hide password
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -81,6 +88,11 @@ namespace CRM_system
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void login_password_TextChanged(object sender, EventArgs e)
+        {
+            login_password.PasswordChar = '*';
         }
     }
 }

@@ -49,10 +49,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.signup_post_code = new System.Windows.Forms.TextBox();
             this.signup_interestlabel = new System.Windows.Forms.Label();
-            this.Signup_Interest = new System.Windows.Forms.TextBox();
             this.city_label = new System.Windows.Forms.Label();
             this.Signup_city = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.signup_pswrd_show = new System.Windows.Forms.Button();
+            this.signup_pswrd_hide = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +103,7 @@
             this.register_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.register_login.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register_login.ForeColor = System.Drawing.Color.White;
-            this.register_login.Location = new System.Drawing.Point(204, 494);
+            this.register_login.Location = new System.Drawing.Point(221, 494);
             this.register_login.Name = "register_login";
             this.register_login.Size = new System.Drawing.Size(66, 19);
             this.register_login.TabIndex = 8;
@@ -114,7 +116,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.label4.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(46, 494);
+            this.label4.Location = new System.Drawing.Point(63, 494);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 19);
             this.label4.TabIndex = 7;
@@ -127,7 +129,7 @@
             this.Signup_btn.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Signup_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.Signup_btn.Image = ((System.Drawing.Image)(resources.GetObject("Signup_btn.Image")));
-            this.Signup_btn.Location = new System.Drawing.Point(67, 457);
+            this.Signup_btn.Location = new System.Drawing.Point(84, 457);
             this.Signup_btn.Name = "Signup_btn";
             this.Signup_btn.Size = new System.Drawing.Size(192, 34);
             this.Signup_btn.TabIndex = 5;
@@ -240,7 +242,8 @@
             this.signup_password.ForeColor = System.Drawing.Color.White;
             this.signup_password.Location = new System.Drawing.Point(28, 240);
             this.signup_password.Name = "signup_password";
-            this.signup_password.Size = new System.Drawing.Size(228, 31);
+            this.signup_password.PasswordChar = '*';
+            this.signup_password.Size = new System.Drawing.Size(259, 31);
             this.signup_password.TabIndex = 27;
             this.signup_password.TextChanged += new System.EventHandler(this.signup_password_TextChanged);
             // 
@@ -305,17 +308,6 @@
             this.signup_interestlabel.Text = "Interest";
             this.signup_interestlabel.Click += new System.EventHandler(this.signup_interestlabel_Click);
             // 
-            // Signup_Interest
-            // 
-            this.Signup_Interest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.Signup_Interest.Font = new System.Drawing.Font("Poppins Light", 12F);
-            this.Signup_Interest.ForeColor = System.Drawing.Color.White;
-            this.Signup_Interest.Location = new System.Drawing.Point(149, 396);
-            this.Signup_Interest.Name = "Signup_Interest";
-            this.Signup_Interest.Size = new System.Drawing.Size(228, 31);
-            this.Signup_Interest.TabIndex = 35;
-            this.Signup_Interest.TextChanged += new System.EventHandler(this.Signup_Interest_TextChanged);
-            // 
             // city_label
             // 
             this.city_label.AutoSize = true;
@@ -350,17 +342,66 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "wrong password";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.comboBox1.Font = new System.Drawing.Font("Poppins Light", 10F);
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Leadership",
+            "Sustainability ",
+            "Entrepreneurship ",
+            "Networking ",
+            "Learning ",
+            "Community Engagement",
+            "Experiencing ",
+            "Sharing ",
+            "Creating"});
+            this.comboBox1.Location = new System.Drawing.Point(150, 396);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(215, 31);
+            this.comboBox1.TabIndex = 41;
+            // 
+            // signup_pswrd_show
+            // 
+            this.signup_pswrd_show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.signup_pswrd_show.FlatAppearance.BorderSize = 0;
+            this.signup_pswrd_show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signup_pswrd_show.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.signup_pswrd_show.Image = ((System.Drawing.Image)(resources.GetObject("signup_pswrd_show.Image")));
+            this.signup_pswrd_show.Location = new System.Drawing.Point(251, 244);
+            this.signup_pswrd_show.Name = "signup_pswrd_show";
+            this.signup_pswrd_show.Size = new System.Drawing.Size(31, 22);
+            this.signup_pswrd_show.TabIndex = 42;
+            this.signup_pswrd_show.UseVisualStyleBackColor = false;
+            this.signup_pswrd_show.Click += new System.EventHandler(this.signup_pswrd_showhide_Click);
+            // 
+            // signup_pswrd_hide
+            // 
+            this.signup_pswrd_hide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.signup_pswrd_hide.FlatAppearance.BorderSize = 0;
+            this.signup_pswrd_hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signup_pswrd_hide.Image = ((System.Drawing.Image)(resources.GetObject("signup_pswrd_hide.Image")));
+            this.signup_pswrd_hide.Location = new System.Drawing.Point(251, 244);
+            this.signup_pswrd_hide.Name = "signup_pswrd_hide";
+            this.signup_pswrd_hide.Size = new System.Drawing.Size(31, 22);
+            this.signup_pswrd_hide.TabIndex = 43;
+            this.signup_pswrd_hide.UseVisualStyleBackColor = false;
+            this.signup_pswrd_hide.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.signup_pswrd_show);
+            this.Controls.Add(this.signup_interestlabel);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.city_label);
             this.Controls.Add(this.Signup_city);
-            this.Controls.Add(this.signup_interestlabel);
-            this.Controls.Add(this.Signup_Interest);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.signup_post_code);
             this.Controls.Add(this.label14);
@@ -380,6 +421,7 @@
             this.Controls.Add(this.Signup_close);
             this.Controls.Add(this.login_close);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.signup_pswrd_hide);
             this.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -414,9 +456,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox signup_post_code;
         private System.Windows.Forms.Label signup_interestlabel;
-        private System.Windows.Forms.TextBox Signup_Interest;
         private System.Windows.Forms.Label city_label;
         private System.Windows.Forms.TextBox Signup_city;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button signup_pswrd_show;
+        private System.Windows.Forms.Button signup_pswrd_hide;
     }
 }

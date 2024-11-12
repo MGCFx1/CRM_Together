@@ -170,5 +170,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-login-20.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Hide_Password.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
