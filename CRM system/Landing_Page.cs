@@ -74,7 +74,7 @@ namespace CRM_system
 
         }
 
-        private void kryptonColorButton1_SelectedColorChanged(object sender, ComponentFactory.Krypton.Toolkit.ColorEventArgs e)
+        private void kryptonColorButton1_SelectedColorChanged(object sender, EventArgs e)
         {
 
         }
@@ -90,6 +90,11 @@ namespace CRM_system
         }
 
         private void Landing_Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }
