@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CRM_system.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,17 +14,14 @@ namespace CRM_system
 {
     public partial class Login : Form
     {
+        private DB.UserQueries query;
         public Login()
         {
             InitializeComponent();
+            query = new DB.UserQueries();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -51,24 +50,106 @@ namespace CRM_system
             this.Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void login_btn_Click(object sender, EventArgs e)
+        // For login: maybe create a helper file too
+        public static bool IsPasswordValid(string password, string hashedPassword)
         {
 
+            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+
+            return isPasswordValid;
+        }
+
+        // To check if a user's email is valid
+        public static bool IsValidEmail(string email)
+        {
+            // Regular expression pattern for validating email
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Use Regex.IsMatch to check if the input matches the pattern
+            return Regex.IsMatch(email, emailPattern);
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            Boolean isError = false;
+            string email = login_email.Text;
+            string password = login_password.Text;
+
+            List<Models.User> usersWithEmail = query.GetUserByEmail(email);
+
+
+            if (email == "")
+            {
+                // If none of those things are blank
+                lblEmailErr.Visible = true;
+                lblEmailErr.Text = "Email cannot be blank";
+                isError = true;
+            }
+            else if (!IsValidEmail(email))
+            {
+                lblEmailErr.Text = "Sorry, that doesn't seem like a valid email";
+                lblEmailErr.Visible = true;
+                isError = true;
+            }
+            else if (!(usersWithEmail.Count > 0))
+            {
+                lblEmailErr.Text = "Email does not exist";
+                //If something goes wrong
+                lblEmailErr.Visible = true;
+                isError = true;
+            }
+            else
+            {
+                lblEmailErr.Visible = false;
+            }
+
+
+            Console.WriteLine("Password: " + usersWithEmail[0].Password);
+
+            if (password == "")
+            {
+                // If none of those things are blank
+                lblPasswordErr.Visible = true;
+                lblPasswordErr.Text = "Password cannot be blank";
+                isError = true;
+            }
+            else if (!IsPasswordValid(password, usersWithEmail[0].Password))
+            {
+                lblPasswordErr.Text = "Sorry, incorrect password";
+                lblPasswordErr.Visible = true;
+                isError = true;
+            }
+            else
+            {
+                lblPasswordErr.Visible = false;
+            }
+
+
+
+            if (isError)
+            {
+                return;
+            }
+
+        
+
+            //if (usersWithUsername != null && usersWithUsername.Count > 0)
+            //{
+            //    UserSession.Username = usersWithUsername[0].Name;
+            //}
+            //else
+            //{
+            //    UserSession.Username = usersWithEmail[0].Name;
+            //}
+
+            lblEmailErr.Text = "Successful login";
+            lblEmailErr.Visible = true;
+            
         }
 
         private void login_close_Click(object sender, EventArgs e)

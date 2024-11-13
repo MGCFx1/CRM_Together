@@ -154,7 +154,8 @@ namespace CRM_system.DB
                             {
                                 Id = reader.GetInt32(0),  // First column (Id
                                 Email = reader.GetString(1),
-                                Name = reader.GetString(2)
+                                Name = reader.GetString(2),
+                                Password = reader.GetString(3)
                             };
 
                             // Add the user to the list

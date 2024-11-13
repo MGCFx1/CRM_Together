@@ -176,22 +176,6 @@ namespace CRM_system
             return Regex.IsMatch(email, emailPattern);
         }
 
-
-       // For login: maybe create a helper file too
-        //public static bool IsPasswordValid(string password)
-        //{
-            //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-            //Console.WriteLine("Hashed Password: " + hashedPassword);
-
-            //// Verify the password
-            //Console.Write("Enter password to authenticate: ");
-            //string passwordToCheck = Console.ReadLine();
-
-            //bool isPasswordValid = BCrypt.Net.BCrypt.Verify(passwordToCheck, hashedPassword);
-
-            //return isPasswordValid;
-        //}
-
         private void Signup_btn_Click(object sender, EventArgs e)
         {
 
