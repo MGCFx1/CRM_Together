@@ -9,36 +9,47 @@ using System.Threading.Tasks;
 
 namespace CRM_system.DB
 {
-    public class UserQueries
+    public class LocationQueries
     {
         // Connection string to the SQLite database file
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
-        public void InsertNewUser(string name, string email, string password, int locationID)
+        public int InsertNewLocation(string city, string address, string postcode)
         {
+
+            int newLocationId = -1;
+
             // Establish a connection to the SQLite database
             using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
 
                 // Define the SQL INSERT statement
-                string insertQuery = "INSERT INTO Users (name, email, password, location_id) VALUES (@name, @email, @password, @location_id);";
+                string insertQuery = "INSERT INTO Locations (city, address, postcode) VALUES (@city, @address, @postcode);";
 
                 // Create a command and parameterize the query
                 using (var command = new SQLiteCommand(insertQuery, connection))
                 {
-                    command.Parameters.AddWithValue("@name", name);
-                    command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@password", password);
-                    command.Parameters.AddWithValue("@location_id", locationID);
+                    command.Parameters.AddWithValue("@city", city);
+                    command.Parameters.AddWithValue("@address", address);
+                    command.Parameters.AddWithValue("@postcode", postcode);
 
                     // Execute the command
                     int rowsAffected = command.ExecuteNonQuery();
                     Console.WriteLine($"{rowsAffected} row(s) inserted successfully.");
                 }
 
+                // Retrieve the ID of the newly inserted row
+                using (var command = new SQLiteCommand("SELECT last_insert_rowid();", connection))
+                {
+                    newLocationId = Convert.ToInt32(command.ExecuteScalar());
+                }
+
+
                 connection.Close();
             }
+
+            return newLocationId;
         }
 
         // Method to retrieve all users and return them as a list

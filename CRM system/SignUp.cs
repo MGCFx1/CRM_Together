@@ -9,34 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace CRM_system
 {
     public partial class SignUp : Form
     {
         private DB.UserQueries query;
+        private DB.LocationQueries locationQuery;
         public SignUp()
         {
             InitializeComponent();
             query = new DB.UserQueries();
+            locationQuery = new DB.LocationQueries();
         }
 
         private void SignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
@@ -60,11 +48,6 @@ namespace CRM_system
             // If the user clicks No, do nothing and return to the application
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -75,16 +58,6 @@ namespace CRM_system
             Login sForm = new Login();
             sForm.Show();
             this.Hide();
-
-        }
-
-        private void Register_Name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedTextBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -193,21 +166,46 @@ namespace CRM_system
 
         }
 
+        // To check if a user's email is valid
+        public static bool IsValidEmail(string email)
+        {
+            // Regular expression pattern for validating email
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Use Regex.IsMatch to check if the input matches the pattern
+            return Regex.IsMatch(email, emailPattern);
+        }
+
+
+       // For login: maybe create a helper file too
+        //public static bool IsPasswordValid(string password)
+        //{
+            //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            //Console.WriteLine("Hashed Password: " + hashedPassword);
+
+            //// Verify the password
+            //Console.Write("Enter password to authenticate: ");
+            //string passwordToCheck = Console.ReadLine();
+
+            //bool isPasswordValid = BCrypt.Net.BCrypt.Verify(passwordToCheck, hashedPassword);
+
+            //return isPasswordValid;
+        //}
+
         private void Signup_btn_Click(object sender, EventArgs e)
         {
-            //var errors = new Dictionary<string, string>
-            //{
-            //    { "name", "" },
-            //    { "email", "" },
-            //    { "password", ""}
-            //};
 
+            // User Details
             Boolean isError = false;
             string name = signup_fullname.Text;
             string email = signup_email.Text;
             string password = signup_password.Text;
 
-            //List<Mdo> usersWithUsername = query.GetUserByUsername(username);
+            // Location Details
+            string city = Signup_city.Text;
+            string address = signup_address.Text;
+            string postcode = signup_post_code.Text;
+
             List<Models.User> usersWithEmail = query.GetUserByEmail(email);
 
 
@@ -217,38 +215,64 @@ namespace CRM_system
                 lblErrName.Visible = true;
                 lblErrName.Text = "Name cannot be blank or less than 4 chars";
                 isError = true;
+            } else
+            {
+                lblErrName.Visible = false;
             }
+
             if (email == "")
             {
                 // If none of those things are blank
                 lblErrEmail.Visible = true;
                 lblErrEmail.Text = "Email cannot be blank";
                 isError = true;
+            } else if (usersWithEmail.Count > 0 && usersWithEmail[0].Email != "")
+            {
+                lblErrEmail.Text = "Email is already in use";
+                //If something goes wrong
+                lblErrEmail.Visible = true;
+                isError = true;
             }
+            else if (!IsValidEmail(email))
+            {
+                lblErrEmail.Text = "Sorry, that doesn't seem like an email";
+                lblErrEmail.Visible = true;
+                isError = true;
+            }
+            else
+            {
+                lblErrEmail.Visible = false;
+            }
+
             if (password == "")
             {
                 // If none of those things are blank
                 lblErrPassword.Visible = true;
-                lblErrPassword.Text = "Name cannot be blank";
+                lblErrPassword.Text = "Password cannot be blank";
                 isError = true;
             }
-            //else if (usersWithEmail.Count > 0)
-            //{
-            //    lblAuthError.Text = "Sorry email is already in use";
-            //    lblAuthError.Visible = true;
-            //}
-            //else
-            //{
-            //    lblAuthError.Text = "Fields cannot be empty";
-            //    //If something goes wrong
-            //    lblAuthError.Visible = true;
-            //}
+            else if (password.Length < 8)
+            {
+                // If none of those things are blank
+                lblErrPassword.Visible = true;
+                lblErrPassword.Text = "Password is too weak; 8 characters required";
+                isError = true;
+            }
+            else
+            {
+                lblErrPassword.Visible = false;
+                // Storing the encrypted password in the database
+                password = BCrypt.Net.BCrypt.HashPassword(password);
+            }
 
-            if (isError) {
+            if (isError) 
+            {
                 return;
             }
 
-            query.InsertNewUser(name, email, password);
+            int location_id = locationQuery.InsertNewLocation(city, address, postcode);
+            query.InsertNewUser(name, email, password, location_id);
+
             lblErrName.Text = "";
             lblErrEmail.Text = "";
             lblErrPassword.Text = "";
