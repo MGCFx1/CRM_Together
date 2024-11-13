@@ -51,10 +51,12 @@
             this.signup_interestlabel = new System.Windows.Forms.Label();
             this.city_label = new System.Windows.Forms.Label();
             this.Signup_city = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblErrPassword = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.signup_pswrd_show = new System.Windows.Forms.Button();
             this.signup_pswrd_hide = new System.Windows.Forms.Button();
+            this.lblErrEmail = new System.Windows.Forms.Label();
+            this.lblErrName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,17 +333,18 @@
             this.Signup_city.Size = new System.Drawing.Size(112, 30);
             this.Signup_city.TabIndex = 37;
             // 
-            // label3
+            // lblErrPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(116, 221);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 17);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "wrong password";
+            this.lblErrPassword.AutoSize = true;
+            this.lblErrPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.lblErrPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic);
+            this.lblErrPassword.ForeColor = System.Drawing.Color.White;
+            this.lblErrPassword.Location = new System.Drawing.Point(124, 220);
+            this.lblErrPassword.Name = "lblErrPassword";
+            this.lblErrPassword.Size = new System.Drawing.Size(110, 17);
+            this.lblErrPassword.TabIndex = 40;
+            this.lblErrPassword.Text = "wrong password";
+            this.lblErrPassword.Visible = false;
             // 
             // comboBox1
             // 
@@ -391,16 +394,44 @@
             this.signup_pswrd_hide.UseVisualStyleBackColor = false;
             this.signup_pswrd_hide.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblErrEmail
+            // 
+            this.lblErrEmail.AutoSize = true;
+            this.lblErrEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.lblErrEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic);
+            this.lblErrEmail.ForeColor = System.Drawing.Color.White;
+            this.lblErrEmail.Location = new System.Drawing.Point(157, 155);
+            this.lblErrEmail.Name = "lblErrEmail";
+            this.lblErrEmail.Size = new System.Drawing.Size(110, 17);
+            this.lblErrEmail.TabIndex = 44;
+            this.lblErrEmail.Text = "wrong password";
+            this.lblErrEmail.Visible = false;
+            // 
+            // lblErrName
+            // 
+            this.lblErrName.AutoSize = true;
+            this.lblErrName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.lblErrName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic);
+            this.lblErrName.ForeColor = System.Drawing.Color.White;
+            this.lblErrName.Location = new System.Drawing.Point(126, 91);
+            this.lblErrName.Name = "lblErrName";
+            this.lblErrName.Size = new System.Drawing.Size(110, 17);
+            this.lblErrName.TabIndex = 45;
+            this.lblErrName.Text = "wrong password";
+            this.lblErrName.Visible = false;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.lblErrName);
+            this.Controls.Add(this.lblErrEmail);
             this.Controls.Add(this.signup_pswrd_show);
             this.Controls.Add(this.signup_interestlabel);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblErrPassword);
             this.Controls.Add(this.city_label);
             this.Controls.Add(this.Signup_city);
             this.Controls.Add(this.label16);
@@ -459,9 +490,11 @@
         private System.Windows.Forms.Label signup_interestlabel;
         private System.Windows.Forms.Label city_label;
         private System.Windows.Forms.TextBox Signup_city;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblErrPassword;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button signup_pswrd_show;
         private System.Windows.Forms.Button signup_pswrd_hide;
+        private System.Windows.Forms.Label lblErrEmail;
+        private System.Windows.Forms.Label lblErrName;
     }
 }

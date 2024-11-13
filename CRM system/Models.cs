@@ -20,4 +20,12 @@ namespace CRM_system.Models
         public string LastLogin { get; set; }
         
     }
+
+    public class Location
+    {
+        public int Id { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
+        public string PostCode { get; set; }
+    }
 }

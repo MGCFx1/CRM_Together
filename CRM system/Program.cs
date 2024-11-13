@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM_system.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,11 @@ namespace CRM_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Initialize the database before running the main form
+            var dbInitializer = new DatabaseInitializer();
+            dbInitializer.InitializeDatabase();
+
             Application.Run(new Landing_Page());
 
         }

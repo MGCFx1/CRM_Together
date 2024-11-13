@@ -41,9 +41,9 @@ namespace CRM_system.DB
         }
 
         // Method to retrieve all users and return them as a list
-        public List<User> GetAllUsers()
+        public List<Models.User> GetAllUsers()
         {
-            var users = new List<User>();
+            var users = new List<Models.User>();
 
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -61,7 +61,7 @@ namespace CRM_system.DB
                         while (reader.Read())
                         {
                             // Assuming the USERS table has columns like Id, Username, Email, and Password
-                            var user = new User
+                            var user = new Models.User
                             {
                                 Id = reader.GetInt32(0),  // First column (Id)
                                 Name = reader.GetString(1),  // Second column (Username)
@@ -82,9 +82,9 @@ namespace CRM_system.DB
         }
 
         // Method to check if a user with the same username exists
-        public List<User> GetUserByUsername(string username)
+        public List<Models.User> GetUserByUsername(string username)
         {
-            var users = new List<User>();
+            var users = new List<Models.User>();
 
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -104,7 +104,7 @@ namespace CRM_system.DB
                         while (reader.Read())
                         {
                             // Assuming the USERS table has columns like Id, Username, Email, and Password
-                            var user = new User
+                            var user = new Models.User
                             {
                                 Id = reader.GetInt32(0),  // First column (Id)
                                 Name = reader.GetString(1),
@@ -124,9 +124,9 @@ namespace CRM_system.DB
         }
 
         // Check if any user with a the same email exists
-        public List<User> GetUserByEmail(string email)
+        public List<Models.User> GetUserByEmail(string email)
         {
-            var users = new List<User>();
+            var users = new List<Models.User>();
 
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -149,7 +149,7 @@ namespace CRM_system.DB
                         while (reader.Read())
                         {
                             // Assuming the USERS table has columns like Id, Username, Email, and Password
-                            var user = new User
+                            var user = new Models.User
                             {
                                 Id = reader.GetInt32(0),  // First column (Id
                                 Email = reader.GetString(1),
