@@ -76,6 +76,7 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(212, 540);
             this.sidebar.TabIndex = 0;
+            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
             // 
             // panel1
             // 

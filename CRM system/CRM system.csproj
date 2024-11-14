@@ -58,6 +58,12 @@
     <Compile Include="Accounts_Forms.Designer.cs">
       <DependentUpon>Accounts_Forms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admins_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Dashboard.Designer.cs">
+      <DependentUpon>Admins_Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contacts_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="Accounts_Forms.resx">
       <DependentUpon>Accounts_Forms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Dashboard.resx">
+      <DependentUpon>Admins_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contacts_Form.resx">
       <DependentUpon>Contacts_Form.cs</DependentUpon>
