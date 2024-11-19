@@ -61,7 +61,7 @@
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel5);
             this.sidebar.Controls.Add(this.panel6);
@@ -79,6 +79,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.panel1.Controls.Add(this.NavTitle);
             this.panel1.Controls.Add(this.menuButton);
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -283,7 +284,7 @@
             this.Signup_close.BackColor = System.Drawing.Color.White;
             this.Signup_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Signup_close.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Signup_close.Location = new System.Drawing.Point(747, 22);
+            this.Signup_close.Location = new System.Drawing.Point(984, 9);
             this.Signup_close.Name = "Signup_close";
             this.Signup_close.Size = new System.Drawing.Size(22, 28);
             this.Signup_close.TabIndex = 10;
@@ -294,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 540);
+            this.ClientSize = new System.Drawing.Size(1018, 540);
             this.Controls.Add(this.Signup_close);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -121,7 +121,7 @@
   <data name="menuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAedJREFUSEvtljuPTlEUhsddMUg0Egmhcws6EoS/gJK/gHK0VBT8ARpCotRQ0Uxn
+        DAAACwwBP0AiyAAAAedJREFUSEvtljuPTlEUhsddMUg0Egmhcws6EoS/gJK/gHK0VBT8ARpCotRQ0Uxn
         hIRQEZdOhIQGez9r8spOzknWWdkzOftDRjFPcorvfE/etffZ16mpZf5XgBOSNsf3Hkm7JO2J7ydG0k7g
         O/AJOB3/L0haY2ZPgQxcKb+j04SkVWY2a2bqH+CepPXeK8W8Y2ZPJG3zThNmdjEElue+d3LORwELjXsr
         adp7o0kpHQRSCPwsaUvvSNoEvA8OOedDw7SRSFpnZi9jb4FT3gNuV5xL3mkCuF4JvBGck9Exs2cTT6yc
@@ -148,7 +148,7 @@
   <data name="pnMemberships.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAVpJREFUSEvtlk9Kw1AQxqPiypVnqUKRyMyXUlDctjfwHnWnW5fSAwiuMynewQO4
+        DgAACw4BQL7hQQAAAVpJREFUSEvtlk9Kw1AQxqPiypVnqUKRyMyXUlDctjfwHnWnW5fSAwiuMynewQO4
         EBdaFD2CiJUpVuiX1/xBgy4y8IO8eV/mR7J4SRS11VbTNVE9ylSnGTBrAgMeLUkO2Rv5Bod/GwMe2Btx
         qCnY+3/FBlw63K8Le8vFIjtZr7fL/bqwt1BswP0sitY8Z6p3vF8H9haLVU8XOQPOeL8Oy1YSm8hxGsfb
         nOHyjGd5eBE8Y1kMvKYiB5zhSpMEBjzx8CJ4Ru5VG/BhwPlNp7PJ2avhcMOAk0z1ne8rg2flxN+IdHNZ
@@ -160,7 +160,7 @@
   <data name="PnEvents.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAqhJREFUWEftVk2IjVEYvn5qFIVshA2SxAoLaeae5zn3Tl02ZjNZzGKShY2iUKTM
+        DAAACwwBP0AiyAAAAqhJREFUWEftVk2IjVEYvn5qFIVshA2SxAoLaeae5zn3Tl02ZjNZzGKShY2iUKTM
         Ais1JVnYIAY1wmK+99zGpBsLCys1YkeSMmSnjMjo/dxr7n2/O/d/ymKeevrud877Ps/7ffc953yp1AIW
         sIAWEZHpQF4U8lqz1Ly89z1Ws2GM9vcvEXIkkDPtUsjbqmc96iIAZ61YmzxtPepCyA9VhFon8N561ETB
         uWUJkU4wl+uyXnNivLd3uQBTApyIMplNBeeW2phGoHmB3BzIk0J+Vl0bMyc0OXJubel+zPv1ee93RuSu
@@ -177,7 +177,7 @@
   <data name="PneLearning.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAZBJREFUSEvtVS1PA0EUPH4AX+FPYAiCYJrS3dmrqGnAkiCBIAkCRdAY8AQkHpJ2
+        DAAACwwBP0AiyAAAAZBJREFUSEvtVS1PA0EUPH4AX+FPYAiCYJrS3dmrqGnAkiCBIAkCRdAY8AQkHpJ2
         t01qwfEHahA1JIjK2pLXj2Tfu11Cc1cMnWREd6YzuXe7e0mywL+Bq9VWLPDogPc58eGlVFqWvUkTuHJa
         d60xZw44LZKjTK271CF7EwvcE+V6DC1j9ohyPYZovi9YrS8CoxrRKnWc18/AgiqVLTmuKdtKbeb1M/hC
         G9iWAXKsefwMvuCMOZcjc8BtUX6GqBBBYX5fsFrfOWAYpNbXef0MvtAsl9ebwE6IdNHk9TOwJ1DqYPrb
