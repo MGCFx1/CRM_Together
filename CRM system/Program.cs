@@ -1,4 +1,5 @@
-﻿using CRM_system.DB;
+﻿using CRM_system.Admins_Forms;
+using CRM_system.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace CRM_system
             var dbInitializer = new DatabaseInitializer();
             dbInitializer.InitializeDatabase();
 
-            Application.Run(new Users_Dashboard());
+            Application.Run(new AdminsPanel());
 
         }
     }
