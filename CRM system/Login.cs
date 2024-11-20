@@ -108,9 +108,6 @@ namespace CRM_system
                 lblEmailErr.Visible = false;
             }
 
-
-            Console.WriteLine("Password: " + usersWithEmail[0].Password);
-
             if (password == "")
             {
                 // If none of those things are blank
@@ -118,7 +115,7 @@ namespace CRM_system
                 lblPasswordErr.Text = "Password cannot be blank";
                 isError = true;
             }
-            else if (!IsPasswordValid(password, usersWithEmail[0].Password))
+            else if (usersWithEmail.Count > 0 && !IsPasswordValid(password, usersWithEmail[0].Password))
             {
                 lblPasswordErr.Text = "Sorry, incorrect password";
                 lblPasswordErr.Visible = true;
