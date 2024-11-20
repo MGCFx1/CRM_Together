@@ -15,6 +15,7 @@ namespace CRM_system
         public dashboard_form()
         {
             InitializeComponent();
+            dashboardFormLbl.Text = UserSession.Name;
         }
     }
 }

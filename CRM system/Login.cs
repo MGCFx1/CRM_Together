@@ -133,17 +133,16 @@ namespace CRM_system
                 return;
             }
 
-        
 
-            //if (usersWithUsername != null && usersWithUsername.Count > 0)
-            //{
-            //    UserSession.Username = usersWithUsername[0].Name;
-            //}
-            //else
-            //{
-            //    UserSession.Username = usersWithEmail[0].Name;
-            //}
 
+            if (usersWithEmail != null && usersWithEmail.Count > 0)
+            {
+                UserSession.Name = usersWithEmail[0].Name;
+            }
+
+            this.Hide();
+            dashboard_form dashboard_Form = new dashboard_form();
+            dashboard_Form.Show();
             lblEmailErr.Text = "Successful login";
             lblEmailErr.Visible = true;
             

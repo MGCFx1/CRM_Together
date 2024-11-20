@@ -17,6 +17,10 @@ namespace CRM_system
         {
             InitializeComponent();
             query = new DB.UserQueries();
+            // Temp
+            string word = "word";
+            word = word[0].ToString().ToUpper() + word.Substring(1);
+            Console.WriteLine(word);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace CRM_system
 {
@@ -178,17 +179,20 @@ namespace CRM_system
 
         private void Signup_btn_Click(object sender, EventArgs e)
         {
+            // To Manage the case of Everything
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
 
             // User Details
             Boolean isError = false;
-            string name = signup_fullname.Text;
-            string email = signup_email.Text;
+            string name = textInfo.ToTitleCase(signup_fullname.Text);
+            string email = signup_email.Text.ToLower();
             string password = signup_password.Text;
+            string membership_status = "pending";
 
             // Location Details
-            string city = Signup_city.Text;
-            string address = signup_address.Text;
-            string postcode = signup_post_code.Text;
+            string city = textInfo.ToTitleCase(Signup_city.Text);
+            string address = textInfo.ToTitleCase(signup_address.Text);
+            string postcode = signup_post_code.Text.ToUpper();
 
             List<Models.User> usersWithEmail = query.GetUserByEmail(email);
 
@@ -255,7 +259,7 @@ namespace CRM_system
             }
 
             int location_id = locationQuery.InsertNewLocation(city, address, postcode);
-            query.InsertNewUser(name, email, password, location_id);
+            query.InsertNewUser(name, email, password, membership_status, location_id);
 
             lblErrName.Text = "";
             lblErrEmail.Text = "";
