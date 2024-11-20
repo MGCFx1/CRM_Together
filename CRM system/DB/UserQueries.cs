@@ -129,5 +129,27 @@ namespace CRM_system.DB
 
             return users;  // Return the list of users
         }
+
+        //Method to get total number of users
+        public int GetUserCount()
+        {
+            int count = 0;
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string countQuery = "SELECT COUNT(*) FROM Users;";
+
+                using (var command = new SQLiteCommand(countQuery, connection))
+                {
+                    count = Convert.ToInt32(command.ExecuteScalar());
+                }
+
+                connection.Close();
+            }
+
+            return count;
+        }
     }
 }

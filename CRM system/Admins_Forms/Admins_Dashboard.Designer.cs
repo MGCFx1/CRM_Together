@@ -46,33 +46,33 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.adManageMembers_qa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.adMemberCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.adUserPic4 = new System.Windows.Forms.Button();
-            this.adUserPic2 = new System.Windows.Forms.Button();
-            this.adUserPic3 = new System.Windows.Forms.Button();
-            this.adUserPic1 = new System.Windows.Forms.Button();
-            this.adBrowseMemBtn = new System.Windows.Forms.Button();
-            this.adUserPic5 = new System.Windows.Forms.Button();
             this.adUserPic7 = new System.Windows.Forms.Button();
             this.adUserPic6 = new System.Windows.Forms.Button();
+            this.adUserPic5 = new System.Windows.Forms.Button();
+            this.adBrowseMemBtn = new System.Windows.Forms.Button();
+            this.adUserPic4 = new System.Windows.Forms.Button();
+            this.adUserPic3 = new System.Windows.Forms.Button();
+            this.adUserPic2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.adUserPic1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.adBrowseReqBtn = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.adMemberReqName1 = new System.Windows.Forms.Label();
-            this.adMemberReqEmail1 = new System.Windows.Forms.Label();
-            this.adMemberReqInter1 = new System.Windows.Forms.Label();
-            this.adMemberReqApp1 = new System.Windows.Forms.Button();
             this.adMemberReqDec1 = new System.Windows.Forms.Button();
+            this.adMemberReqApp1 = new System.Windows.Forms.Button();
+            this.adMemberReqInter1 = new System.Windows.Forms.Label();
+            this.adMemberReqEmail1 = new System.Windows.Forms.Label();
+            this.adMemberReqName1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.adMemberReqDec2 = new System.Windows.Forms.Button();
             this.adMemberReqApp2 = new System.Windows.Forms.Button();
@@ -95,8 +95,8 @@
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -285,12 +285,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.adMemberCount);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(165, 73);
             this.panel2.TabIndex = 22;
+            // 
+            // adMemberCount
+            // 
+            this.adMemberCount.AutoSize = true;
+            this.adMemberCount.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adMemberCount.ForeColor = System.Drawing.Color.White;
+            this.adMemberCount.Location = new System.Drawing.Point(9, 29);
+            this.adMemberCount.Name = "adMemberCount";
+            this.adMemberCount.Size = new System.Drawing.Size(49, 42);
+            this.adMemberCount.TabIndex = 2;
+            this.adMemberCount.Text = "35";
+            this.adMemberCount.Click += new System.EventHandler(this.adMemberCount_Click);
             // 
             // label4
             // 
@@ -302,17 +314,6 @@
             this.label4.Size = new System.Drawing.Size(93, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Total Members";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(9, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 42);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "35";
             // 
             // flowLayoutPanel2
             // 
@@ -357,26 +358,6 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Total Events";
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.flowLayoutPanel3.Controls.Add(this.panel10);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(233, 275);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(351, 258);
-            this.flowLayoutPanel3.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(3, 4);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 19);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Browese Members";
-            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
@@ -393,79 +374,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(348, 74);
             this.panel9.TabIndex = 24;
-            // 
-            // adUserPic4
-            // 
-            this.adUserPic4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adUserPic4.FlatAppearance.BorderSize = 0;
-            this.adUserPic4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adUserPic4.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic4.Image")));
-            this.adUserPic4.Location = new System.Drawing.Point(151, 19);
-            this.adUserPic4.Name = "adUserPic4";
-            this.adUserPic4.Size = new System.Drawing.Size(46, 48);
-            this.adUserPic4.TabIndex = 3;
-            this.adUserPic4.UseVisualStyleBackColor = true;
-            // 
-            // adUserPic2
-            // 
-            this.adUserPic2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adUserPic2.FlatAppearance.BorderSize = 0;
-            this.adUserPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adUserPic2.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic2.Image")));
-            this.adUserPic2.Location = new System.Drawing.Point(53, 19);
-            this.adUserPic2.Name = "adUserPic2";
-            this.adUserPic2.Size = new System.Drawing.Size(44, 48);
-            this.adUserPic2.TabIndex = 1;
-            this.adUserPic2.UseVisualStyleBackColor = true;
-            // 
-            // adUserPic3
-            // 
-            this.adUserPic3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adUserPic3.FlatAppearance.BorderSize = 0;
-            this.adUserPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adUserPic3.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic3.Image")));
-            this.adUserPic3.Location = new System.Drawing.Point(103, 19);
-            this.adUserPic3.Name = "adUserPic3";
-            this.adUserPic3.Size = new System.Drawing.Size(43, 48);
-            this.adUserPic3.TabIndex = 2;
-            this.adUserPic3.UseVisualStyleBackColor = true;
-            // 
-            // adUserPic1
-            // 
-            this.adUserPic1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adUserPic1.FlatAppearance.BorderSize = 0;
-            this.adUserPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adUserPic1.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic1.Image")));
-            this.adUserPic1.Location = new System.Drawing.Point(3, 19);
-            this.adUserPic1.Name = "adUserPic1";
-            this.adUserPic1.Size = new System.Drawing.Size(44, 48);
-            this.adUserPic1.TabIndex = 0;
-            this.adUserPic1.UseVisualStyleBackColor = true;
-            // 
-            // adBrowseMemBtn
-            // 
-            this.adBrowseMemBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adBrowseMemBtn.FlatAppearance.BorderSize = 0;
-            this.adBrowseMemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adBrowseMemBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.adBrowseMemBtn.Image = ((System.Drawing.Image)(resources.GetObject("adBrowseMemBtn.Image")));
-            this.adBrowseMemBtn.Location = new System.Drawing.Point(322, 3);
-            this.adBrowseMemBtn.Name = "adBrowseMemBtn";
-            this.adBrowseMemBtn.Size = new System.Drawing.Size(16, 20);
-            this.adBrowseMemBtn.TabIndex = 4;
-            this.adBrowseMemBtn.UseVisualStyleBackColor = true;
-            // 
-            // adUserPic5
-            // 
-            this.adUserPic5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adUserPic5.FlatAppearance.BorderSize = 0;
-            this.adUserPic5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adUserPic5.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic5.Image")));
-            this.adUserPic5.Location = new System.Drawing.Point(203, 19);
-            this.adUserPic5.Name = "adUserPic5";
-            this.adUserPic5.Size = new System.Drawing.Size(43, 48);
-            this.adUserPic5.TabIndex = 5;
-            this.adUserPic5.UseVisualStyleBackColor = true;
             // 
             // adUserPic7
             // 
@@ -490,6 +398,99 @@
             this.adUserPic6.Size = new System.Drawing.Size(43, 48);
             this.adUserPic6.TabIndex = 6;
             this.adUserPic6.UseVisualStyleBackColor = true;
+            // 
+            // adUserPic5
+            // 
+            this.adUserPic5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adUserPic5.FlatAppearance.BorderSize = 0;
+            this.adUserPic5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adUserPic5.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic5.Image")));
+            this.adUserPic5.Location = new System.Drawing.Point(203, 19);
+            this.adUserPic5.Name = "adUserPic5";
+            this.adUserPic5.Size = new System.Drawing.Size(43, 48);
+            this.adUserPic5.TabIndex = 5;
+            this.adUserPic5.UseVisualStyleBackColor = true;
+            // 
+            // adBrowseMemBtn
+            // 
+            this.adBrowseMemBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adBrowseMemBtn.FlatAppearance.BorderSize = 0;
+            this.adBrowseMemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adBrowseMemBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.adBrowseMemBtn.Image = ((System.Drawing.Image)(resources.GetObject("adBrowseMemBtn.Image")));
+            this.adBrowseMemBtn.Location = new System.Drawing.Point(322, 3);
+            this.adBrowseMemBtn.Name = "adBrowseMemBtn";
+            this.adBrowseMemBtn.Size = new System.Drawing.Size(16, 20);
+            this.adBrowseMemBtn.TabIndex = 4;
+            this.adBrowseMemBtn.UseVisualStyleBackColor = true;
+            // 
+            // adUserPic4
+            // 
+            this.adUserPic4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adUserPic4.FlatAppearance.BorderSize = 0;
+            this.adUserPic4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adUserPic4.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic4.Image")));
+            this.adUserPic4.Location = new System.Drawing.Point(151, 19);
+            this.adUserPic4.Name = "adUserPic4";
+            this.adUserPic4.Size = new System.Drawing.Size(46, 48);
+            this.adUserPic4.TabIndex = 3;
+            this.adUserPic4.UseVisualStyleBackColor = true;
+            // 
+            // adUserPic3
+            // 
+            this.adUserPic3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adUserPic3.FlatAppearance.BorderSize = 0;
+            this.adUserPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adUserPic3.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic3.Image")));
+            this.adUserPic3.Location = new System.Drawing.Point(103, 19);
+            this.adUserPic3.Name = "adUserPic3";
+            this.adUserPic3.Size = new System.Drawing.Size(43, 48);
+            this.adUserPic3.TabIndex = 2;
+            this.adUserPic3.UseVisualStyleBackColor = true;
+            // 
+            // adUserPic2
+            // 
+            this.adUserPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adUserPic2.FlatAppearance.BorderSize = 0;
+            this.adUserPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adUserPic2.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic2.Image")));
+            this.adUserPic2.Location = new System.Drawing.Point(53, 19);
+            this.adUserPic2.Name = "adUserPic2";
+            this.adUserPic2.Size = new System.Drawing.Size(44, 48);
+            this.adUserPic2.TabIndex = 1;
+            this.adUserPic2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(3, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 19);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Browese Members";
+            // 
+            // adUserPic1
+            // 
+            this.adUserPic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adUserPic1.FlatAppearance.BorderSize = 0;
+            this.adUserPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adUserPic1.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic1.Image")));
+            this.adUserPic1.Location = new System.Drawing.Point(3, 19);
+            this.adUserPic1.Name = "adUserPic1";
+            this.adUserPic1.Size = new System.Drawing.Size(44, 48);
+            this.adUserPic1.TabIndex = 0;
+            this.adUserPic1.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.flowLayoutPanel3.Controls.Add(this.panel10);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(233, 275);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(351, 258);
+            this.flowLayoutPanel3.TabIndex = 19;
             // 
             // panel10
             // 
@@ -538,44 +539,17 @@
             this.panel11.Size = new System.Drawing.Size(351, 71);
             this.panel11.TabIndex = 24;
             // 
-            // pictureBox1
+            // adMemberReqDec1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // adMemberReqName1
-            // 
-            this.adMemberReqName1.AutoSize = true;
-            this.adMemberReqName1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqName1.Location = new System.Drawing.Point(60, 6);
-            this.adMemberReqName1.Name = "adMemberReqName1";
-            this.adMemberReqName1.Size = new System.Drawing.Size(45, 22);
-            this.adMemberReqName1.TabIndex = 1;
-            this.adMemberReqName1.Text = "Name";
-            // 
-            // adMemberReqEmail1
-            // 
-            this.adMemberReqEmail1.AutoSize = true;
-            this.adMemberReqEmail1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqEmail1.Location = new System.Drawing.Point(60, 26);
-            this.adMemberReqEmail1.Name = "adMemberReqEmail1";
-            this.adMemberReqEmail1.Size = new System.Drawing.Size(42, 22);
-            this.adMemberReqEmail1.TabIndex = 2;
-            this.adMemberReqEmail1.Text = "Email";
-            // 
-            // adMemberReqInter1
-            // 
-            this.adMemberReqInter1.AutoSize = true;
-            this.adMemberReqInter1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqInter1.Location = new System.Drawing.Point(60, 48);
-            this.adMemberReqInter1.Name = "adMemberReqInter1";
-            this.adMemberReqInter1.Size = new System.Drawing.Size(53, 22);
-            this.adMemberReqInter1.TabIndex = 3;
-            this.adMemberReqInter1.Text = "Interest";
+            this.adMemberReqDec1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adMemberReqDec1.FlatAppearance.BorderSize = 0;
+            this.adMemberReqDec1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adMemberReqDec1.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqDec1.Image")));
+            this.adMemberReqDec1.Location = new System.Drawing.Point(297, 19);
+            this.adMemberReqDec1.Name = "adMemberReqDec1";
+            this.adMemberReqDec1.Size = new System.Drawing.Size(40, 33);
+            this.adMemberReqDec1.TabIndex = 5;
+            this.adMemberReqDec1.UseVisualStyleBackColor = true;
             // 
             // adMemberReqApp1
             // 
@@ -589,17 +563,44 @@
             this.adMemberReqApp1.TabIndex = 4;
             this.adMemberReqApp1.UseVisualStyleBackColor = true;
             // 
-            // adMemberReqDec1
+            // adMemberReqInter1
             // 
-            this.adMemberReqDec1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adMemberReqDec1.FlatAppearance.BorderSize = 0;
-            this.adMemberReqDec1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adMemberReqDec1.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqDec1.Image")));
-            this.adMemberReqDec1.Location = new System.Drawing.Point(297, 19);
-            this.adMemberReqDec1.Name = "adMemberReqDec1";
-            this.adMemberReqDec1.Size = new System.Drawing.Size(40, 33);
-            this.adMemberReqDec1.TabIndex = 5;
-            this.adMemberReqDec1.UseVisualStyleBackColor = true;
+            this.adMemberReqInter1.AutoSize = true;
+            this.adMemberReqInter1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adMemberReqInter1.Location = new System.Drawing.Point(60, 48);
+            this.adMemberReqInter1.Name = "adMemberReqInter1";
+            this.adMemberReqInter1.Size = new System.Drawing.Size(53, 22);
+            this.adMemberReqInter1.TabIndex = 3;
+            this.adMemberReqInter1.Text = "Interest";
+            // 
+            // adMemberReqEmail1
+            // 
+            this.adMemberReqEmail1.AutoSize = true;
+            this.adMemberReqEmail1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adMemberReqEmail1.Location = new System.Drawing.Point(60, 26);
+            this.adMemberReqEmail1.Name = "adMemberReqEmail1";
+            this.adMemberReqEmail1.Size = new System.Drawing.Size(42, 22);
+            this.adMemberReqEmail1.TabIndex = 2;
+            this.adMemberReqEmail1.Text = "Email";
+            // 
+            // adMemberReqName1
+            // 
+            this.adMemberReqName1.AutoSize = true;
+            this.adMemberReqName1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adMemberReqName1.Location = new System.Drawing.Point(60, 6);
+            this.adMemberReqName1.Name = "adMemberReqName1";
+            this.adMemberReqName1.Size = new System.Drawing.Size(45, 22);
+            this.adMemberReqName1.TabIndex = 1;
+            this.adMemberReqName1.Text = "Name";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel12
             // 
@@ -790,9 +791,9 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -829,7 +830,7 @@
         private System.Windows.Forms.Button adManageMembers_qa;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label adMemberCount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel8;
