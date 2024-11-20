@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CRM_system
+namespace CRM_system.Admins_Forms
 {
-    public partial class Memberships_Form : Form
+    public partial class Admins_Dashboard : Form
     {
-        public Memberships_Form()
+        public Admins_Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

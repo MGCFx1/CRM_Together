@@ -172,5 +172,10 @@ namespace CRM_system
         {
             login_password.PasswordChar = '*';
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -90,6 +90,36 @@
     <Compile Include="Accounts_Forms.Designer.cs">
       <DependentUpon>Accounts_Forms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admins_Forms\AdminsPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\AdminsPanel.Designer.cs">
+      <DependentUpon>AdminsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Contacts.Designer.cs">
+      <DependentUpon>Admins_Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Dashboard.Designer.cs">
+      <DependentUpon>Admins_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Events.Designer.cs">
+      <DependentUpon>Admins_Events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Learning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\Admins_Learning.Designer.cs">
+      <DependentUpon>Admins_Learning.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contacts_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +182,21 @@
     </Compile>
     <EmbeddedResource Include="Accounts_Forms.resx">
       <DependentUpon>Accounts_Forms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\AdminsPanel.resx">
+      <DependentUpon>AdminsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\Admins_Contacts.resx">
+      <DependentUpon>Admins_Contacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\Admins_Dashboard.resx">
+      <DependentUpon>Admins_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\Admins_Events.resx">
+      <DependentUpon>Admins_Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\Admins_Learning.resx">
+      <DependentUpon>Admins_Learning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contacts_Form.resx">
       <DependentUpon>Contacts_Form.cs</DependentUpon>

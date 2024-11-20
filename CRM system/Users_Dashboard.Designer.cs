@@ -33,35 +33,35 @@
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.NavTitle = new System.Windows.Forms.Label();
-            this.menuButton = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pnDashboard = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.pnMemberships = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.PnEvents = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.PneLearning = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnContacts = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pnAccount = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.Signup_close = new System.Windows.Forms.Label();
+            this.menuButton = new System.Windows.Forms.PictureBox();
+            this.pnDashboard = new System.Windows.Forms.Button();
+            this.pnMemberships = new System.Windows.Forms.Button();
+            this.PnEvents = new System.Windows.Forms.Button();
+            this.PneLearning = new System.Windows.Forms.Button();
+            this.pnContacts = new System.Windows.Forms.Button();
+            this.pnAccount = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel5);
             this.sidebar.Controls.Add(this.panel6);
@@ -79,6 +79,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.panel1.Controls.Add(this.NavTitle);
             this.panel1.Controls.Add(this.menuButton);
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -99,6 +100,72 @@
             this.NavTitle.Text = "Nav Menu";
             this.NavTitle.Click += new System.EventHandler(this.NavTitle_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pnDashboard);
+            this.panel5.Location = new System.Drawing.Point(3, 92);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(211, 52);
+            this.panel5.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.pnMemberships);
+            this.panel6.Location = new System.Drawing.Point(3, 150);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(211, 52);
+            this.panel6.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.PnEvents);
+            this.panel4.Location = new System.Drawing.Point(3, 208);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(211, 52);
+            this.panel4.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.PneLearning);
+            this.panel3.Location = new System.Drawing.Point(3, 266);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(211, 52);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pnContacts);
+            this.panel2.Location = new System.Drawing.Point(3, 324);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(211, 145);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.pnAccount);
+            this.panel7.Location = new System.Drawing.Point(3, 475);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(211, 52);
+            this.panel7.TabIndex = 2;
+            // 
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
+            // 
+            // Signup_close
+            // 
+            this.Signup_close.AutoSize = true;
+            this.Signup_close.BackColor = System.Drawing.Color.White;
+            this.Signup_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Signup_close.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Signup_close.Location = new System.Drawing.Point(972, 18);
+            this.Signup_close.Name = "Signup_close";
+            this.Signup_close.Size = new System.Drawing.Size(22, 28);
+            this.Signup_close.TabIndex = 10;
+            this.Signup_close.Text = "X";
+            this.Signup_close.Click += new System.EventHandler(this.Signup_close_Click);
+            // 
             // menuButton
             // 
             this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -109,14 +176,6 @@
             this.menuButton.TabIndex = 0;
             this.menuButton.TabStop = false;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.pnDashboard);
-            this.panel5.Location = new System.Drawing.Point(3, 92);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(211, 52);
-            this.panel5.TabIndex = 2;
             // 
             // pnDashboard
             // 
@@ -137,14 +196,6 @@
             this.pnDashboard.UseVisualStyleBackColor = true;
             this.pnDashboard.Click += new System.EventHandler(this.pnDashboard_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pnMemberships);
-            this.panel6.Location = new System.Drawing.Point(3, 150);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(211, 52);
-            this.panel6.TabIndex = 2;
-            // 
             // pnMemberships
             // 
             this.pnMemberships.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -163,14 +214,6 @@
             this.pnMemberships.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pnMemberships.UseVisualStyleBackColor = true;
             this.pnMemberships.Click += new System.EventHandler(this.pnMemberships_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.PnEvents);
-            this.panel4.Location = new System.Drawing.Point(3, 208);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(211, 52);
-            this.panel4.TabIndex = 2;
             // 
             // PnEvents
             // 
@@ -191,14 +234,6 @@
             this.PnEvents.UseVisualStyleBackColor = true;
             this.PnEvents.Click += new System.EventHandler(this.PnEvents_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.PneLearning);
-            this.panel3.Location = new System.Drawing.Point(3, 266);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(211, 52);
-            this.panel3.TabIndex = 2;
-            // 
             // PneLearning
             // 
             this.PneLearning.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -217,14 +252,6 @@
             this.PneLearning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PneLearning.UseVisualStyleBackColor = true;
             this.PneLearning.Click += new System.EventHandler(this.PneLearning_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pnContacts);
-            this.panel2.Location = new System.Drawing.Point(3, 324);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 145);
-            this.panel2.TabIndex = 1;
             // 
             // pnContacts
             // 
@@ -245,14 +272,6 @@
             this.pnContacts.UseVisualStyleBackColor = true;
             this.pnContacts.Click += new System.EventHandler(this.pnContacts_Click);
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.pnAccount);
-            this.panel7.Location = new System.Drawing.Point(3, 475);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(211, 52);
-            this.panel7.TabIndex = 2;
-            // 
             // pnAccount
             // 
             this.pnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -272,29 +291,11 @@
             this.pnAccount.UseVisualStyleBackColor = true;
             this.pnAccount.Click += new System.EventHandler(this.pnAccount_Click);
             // 
-            // sidebarTimer
-            // 
-            this.sidebarTimer.Interval = 10;
-            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
-            // 
-            // Signup_close
-            // 
-            this.Signup_close.AutoSize = true;
-            this.Signup_close.BackColor = System.Drawing.Color.White;
-            this.Signup_close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Signup_close.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Signup_close.Location = new System.Drawing.Point(747, 22);
-            this.Signup_close.Name = "Signup_close";
-            this.Signup_close.Size = new System.Drawing.Size(22, 28);
-            this.Signup_close.TabIndex = 10;
-            this.Signup_close.Text = "X";
-            this.Signup_close.Click += new System.EventHandler(this.Signup_close_Click);
-            // 
             // Users_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 540);
+            this.ClientSize = new System.Drawing.Size(1018, 540);
             this.Controls.Add(this.Signup_close);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -306,13 +307,13 @@
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
