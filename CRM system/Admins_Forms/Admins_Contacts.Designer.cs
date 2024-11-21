@@ -62,8 +62,10 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.adMembersRemove = new System.Windows.Forms.Button();
             this.adMembersRef = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.adMemberList)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -447,21 +449,22 @@
             this.label18.TabIndex = 8;
             this.label18.Text = "Membership Requests";
             // 
-            // button2
+            // adMembersRemove
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(282, 493);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 29);
-            this.button2.TabIndex = 59;
-            this.button2.Text = "       Remove a member";
-            this.button2.UseVisualStyleBackColor = false;
+            this.adMembersRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adMembersRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adMembersRemove.FlatAppearance.BorderSize = 0;
+            this.adMembersRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adMembersRemove.ForeColor = System.Drawing.Color.White;
+            this.adMembersRemove.Image = ((System.Drawing.Image)(resources.GetObject("adMembersRemove.Image")));
+            this.adMembersRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adMembersRemove.Location = new System.Drawing.Point(282, 493);
+            this.adMembersRemove.Name = "adMembersRemove";
+            this.adMembersRemove.Size = new System.Drawing.Size(134, 29);
+            this.adMembersRemove.TabIndex = 59;
+            this.adMembersRemove.Text = "       Remove a member";
+            this.adMembersRemove.UseVisualStyleBackColor = false;
+            this.adMembersRemove.Click += new System.EventHandler(this.adMembersRemove_Click);
             // 
             // adMembersRef
             // 
@@ -480,13 +483,41 @@
             this.adMembersRef.UseVisualStyleBackColor = false;
             this.adMembersRef.Click += new System.EventHandler(this.adMembersRef_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(937, 33);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 43);
+            this.button2.TabIndex = 62;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(890, 33);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 43);
+            this.button3.TabIndex = 61;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // Admins_Contacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 540);
-            this.Controls.Add(this.adMembersRef);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.adMembersRef);
+            this.Controls.Add(this.adMembersRemove);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel3);
@@ -555,7 +586,9 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button adMembersRemove;
         private System.Windows.Forms.Button adMembersRef;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

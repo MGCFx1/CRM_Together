@@ -177,6 +177,23 @@ namespace CRM_system.DB
             return memberContacts;
         }
 
+        public bool RemoveUserById(int userId)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM Users WHERE ID = @ID;";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", userId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0; // Return true if a row was deleted
+                }
+            }
+        }
+
 
     }
 }

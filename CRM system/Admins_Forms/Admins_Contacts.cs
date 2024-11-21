@@ -63,7 +63,7 @@ namespace CRM_system.Admins_Forms
 
         private void adMemberList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Optional: Handle cell clicks if needed
+            
         }
 
         private void adMemberSearch_TextChanged(object sender, EventArgs e)
@@ -106,5 +106,44 @@ namespace CRM_system.Admins_Forms
                 MessageBox.Show($"Error refreshing the list: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void adMembersRemove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ensure a row is selected
+                if (adMemberList.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select a user to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Get the selected user's ID
+                int selectedUserId = Convert.ToInt32(adMemberList.SelectedRows[0].Cells["ID"].Value);
+
+                // Confirm deletion
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Attempt to remove the user from the database
+                    if (userQueries.RemoveUserById(selectedUserId))
+                    {
+                        MessageBox.Show("User removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Refresh the DataGridView
+                        LoadMemberContacts();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to remove the user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error removing user: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+    }
     }
 }
