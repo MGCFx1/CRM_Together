@@ -145,7 +145,7 @@ namespace CRM_system.DB
                                 Email = reader.GetString(2),  // Third column (Email)
                                 Password = reader.GetString(3),  // Fourth column (Password)
                                 MembershipStatus = reader.GetString(4),  // Third column (Email)
-                                LocationID = reader.GetInt32(6)
+                                LocationID = !reader.IsDBNull(6) ? reader.GetInt32(6) : 0
                             };
 
                             // Add the user to the list

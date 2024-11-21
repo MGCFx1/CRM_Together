@@ -27,7 +27,6 @@ namespace CRM_system.Admins_Forms
         public void LoadData()
         {
             List<Models.User> pendingUsers = query.GetUsersByStatus("pending");
-            Console.WriteLine(pendingUsers.Count);
 
             try
             {
@@ -44,7 +43,7 @@ namespace CRM_system.Admins_Forms
             }
 
 
-            for (int i = 0; i < pendingUsers.Count && i < 2; i++)
+            for (int i = 0; i < pendingUsers.Count && i < 3; i++)
             {
                 if (i == 0)
                 {
@@ -94,9 +93,6 @@ namespace CRM_system.Admins_Forms
 
             query.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
             ReinitializeForm();
-
-            // Load the data for the admin dashboard
-            LoadData();
         }
 
         private void adMemberCount_Click(object sender, EventArgs e)
@@ -109,29 +105,46 @@ namespace CRM_system.Admins_Forms
 
         }
 
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void adMemberReqApp1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void adMemberReqApp2_Click(object sender, EventArgs e)
         {
+            List<Models.User> pendingUsers = query.GetUsersByStatus("pending");
+            var currentUser = pendingUsers[1];
+            string status = "active";
 
+            query.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
         }
 
-        private void Admins_Dashboard_Load(object sender, EventArgs e)
+        private void adMemberReqDec2_Click(object sender, EventArgs e)
         {
+            List<Models.User> pendingUsers = query.GetUsersByStatus("pending");
 
+            var currentUser = pendingUsers[1];
+            string status = "inactive";
+
+            query.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
         }
 
-        private void adMemberReqApp1_Click_2(object sender, EventArgs e)
+        private void adMemberReqApp3_Click(object sender, EventArgs e)
         {
+            List<Models.User> pendingUsers = query.GetUsersByStatus("pending");
+            var currentUser = pendingUsers[2];
+            string status = "active";
 
+            query.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
+        }
+
+        private void adMemberReqDec3_Click(object sender, EventArgs e)
+        {
+            List<Models.User> pendingUsers = query.GetUsersByStatus("pending");
+
+            var currentUser = pendingUsers[2];
+            string status = "inactive";
+
+            query.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
         }
     }
 }
