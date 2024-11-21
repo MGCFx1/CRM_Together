@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace CRM_system.Admins_Forms
@@ -14,11 +15,42 @@ namespace CRM_system.Admins_Forms
     {
         private DB.UserQueries userQueries;
         private DataTable contacts; // Store contacts for filtering
+        private List<Models.User> pendingUsers;
 
         public Admins_Contacts()
         {
             InitializeComponent();
             userQueries = new DB.UserQueries();
+            LoadMemberContacts();
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            pendingUsers = userQueries.GetUsersByStatus("pending");
+
+            for (int i = 0; i < pendingUsers.Count && i < 2; i++)
+            {
+                if (i == 0)
+                {
+                    panel15.Visible = true;
+                    label14.Text = pendingUsers[i].Name;
+                    label13.Text = pendingUsers[i].Email;
+                }
+                else
+                {
+                    panel16.Visible = true;
+                    label17.Text = pendingUsers[i].Name;
+                    label16.Text = pendingUsers[i].Email;
+                }
+            }
+        }
+
+        public void ReinitializeForm()
+        {
+            Controls.Clear(); // Clear all controls
+            InitializeComponent(); // Reinitialize components
+            LoadData(); // Re-fetch data or set the state
             LoadMemberContacts();
         }
 
@@ -232,5 +264,41 @@ namespace CRM_system.Admins_Forms
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var currentUser = pendingUsers[0];
+            string status = "active";
+
+            userQueries.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var currentUser = pendingUsers[0];
+            string status = "inactive";
+
+            userQueries.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+
+            ReinitializeForm();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var currentUser = pendingUsers[1];
+            string status = "active";
+
+            userQueries.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var currentUser = pendingUsers[1];
+            string status = "inactive";
+
+            userQueries.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            ReinitializeForm();
+        }
     }
 }
