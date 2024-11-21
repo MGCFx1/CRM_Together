@@ -153,6 +153,7 @@ namespace CRM_system.DB
             return count;
         }
 
+        //Retrieve all members in a list
         public DataTable GetAllMemberContacts()
         {
             DataTable memberContacts = new DataTable();
@@ -177,6 +178,7 @@ namespace CRM_system.DB
             return memberContacts;
         }
 
+        //Delete user by ID
         public bool RemoveUserById(int userId)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -189,10 +191,34 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@ID", userId);
 
                     int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; // Return true if a row was deleted
+                    return rowsAffected > 0; 
                 }
             }
         }
+
+        //Add User Directly from admins panel
+        public bool AddNewMember(string name, string email, string password)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO Users (name, email, password, membership_status) " +
+                               "VALUES (@Name, @Email, @Password, 'active');";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); 
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0; 
+                }
+            }
+        }
+
+
 
 
     }

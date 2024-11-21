@@ -111,26 +111,23 @@ namespace CRM_system.Admins_Forms
         {
             try
             {
-                // Ensure a row is selected
+                
                 if (adMemberList.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Please select a user to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Get the selected user's ID
                 int selectedUserId = Convert.ToInt32(adMemberList.SelectedRows[0].Cells["ID"].Value);
 
                 // Confirm deletion
                 var confirmResult = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    // Attempt to remove the user from the database
+                    // Remove user from database
                     if (userQueries.RemoveUserById(selectedUserId))
                     {
                         MessageBox.Show("User removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Refresh the DataGridView
                         LoadMemberContacts();
                     }
                     else
@@ -145,5 +142,95 @@ namespace CRM_system.Admins_Forms
             }
         
     }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adMemberbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fullName = adFullNameAdd.Text.Trim();
+                string email = adEmailAddressAdd.Text.Trim();
+                string password = adPasswordAdd.Text.Trim();
+
+                // Validation flags
+                bool isValid = true;
+
+                // Email validation
+                if (string.IsNullOrEmpty(email) || !IsValidEmail(email))
+                {
+                    lblEmailError.Text = "Please enter a valid email address.";
+                    lblEmailError.Visible = true;
+                    isValid = false;
+                }
+                else
+                {
+                    lblEmailError.Visible = false;
+                }
+
+                // Password validation
+                if (string.IsNullOrEmpty(password) || password.Length < 8)
+                {
+                    lblPasswordError.Text = "Password must be at least 8 characters.";
+                    lblPasswordError.Visible = true;
+                    isValid = false;
+                }
+                else
+                {
+                    lblPasswordError.Visible = false;
+                }
+
+                if (!isValid)
+                {
+                    return;
+                }
+
+                if (userQueries.AddNewMember(fullName, email, password))
+                {
+                    MessageBox.Show("Member added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refresh the DataGridView to show the new member
+                    LoadMemberContacts();
+
+                    // Clear input fields and hide error labels
+                    adFullNameAdd.Text = string.Empty;
+                    adEmailAddressAdd.Text = string.Empty;
+                    adPasswordAdd.Text = string.Empty;
+                    adInterestAdd.Text = string.Empty;
+
+                    lblEmailError.Visible = false;
+                    lblPasswordError.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add the member. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding member: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

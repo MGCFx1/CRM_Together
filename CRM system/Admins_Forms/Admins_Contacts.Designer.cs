@@ -38,14 +38,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.adInterestAdd = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.adEmailAddressAdd = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.adFullNameAdd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.adMemberbtn = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -66,6 +66,10 @@
             this.adMembersRef = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.adPasswordAdd = new System.Windows.Forms.TextBox();
+            this.lblEmailError = new System.Windows.Forms.Label();
+            this.lblPasswordError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.adMemberList)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,13 +150,17 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.lblPasswordError);
+            this.panel3.Controls.Add(this.lblEmailError);
+            this.panel3.Controls.Add(this.adMemberbtn);
             this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.adPasswordAdd);
+            this.panel3.Controls.Add(this.adInterestAdd);
+            this.panel3.Controls.Add(this.adFullNameAdd);
+            this.panel3.Controls.Add(this.adEmailAddressAdd);
             this.panel3.Location = new System.Drawing.Point(618, 127);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(360, 212);
@@ -164,19 +172,20 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(24, 123);
+            this.label4.Location = new System.Drawing.Point(24, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 56;
             this.label4.Text = "Interest";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // comboBox2
+            // adInterestAdd
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.White;
-            this.comboBox2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.adInterestAdd.BackColor = System.Drawing.Color.White;
+            this.adInterestAdd.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adInterestAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adInterestAdd.FormattingEnabled = true;
+            this.adInterestAdd.Items.AddRange(new object[] {
             "Leadership",
             "Sustainability ",
             "Entrepreneurship ",
@@ -186,10 +195,11 @@
             "Experiencing ",
             "Sharing ",
             "Creating"});
-            this.comboBox2.Location = new System.Drawing.Point(24, 134);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(313, 31);
-            this.comboBox2.TabIndex = 57;
+            this.adInterestAdd.Location = new System.Drawing.Point(24, 130);
+            this.adInterestAdd.Name = "adInterestAdd";
+            this.adInterestAdd.Size = new System.Drawing.Size(313, 31);
+            this.adInterestAdd.TabIndex = 57;
+            this.adInterestAdd.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -197,21 +207,21 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(24, 67);
+            this.label5.Location = new System.Drawing.Point(164, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 16);
             this.label5.TabIndex = 55;
             this.label5.Text = "Email Address";
             // 
-            // textBox1
+            // adEmailAddressAdd
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(24, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(312, 31);
-            this.textBox1.TabIndex = 54;
+            this.adEmailAddressAdd.BackColor = System.Drawing.Color.White;
+            this.adEmailAddressAdd.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adEmailAddressAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEmailAddressAdd.Location = new System.Drawing.Point(164, 23);
+            this.adEmailAddressAdd.Name = "adEmailAddressAdd";
+            this.adEmailAddressAdd.Size = new System.Drawing.Size(184, 31);
+            this.adEmailAddressAdd.TabIndex = 54;
             // 
             // label8
             // 
@@ -225,15 +235,15 @@
             this.label8.TabIndex = 53;
             this.label8.Text = "Full Name";
             // 
-            // textBox2
+            // adFullNameAdd
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(24, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(312, 31);
-            this.textBox2.TabIndex = 52;
+            this.adFullNameAdd.BackColor = System.Drawing.Color.White;
+            this.adFullNameAdd.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adFullNameAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adFullNameAdd.Location = new System.Drawing.Point(24, 23);
+            this.adFullNameAdd.Name = "adFullNameAdd";
+            this.adFullNameAdd.Size = new System.Drawing.Size(130, 31);
+            this.adFullNameAdd.TabIndex = 52;
             // 
             // label6
             // 
@@ -257,21 +267,22 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Members List";
             // 
-            // button1
+            // adMemberbtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(27, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 29);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "    Add a member";
-            this.button1.UseVisualStyleBackColor = false;
+            this.adMemberbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adMemberbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adMemberbtn.FlatAppearance.BorderSize = 0;
+            this.adMemberbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adMemberbtn.ForeColor = System.Drawing.Color.White;
+            this.adMemberbtn.Image = ((System.Drawing.Image)(resources.GetObject("adMemberbtn.Image")));
+            this.adMemberbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adMemberbtn.Location = new System.Drawing.Point(121, 173);
+            this.adMemberbtn.Name = "adMemberbtn";
+            this.adMemberbtn.Size = new System.Drawing.Size(124, 29);
+            this.adMemberbtn.TabIndex = 58;
+            this.adMemberbtn.Text = "    Add a member";
+            this.adMemberbtn.UseVisualStyleBackColor = false;
+            this.adMemberbtn.Click += new System.EventHandler(this.adMemberbtn_Click);
             // 
             // panel15
             // 
@@ -509,6 +520,48 @@
             this.button3.TabIndex = 61;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(24, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 16);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "Password";
+            // 
+            // adPasswordAdd
+            // 
+            this.adPasswordAdd.BackColor = System.Drawing.Color.White;
+            this.adPasswordAdd.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adPasswordAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adPasswordAdd.Location = new System.Drawing.Point(24, 78);
+            this.adPasswordAdd.Name = "adPasswordAdd";
+            this.adPasswordAdd.Size = new System.Drawing.Size(309, 31);
+            this.adPasswordAdd.TabIndex = 60;
+            // 
+            // lblEmailError
+            // 
+            this.lblEmailError.AutoSize = true;
+            this.lblEmailError.Location = new System.Drawing.Point(265, 7);
+            this.lblEmailError.Name = "lblEmailError";
+            this.lblEmailError.Size = new System.Drawing.Size(29, 13);
+            this.lblEmailError.TabIndex = 61;
+            this.lblEmailError.Text = "Error";
+            this.lblEmailError.Visible = false;
+            // 
+            // lblPasswordError
+            // 
+            this.lblPasswordError.AutoSize = true;
+            this.lblPasswordError.Location = new System.Drawing.Point(110, 62);
+            this.lblPasswordError.Name = "lblPasswordError";
+            this.lblPasswordError.Size = new System.Drawing.Size(29, 13);
+            this.lblPasswordError.TabIndex = 62;
+            this.lblPasswordError.Text = "Error";
+            this.lblPasswordError.Visible = false;
+            // 
             // Admins_Contacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,14 +615,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox adFullNameAdd;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox adInterestAdd;
+        private System.Windows.Forms.TextBox adEmailAddressAdd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button adMemberbtn;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -590,5 +643,9 @@
         private System.Windows.Forms.Button adMembersRef;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox adPasswordAdd;
+        private System.Windows.Forms.Label lblPasswordError;
+        private System.Windows.Forms.Label lblEmailError;
     }
 }
