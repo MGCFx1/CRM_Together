@@ -15,6 +15,7 @@ namespace CRM_system.Models
 
         // Is user an admin
         public Boolean IsAdmin { get; set; }
+        public int LocationID {get; set;}
         public string CreatedAt { get; set; }
         // When the user last logged in
         public string LastLogin { get; set; }

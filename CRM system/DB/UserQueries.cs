@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CRM_system.DB
 {
@@ -29,6 +30,36 @@ namespace CRM_system.DB
                 // Create a command and parameterize the query
                 using (var command = new SQLiteCommand(insertQuery, connection))
                 {
+                    command.Parameters.AddWithValue("@name", name);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@membership", membership);
+                    command.Parameters.AddWithValue("@location_id", locationID);
+
+                    // Execute the command
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"{rowsAffected} row(s) inserted successfully.");
+                }
+
+                connection.Close();
+            }
+        }
+        public void UpdateUser(int id, string name, string email, string password, string membership, int locationID)
+        {
+            // Establish a connection to the SQLite database
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Define the SQL INSERT statement
+                string insertQuery = "UPDATE Users SET name = @name, email = @email, " +
+                    "password = @password, membership_status = @membership, location_id = @location_id" +
+                    " WHERE id = @id;";
+
+                // Create a command and parameterize the query
+                using (var command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
@@ -71,6 +102,50 @@ namespace CRM_system.DB
                                 Name = reader.GetString(1),  // Second column (Username)
                                 Email = reader.GetString(2),  // Third column (Email)
                                 Password = reader.GetString(3)  // Fourth column (Password)
+                            };
+
+                            // Add the user to the list
+                            users.Add(user);
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return users;  // Return the list of users
+        }
+
+        public List<Models.User> GetUsersByStatus(string status)
+        {
+            var users = new List<Models.User>();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Define the SQL SELECT statement
+                string selectQuery = "SELECT * FROM USERS WHERE membership_status=@status;";
+
+                // Create a command to execute the query
+                using (var command = new SQLiteCommand(selectQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@status", status);
+
+                    // Execute the query and get the result
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Assuming the USERS table has columns like Id, Username, Email, and Password
+                            var user = new Models.User
+                            {
+                                Id = reader.GetInt32(0),  // First column (Id)
+                                Name = reader.GetString(1),  // Second column (Username)
+                                Email = reader.GetString(2),  // Third column (Email)
+                                Password = reader.GetString(3),  // Fourth column (Password)
+                                MembershipStatus = reader.GetString(4),  // Third column (Email)
+                                LocationID = reader.GetInt32(6)
                             };
 
                             // Add the user to the list
