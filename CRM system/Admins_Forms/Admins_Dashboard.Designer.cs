@@ -158,6 +158,7 @@
             this.adUser.Size = new System.Drawing.Size(41, 43);
             this.adUser.TabIndex = 16;
             this.adUser.UseVisualStyleBackColor = false;
+            this.adUser.Click += new System.EventHandler(this.adUser_Click);
             // 
             // label3
             // 
@@ -467,9 +468,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(3, 4);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 19);
+            this.label8.Size = new System.Drawing.Size(107, 19);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Browese Members";
+            this.label8.Text = "Browse Members";
             // 
             // adUserPic1
             // 

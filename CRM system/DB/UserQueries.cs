@@ -1,6 +1,7 @@
 ﻿using CRM_system.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -151,5 +152,31 @@ namespace CRM_system.DB
 
             return count;
         }
+
+        public DataTable GetAllMemberContacts()
+        {
+            DataTable memberContacts = new DataTable();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT id AS 'ID', name AS 'Name', email AS 'Email', membership_status AS 'Membership Status' FROM Users;";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var adapter = new SQLiteDataAdapter(command))
+                    {
+                        adapter.Fill(memberContacts);
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return memberContacts;
+        }
+
+
     }
 }

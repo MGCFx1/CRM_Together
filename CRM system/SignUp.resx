@@ -120,17 +120,17 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Signup_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAIKSURBVEhL7ZY/a1RBFMUDViIKghF7RT+DiRY2YhVEvee+
-        JIuNpZ/CxD+N2Iitnb2Qwj/Y+AGSWCioYKWFYmOi0co9MrOT7L57Z5LN7Cs9cJp377m/nZl9szs19V+7
-        iKonqfqIwEeqbhH4TuApRc7Y3s5E4DKBP1SlM/CVTXOTItM2N5HSSrcc0PsLRU7YfLUIPMxA8gbu2Hy1
-        qPreAUoG3tp8tYpnm/emzVeLwLcMoOROwc8ygLyBVzZfLQIrDlAysGLz1YqviQWUDHy2+WoReOAAZd+3
-        +YkUzi4DaRt4aXMTi01zyYHa7lP1os11IgL3MsCw0g9UPW/7O5WDqr7m4uKRWOv1jhO4TdV1Ar+S16i6
-        HGp21r7kVjo3dzg9l3B5ZD7YtjfZNNfsvLFE4OrIoD6B2fh8AA1nbGHW/bHhFDlA4AKBJwT+7gwBXsR6
-        2N78Smcocs49BzZ2/d2myFmqPo7/Mmx4MOB67BucqavvzMnUCCy1YLFRZJqqz12ztcipNPiNq+0NXmtD
-        FxaOEvjkGnMWOZgGj27zTGvgiMy2t3/BqHrXAUru9Q6lzBCcvmw5hfd8pG/DFt85QNmnU2Y9U9vnVqv+
-        dk1l30iZ5UxtL/CtFrhGxdcJmG1t79A/OD9/zM6pUrgUxr5AVK/Y/ESK8HA5eNhwpV1DtxXvAGCJqqtU
-        /Zm8Gs7Ubu8/P3Xr7eInHXIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAgpJREFUSEvtlj9rVEEUxQNWIgqCEXtFP4OJFjZiFUS9574ki42ln8LEP43YiK2d
+        vZDCP9j4AZJYKKhgpYViY6LRyj0ys5Psvntnks3sKz1wmnfvub+dmX2zOzX1X7uIqiep+ojAR6puEfhO
+        4ClFztjezkTgMoE/VKUz8JVNc5Mi0zY3kdJKtxzQ+wtFTth8tQg8zEDyBu7YfLWo+t4BSgbe2ny1imeb
+        96bNV4vAtwyg5E7BzzKAvIFXNl8tAisOUDKwYvPViq+JBZQMfLb5ahF44ABl37f5iRTOLgNpG3hpcxOL
+        TXPJgdruU/WizXUiAvcywLDSD1Q9b/s7lYOqvubi4pFY6/WOE7hN1XUCv5LXqLocanbWvuRWOjd3OD2X
+        cHlkPti2N9k01+y8sUTg6sigPoHZ+HwADWdsYdb9seEUOUDgAoEnBP7uDAFexHrY3vxKZyhyzj0HNnb9
+        3abIWao+jv8ybHgw4HrsG5ypq+/MydQILLVgsVFkmqrPXbO1yKk0+I2r7Q1ea0MXFo4S+OQacxY5mAaP
+        bvNMa+CIzLa3f8GoetcBSu71DqXMEJy+bDmF93ykb8MW3zlA2adTZj1T2+dWq/52TWXfSJnlTG0v8K0W
+        uEbF1wmYbW3v0D84P3/MzqlSuBTGvkBUr9j8RIrwcDl42HClXUO3Fe8AYImqq1T9mbwaztRu7z8/devt
+        4icdcgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3067,7 +3067,7 @@
   <data name="signup_pswrd_hide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAidJREFUSEvdVMtqFFEQbUR8oOZW9TBT1eOYqLhQFz5QMIRo21U9IRvduc/GB0Si
+        DAAACwwBP0AiyAAAAidJREFUSEvdVMtqFFEQbUR8oOZW9TBT1eOYqLhQFz5QMIRo21U9IRvduc/GB0Si
         H6CIGz9Af8WN7hT8ARFcaSSuxICCBMFgRqp7unP7aiCLcUAP9KbrVJ976p7qKPrv0IbsNMWXL4TvR4o2
         ZjOE+plcJmFtpEhALjLKp47LNayNFGMTspFVo+s4Pcqg9xj0FaGsMuo6gX4k1JcMep/j/ETYv22YAKN8
         ZdQNRnmXYH79YJz2oujBji7OHUpQbzDqMqMOGOUpT+Tnw29siV5vei+jPiGQ24UjkDUCuRLyDO12up9A
