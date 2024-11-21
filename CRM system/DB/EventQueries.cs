@@ -15,17 +15,15 @@ namespace CRM_system.DB
         // Connection string to the SQLite database
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
-        /// <summary>
-        /// Adds a new event to the database.
-        /// </summary>
-        public bool AddEvent(string name, string description, string location, string contentType, string schedule, string publishStatus)
+        // Adds a new event to the database.
+        public bool AddEvent(string name, string description, string location, string contentType, string schedule, string publishStatus, string imagePath)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
 
-                string query = "INSERT INTO Events (name, description, location, content_type, schedule, publish_status) " +
-                               "VALUES (@Name, @Description, @Location, @ContentType, @Schedule, @PublishStatus);";
+                string query = "INSERT INTO Events (name, description, location, content_type, schedule, publish_status, image_path) " +
+                               "VALUES (@Name, @Description, @Location, @ContentType, @Schedule, @PublishStatus, @ImagePath);";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
@@ -35,16 +33,15 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@ContentType", contentType);
                     command.Parameters.AddWithValue("@Schedule", schedule);
                     command.Parameters.AddWithValue("@PublishStatus", publishStatus);
+                    command.Parameters.AddWithValue("@ImagePath", imagePath);
 
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; // Return true if the event was successfully added
+                    return command.ExecuteNonQuery() > 0; // Return true if a row was inserted
                 }
             }
         }
 
-        /// <summary>
-        /// Retrieves all events from the database.
-        /// </summary>
+
+        // Retrieves all events from the database.
         public DataTable GetAllEvents()
         {
             var events = new DataTable();
@@ -66,12 +63,11 @@ namespace CRM_system.DB
                 }
             }
 
-            return events; // Return the DataTable containing all events
+            return events; 
         }
 
-        /// <summary>
-        /// Deletes an event by ID.
-        /// </summary>
+
+        // Deletes an event by ID.
         public bool DeleteEvent(int eventId)
         {
             using (var connection = new SQLiteConnection(ConnectionString))

@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admins_Events));
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.adEventInContentType = new System.Windows.Forms.ComboBox();
-            this.adEventInName = new System.Windows.Forms.TextBox();
-            this.adEventInLoaction = new System.Windows.Forms.TextBox();
-            this.adEventInDescription = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.adEventInSchedule = new System.Windows.Forms.DateTimePicker();
+            this.adEventsDiscardUp = new System.Windows.Forms.Button();
+            this.lblImageError = new System.Windows.Forms.Label();
+            this.adEventSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.adEventInSchedule = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.adEventInPublish = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.adEventInDescription = new System.Windows.Forms.RichTextBox();
+            this.adEventInName = new System.Windows.Forms.TextBox();
+            this.adEventInLoaction = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.adEventInContentType = new System.Windows.Forms.ComboBox();
+            this.btnUploadImage = new System.Windows.Forms.Button();
+            this.adlblFileName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.adUser = new System.Windows.Forms.Button();
+            this.adNotification = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(218, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 28);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Admin Events";
             // 
             // panel1
             // 
@@ -68,7 +69,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.adEventsDiscardUp);
+            this.panel2.Controls.Add(this.adEventSave);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.adEventInSchedule);
@@ -81,52 +84,116 @@
             this.panel2.Controls.Add(this.adEventInLoaction);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.adEventInContentType);
-            this.panel2.Location = new System.Drawing.Point(223, 63);
+            this.panel2.Location = new System.Drawing.Point(223, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(327, 431);
+            this.panel2.Size = new System.Drawing.Size(327, 451);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button1
+            // adEventsDiscardUp
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(35, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 29);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "    Add an Event";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.adEventsDiscardUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventsDiscardUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adEventsDiscardUp.FlatAppearance.BorderSize = 0;
+            this.adEventsDiscardUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adEventsDiscardUp.ForeColor = System.Drawing.Color.White;
+            this.adEventsDiscardUp.Image = ((System.Drawing.Image)(resources.GetObject("adEventsDiscardUp.Image")));
+            this.adEventsDiscardUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adEventsDiscardUp.Location = new System.Drawing.Point(164, 414);
+            this.adEventsDiscardUp.Name = "adEventsDiscardUp";
+            this.adEventsDiscardUp.Size = new System.Drawing.Size(124, 29);
+            this.adEventsDiscardUp.TabIndex = 89;
+            this.adEventsDiscardUp.Text = "    Discard Upload";
+            this.adEventsDiscardUp.UseVisualStyleBackColor = false;
+            this.adEventsDiscardUp.Click += new System.EventHandler(this.adEventsDiscardUp_Click);
             // 
-            // label7
+            // lblImageError
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 244);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 16);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "Content Type";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.lblImageError.AutoSize = true;
+            this.lblImageError.Location = new System.Drawing.Point(183, 6);
+            this.lblImageError.Name = "lblImageError";
+            this.lblImageError.Size = new System.Drawing.Size(29, 13);
+            this.lblImageError.TabIndex = 88;
+            this.lblImageError.Text = "Error";
+            this.lblImageError.Visible = false;
             // 
-            // label11
+            // adEventSave
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(13, 193);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 16);
-            this.label11.TabIndex = 75;
-            this.label11.Text = "Event Location";
+            this.adEventSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adEventSave.FlatAppearance.BorderSize = 0;
+            this.adEventSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adEventSave.ForeColor = System.Drawing.Color.White;
+            this.adEventSave.Image = ((System.Drawing.Image)(resources.GetObject("adEventSave.Image")));
+            this.adEventSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adEventSave.Location = new System.Drawing.Point(37, 414);
+            this.adEventSave.Name = "adEventSave";
+            this.adEventSave.Size = new System.Drawing.Size(124, 29);
+            this.adEventSave.TabIndex = 78;
+            this.adEventSave.Text = "    Add an Event";
+            this.adEventSave.UseVisualStyleBackColor = false;
+            this.adEventSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(9, 281);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 16);
+            this.label3.TabIndex = 83;
+            this.label3.Text = "Content Schedule";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(10, 326);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 16);
+            this.label5.TabIndex = 84;
+            this.label5.Text = "Publish Settings";
+            // 
+            // adEventInSchedule
+            // 
+            this.adEventInSchedule.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.adEventInSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adEventInSchedule.Location = new System.Drawing.Point(9, 297);
+            this.adEventInSchedule.Name = "adEventInSchedule";
+            this.adEventInSchedule.Size = new System.Drawing.Size(298, 21);
+            this.adEventInSchedule.TabIndex = 82;
+            this.adEventInSchedule.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.TabIndex = 76;
+            this.label1.Text = "Event Description";
+            // 
+            // adEventInPublish
+            // 
+            this.adEventInPublish.BackColor = System.Drawing.Color.White;
+            this.adEventInPublish.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adEventInPublish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventInPublish.FormattingEnabled = true;
+            this.adEventInPublish.Items.AddRange(new object[] {
+            "Public",
+            "Private",
+            "Draft"});
+            this.adEventInPublish.Location = new System.Drawing.Point(9, 341);
+            this.adEventInPublish.Name = "adEventInPublish";
+            this.adEventInPublish.Size = new System.Drawing.Size(299, 24);
+            this.adEventInPublish.TabIndex = 85;
             // 
             // label12
             // 
@@ -134,11 +201,64 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(13, 29);
+            this.label12.Location = new System.Drawing.Point(11, 19);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 16);
             this.label12.TabIndex = 73;
             this.label12.Text = "Event Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(10, 234);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 16);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "Content Type";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // adEventInDescription
+            // 
+            this.adEventInDescription.Location = new System.Drawing.Point(11, 80);
+            this.adEventInDescription.Name = "adEventInDescription";
+            this.adEventInDescription.Size = new System.Drawing.Size(298, 96);
+            this.adEventInDescription.TabIndex = 81;
+            this.adEventInDescription.Text = "";
+            // 
+            // adEventInName
+            // 
+            this.adEventInName.BackColor = System.Drawing.Color.White;
+            this.adEventInName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adEventInName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventInName.Location = new System.Drawing.Point(11, 31);
+            this.adEventInName.Name = "adEventInName";
+            this.adEventInName.Size = new System.Drawing.Size(298, 26);
+            this.adEventInName.TabIndex = 72;
+            // 
+            // adEventInLoaction
+            // 
+            this.adEventInLoaction.BackColor = System.Drawing.Color.White;
+            this.adEventInLoaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adEventInLoaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventInLoaction.Location = new System.Drawing.Point(10, 199);
+            this.adEventInLoaction.Name = "adEventInLoaction";
+            this.adEventInLoaction.Size = new System.Drawing.Size(298, 26);
+            this.adEventInLoaction.TabIndex = 74;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(11, 183);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 16);
+            this.label11.TabIndex = 75;
+            this.label11.Text = "Event Location";
             // 
             // adEventInContentType
             // 
@@ -156,122 +276,128 @@
             "Experiencing ",
             "Sharing ",
             "Creating"});
-            this.adEventInContentType.Location = new System.Drawing.Point(11, 259);
+            this.adEventInContentType.Location = new System.Drawing.Point(9, 249);
             this.adEventInContentType.Name = "adEventInContentType";
             this.adEventInContentType.Size = new System.Drawing.Size(299, 24);
             this.adEventInContentType.TabIndex = 77;
             // 
-            // adEventInName
+            // btnUploadImage
             // 
-            this.adEventInName.BackColor = System.Drawing.Color.White;
-            this.adEventInName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adEventInName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventInName.Location = new System.Drawing.Point(13, 41);
-            this.adEventInName.Name = "adEventInName";
-            this.adEventInName.Size = new System.Drawing.Size(298, 26);
-            this.adEventInName.TabIndex = 72;
+            this.btnUploadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.btnUploadImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUploadImage.FlatAppearance.BorderSize = 0;
+            this.btnUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadImage.ForeColor = System.Drawing.Color.White;
+            this.btnUploadImage.Location = new System.Drawing.Point(0, 5);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(88, 25);
+            this.btnUploadImage.TabIndex = 87;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = false;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
-            // adEventInLoaction
+            // adlblFileName
             // 
-            this.adEventInLoaction.BackColor = System.Drawing.Color.White;
-            this.adEventInLoaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adEventInLoaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventInLoaction.Location = new System.Drawing.Point(12, 209);
-            this.adEventInLoaction.Name = "adEventInLoaction";
-            this.adEventInLoaction.Size = new System.Drawing.Size(298, 26);
-            this.adEventInLoaction.TabIndex = 74;
+            this.adlblFileName.AutoSize = true;
+            this.adlblFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adlblFileName.Location = new System.Drawing.Point(5, 6);
+            this.adlblFileName.Name = "adlblFileName";
+            this.adlblFileName.Size = new System.Drawing.Size(75, 13);
+            this.adlblFileName.TabIndex = 90;
+            this.adlblFileName.Text = "No file chosen";
+            this.adlblFileName.Click += new System.EventHandler(this.label4_Click);
             // 
-            // adEventInDescription
+            // label2
             // 
-            this.adEventInDescription.Location = new System.Drawing.Point(13, 90);
-            this.adEventInDescription.Name = "adEventInDescription";
-            this.adEventInDescription.Size = new System.Drawing.Size(298, 96);
-            this.adEventInDescription.TabIndex = 81;
-            this.adEventInDescription.Text = "";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(228, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 20);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "Admins Events";
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
-            this.label1.TabIndex = 76;
-            this.label1.Text = "Event Description";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(228, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(230, 20);
+            this.label4.TabIndex = 92;
+            this.label4.Text = "View, Add, and Manage Events";
             // 
-            // adEventInSchedule
+            // panel3
             // 
-            this.adEventInSchedule.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.adEventInSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adEventInSchedule.Location = new System.Drawing.Point(11, 307);
-            this.adEventInSchedule.Name = "adEventInSchedule";
-            this.adEventInSchedule.Size = new System.Drawing.Size(298, 21);
-            this.adEventInSchedule.TabIndex = 82;
-            this.adEventInSchedule.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.btnUploadImage);
+            this.panel3.Location = new System.Drawing.Point(9, 371);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(300, 37);
+            this.panel3.TabIndex = 93;
             // 
-            // label3
+            // panel4
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 291);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 16);
-            this.label3.TabIndex = 83;
-            this.label3.Text = "Content Schedule";
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.adlblFileName);
+            this.panel4.Controls.Add(this.lblImageError);
+            this.panel4.Location = new System.Drawing.Point(85, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(215, 25);
+            this.panel4.TabIndex = 88;
             // 
-            // label5
+            // adUser
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 336);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 16);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "Publish Settings";
+            this.adUser.BackColor = System.Drawing.SystemColors.Control;
+            this.adUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adUser.FlatAppearance.BorderSize = 0;
+            this.adUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adUser.Image = ((System.Drawing.Image)(resources.GetObject("adUser.Image")));
+            this.adUser.Location = new System.Drawing.Point(901, 37);
+            this.adUser.Name = "adUser";
+            this.adUser.Size = new System.Drawing.Size(41, 43);
+            this.adUser.TabIndex = 94;
+            this.adUser.UseVisualStyleBackColor = false;
             // 
-            // adEventInPublish
+            // adNotification
             // 
-            this.adEventInPublish.BackColor = System.Drawing.Color.White;
-            this.adEventInPublish.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adEventInPublish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventInPublish.FormattingEnabled = true;
-            this.adEventInPublish.Items.AddRange(new object[] {
-            "Public",
-            "Private",
-            "Draft"});
-            this.adEventInPublish.Location = new System.Drawing.Point(11, 351);
-            this.adEventInPublish.Name = "adEventInPublish";
-            this.adEventInPublish.Size = new System.Drawing.Size(299, 24);
-            this.adEventInPublish.TabIndex = 85;
+            this.adNotification.BackColor = System.Drawing.SystemColors.Control;
+            this.adNotification.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adNotification.FlatAppearance.BorderSize = 0;
+            this.adNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adNotification.Image = ((System.Drawing.Image)(resources.GetObject("adNotification.Image")));
+            this.adNotification.Location = new System.Drawing.Point(854, 37);
+            this.adNotification.Name = "adNotification";
+            this.adNotification.Size = new System.Drawing.Size(41, 43);
+            this.adNotification.TabIndex = 93;
+            this.adNotification.UseVisualStyleBackColor = false;
             // 
             // Admins_Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 540);
+            this.Controls.Add(this.adUser);
+            this.Controls.Add(this.adNotification);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admins_Events";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admins_Events";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker adEventInSchedule;
@@ -283,9 +409,19 @@
         private System.Windows.Forms.TextBox adEventInLoaction;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox adEventInContentType;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button adEventSave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox adEventInPublish;
+        private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.Label lblImageError;
+        private System.Windows.Forms.Button adEventsDiscardUp;
+        private System.Windows.Forms.Label adlblFileName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button adUser;
+        private System.Windows.Forms.Button adNotification;
     }
 }
