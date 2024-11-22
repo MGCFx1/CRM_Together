@@ -158,11 +158,13 @@ namespace CRM_system
 
             if (usersWithEmail != null && usersWithEmail.Count > 0)
             {
+                UserSession.ID = usersWithEmail[0].Id;
                 UserSession.Name = usersWithEmail[0].Name;
+                UserSession.Email = usersWithEmail[0].Email;
             }
 
             this.Hide();
-            dashboard_form dashboard_Form = new dashboard_form();
+            Users_Dashboard dashboard_Form = new Users_Dashboard();
             dashboard_Form.Show();
             //lblEmailErr.Text = "Successful login";
             //lblEmailErr.Visible = true;

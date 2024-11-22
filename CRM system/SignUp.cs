@@ -265,9 +265,12 @@ namespace CRM_system
             lblErrEmail.Text = "";
             lblErrPassword.Text = "";
 
-            dashboard_form dashboard = new dashboard_form();
-            dashboard.Show();
-            this.Hide();
+            MessageBox.Show("You have successfully! You'll have to wait 48hrs to be approved by the" +
+                "before you'll be able to login.", "Sign Up Successfull");
+
+            //dashboard_form dashboard = new dashboard_form();
+            //dashboard.Show();
+            //this.Hide();
         }
     }
 }

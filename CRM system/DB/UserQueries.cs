@@ -161,6 +161,56 @@ namespace CRM_system.DB
             return users;  // Return the list of users
         }
 
+
+        // Check if any user with a the same email exists
+        public List<Models.User> GetUserByID(int id)
+        {
+            var users = new List<Models.User>();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Define the SQL SELECT statement
+                string selectQuery = "SELECT * FROM USERS WHERE id=@id;";
+
+
+                // Create a command to execute the query
+                using (var command = new SQLiteCommand(selectQuery, connection))
+                {
+                    // Add the email parameter to the command
+                    command.Parameters.AddWithValue("@id", id);
+
+                    // Execute the query and get the result
+                    using (var reader = command.ExecuteReader())
+
+                    {
+                        while (reader.Read())
+                        {
+                            // Assuming the USERS table has columns like Id, Username, Email, and Password
+                            var user = new Models.User
+                            {
+                                Id = reader.GetInt32(0),  // First column (Id
+                                Name = reader.GetString(1),
+                                Email = reader.GetString(2),
+                                Password = reader.GetString(3),
+                                MembershipStatus = !reader.IsDBNull(4) ? reader.GetString(4) : "pending",
+                                IsAdmin = reader.IsDBNull(6) ? reader.GetBoolean(5) : false,
+                                LocationID = reader.IsDBNull(7) ? reader.GetInt32(7) : 0
+                            };
+
+                            // Add the user to the list
+                            users.Add(user);
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return users;  // Return the list of users
+        }
+
         // Check if any user with a the same email exists
         public List<Models.User> GetUserByEmail(string email)
         {

@@ -23,6 +23,7 @@ namespace CRM_system
         public Users_Dashboard()
         {
             InitializeComponent();
+            pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
         }
 
         private void Users_Dashboard_Load(object sender, EventArgs e)
