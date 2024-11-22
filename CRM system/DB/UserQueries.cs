@@ -191,7 +191,8 @@ namespace CRM_system.DB
                                 Id = reader.GetInt32(0),  // First column (Id
                                 Name = reader.GetString(1),
                                 Email = reader.GetString(2),
-                                Password = reader.GetString(3)
+                                Password = reader.GetString(3),
+                                MembershipStatus = !reader.IsDBNull(4) ? reader.GetString(4) : "pending"
                             };
 
                             // Add the user to the list

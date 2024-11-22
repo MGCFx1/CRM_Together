@@ -127,12 +127,26 @@ namespace CRM_system
             }
 
 
-
             if (isError)
             {
                 return;
             }
 
+            Console.WriteLine("Status: " + usersWithEmail[0].MembershipStatus);
+
+            if (usersWithEmail[0].MembershipStatus == "pending")
+            {
+                MessageBox.Show("Please wait for admin approval. Thank you for your patience",
+                    "Waiting for Admin Approval");
+                return;
+            }
+
+            if (usersWithEmail[0].MembershipStatus == "inactive")
+            {
+                MessageBox.Show("Sorry, it seems like the admin believes there are no memberships available at this moment. Please try again later.",
+                    "Admin Rejected Membership");
+                return;
+            }
 
 
             if (usersWithEmail != null && usersWithEmail.Count > 0)
@@ -143,8 +157,8 @@ namespace CRM_system
             this.Hide();
             dashboard_form dashboard_Form = new dashboard_form();
             dashboard_Form.Show();
-            lblEmailErr.Text = "Successful login";
-            lblEmailErr.Visible = true;
+            //lblEmailErr.Text = "Successful login";
+            //lblEmailErr.Visible = true;
             
         }
 
