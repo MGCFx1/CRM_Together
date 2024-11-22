@@ -46,6 +46,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.adminLoginLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,11 +250,26 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Exsisting User?";
             // 
+            // adminLoginLbl
+            // 
+            this.adminLoginLbl.BackColor = System.Drawing.Color.White;
+            this.adminLoginLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLoginLbl.ForeColor = System.Drawing.Color.Black;
+            this.adminLoginLbl.Location = new System.Drawing.Point(12, 508);
+            this.adminLoginLbl.Name = "adminLoginLbl";
+            this.adminLoginLbl.Size = new System.Drawing.Size(119, 23);
+            this.adminLoginLbl.TabIndex = 23;
+            this.adminLoginLbl.Text = "Login As Admin";
+            this.adminLoginLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adminLoginLbl.Click += new System.EventHandler(this.adminLoginLbl_Click);
+            // 
             // Landing_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.adminLoginLbl);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
@@ -303,5 +319,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label adminLoginLbl;
     }
 }

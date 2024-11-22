@@ -85,5 +85,12 @@ namespace CRM_system
         {
 
         }
+
+        private void adminLoginLbl_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogin aForm = new AdminLogin();
+            aForm.Show();
+        }
     }
 }

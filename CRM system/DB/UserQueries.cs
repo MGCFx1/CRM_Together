@@ -16,7 +16,7 @@ namespace CRM_system.DB
         // Connection string to the SQLite database file
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
-        public void InsertNewUser(string name, string email, string password, string membership, int locationID)
+        public void InsertNewUser(string name, string email, string password, string membership, Boolean isAdmin, int locationID)
         {
             // Establish a connection to the SQLite database
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -24,8 +24,8 @@ namespace CRM_system.DB
                 connection.Open();
 
                 // Define the SQL INSERT statement
-                string insertQuery = "INSERT INTO Users (name, email, password, membership_status, location_id)" +
-                                     " VALUES (@name, @email, @password, @membership, @location_id);";
+                string insertQuery = "INSERT INTO Users (name, email, password, membership_status, is_admin, location_id)" +
+                                     " VALUES (@name, @email, @password, @membership, @isAdmin, @location_id);";
 
                 // Create a command and parameterize the query
                 using (var command = new SQLiteCommand(insertQuery, connection))
@@ -34,6 +34,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@membership", membership);
+                    command.Parameters.AddWithValue("@isAdmin", isAdmin);
                     command.Parameters.AddWithValue("@location_id", locationID);
 
                     // Execute the command
@@ -192,7 +193,9 @@ namespace CRM_system.DB
                                 Name = reader.GetString(1),
                                 Email = reader.GetString(2),
                                 Password = reader.GetString(3),
-                                MembershipStatus = !reader.IsDBNull(4) ? reader.GetString(4) : "pending"
+                                MembershipStatus = !reader.IsDBNull(4) ? reader.GetString(4) : "pending",
+                                IsAdmin = reader.IsDBNull(6) ? reader.GetBoolean(5) : false,
+
                             };
 
                             // Add the user to the list

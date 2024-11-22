@@ -259,7 +259,7 @@ namespace CRM_system
             }
 
             int location_id = locationQuery.InsertNewLocation(city, address, postcode);
-            query.InsertNewUser(name, email, password, membership_status, location_id);
+            query.InsertNewUser(name, email, password, membership_status, false, location_id);
 
             lblErrName.Text = "";
             lblErrEmail.Text = "";

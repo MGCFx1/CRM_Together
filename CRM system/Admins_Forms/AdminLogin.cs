@@ -1,4 +1,5 @@
-﻿using CRM_system.Models;
+﻿using CRM_system.Admins_Forms;
+using CRM_system.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +13,10 @@ using System.Windows.Forms;
 
 namespace CRM_system
 {
-    public partial class Login : Form
+    public partial class AdminLogin : Form
     {
         private DB.UserQueries query;
-        public Login()
+        public AdminLogin()
         {
             InitializeComponent();
             query = new DB.UserQueries();
@@ -45,9 +46,7 @@ namespace CRM_system
 
         private void label5_Click(object sender, EventArgs e)
         {
-            SignUp sForm = new SignUp();
-            sForm.Show();
-            this.Hide();
+
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -59,7 +58,14 @@ namespace CRM_system
         public static bool IsPasswordValid(string password, string hashedPassword)
         {
 
-            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+            //bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+
+            Boolean isPasswordValid = false;
+
+            if (password == hashedPassword)
+            {
+                isPasswordValid = true;
+            }
 
             return isPasswordValid;
         }
@@ -90,6 +96,7 @@ namespace CRM_system
                 lblEmailErr.Text = "Email cannot be blank";
                 isError = true;
             }
+
             else if (!IsValidEmail(email))
             {
                 lblEmailErr.Text = "Sorry, that doesn't seem like a valid email";
@@ -126,32 +133,16 @@ namespace CRM_system
                 lblPasswordErr.Visible = false;
             }
 
-            if (usersWithEmail.Count > 0 && usersWithEmail[0].IsAdmin == true)
+            if (usersWithEmail.Count > 0 && usersWithEmail[0].IsAdmin == false)
             {
-                lblEmailErr.Text = "Sorry, you are not an admin.";
+                lblEmailErr.Text = "Sorry, you are an admin not a regular user.";
                 lblEmailErr.Visible = true;
                 isError = true;
             }
-            
+
 
             if (isError)
             {
-                return;
-            }
-
-            Console.WriteLine("Status: " + usersWithEmail[0].MembershipStatus);
-
-            if (usersWithEmail[0].MembershipStatus == "pending")
-            {
-                MessageBox.Show("Please wait for admin approval. Thank you for your patience",
-                    "Waiting for Admin Approval");
-                return;
-            }
-
-            if (usersWithEmail[0].MembershipStatus == "inactive")
-            {
-                MessageBox.Show("Sorry, it seems like the admin believes there are no memberships available at this moment. Please try again later.",
-                    "Admin Rejected Membership");
                 return;
             }
 
@@ -162,8 +153,8 @@ namespace CRM_system
             }
 
             this.Hide();
-            dashboard_form dashboard_Form = new dashboard_form();
-            dashboard_Form.Show();
+            AdminsPanel adminsPanel = new AdminsPanel();
+            adminsPanel.Show();
             //lblEmailErr.Text = "Successful login";
             //lblEmailErr.Visible = true;
             

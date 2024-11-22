@@ -1,6 +1,6 @@
 ﻿namespace CRM_system
 {
-    partial class Login
+    partial class AdminLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.login_register = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.login_show = new System.Windows.Forms.CheckBox();
             this.login_btn = new System.Windows.Forms.Button();
             this.login_password = new System.Windows.Forms.TextBox();
@@ -62,28 +61,15 @@
             // 
             this.login_register.AutoSize = true;
             this.login_register.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.login_register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.login_register.Cursor = System.Windows.Forms.Cursors.Default;
             this.login_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_register.ForeColor = System.Drawing.Color.White;
-            this.login_register.Location = new System.Drawing.Point(624, 421);
+            this.login_register.Location = new System.Drawing.Point(579, 422);
             this.login_register.Name = "login_register";
-            this.login_register.Size = new System.Drawing.Size(101, 17);
+            this.login_register.Size = new System.Drawing.Size(98, 17);
             this.login_register.TabIndex = 8;
-            this.login_register.Text = "Sign up here";
+            this.login_register.Text = "Admins Only";
             this.login_register.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(505, 421);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Don\'t have account?";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // login_show
             // 
@@ -102,10 +88,10 @@
             // 
             // login_btn
             // 
-            this.login_btn.BackColor = System.Drawing.Color.White;
+            this.login_btn.BackColor = System.Drawing.Color.Black;
             this.login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.login_btn.ForeColor = System.Drawing.Color.White;
             this.login_btn.Image = ((System.Drawing.Image)(resources.GetObject("login_btn.Image")));
             this.login_btn.Location = new System.Drawing.Point(539, 371);
             this.login_btn.Name = "login_btn";
@@ -194,9 +180,9 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(500, 152);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(180, 20);
+            this.label12.Size = new System.Drawing.Size(209, 20);
             this.label12.TabIndex = 13;
-            this.label12.Text = "Sign in to your account";
+            this.label12.Text = "It\'s great to have you back!";
             // 
             // label7
             // 
@@ -206,9 +192,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(499, 125);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(201, 29);
+            this.label7.Size = new System.Drawing.Size(213, 29);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Welcome back!";
+            this.label7.Text = "Welcome Admin";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblPasswordErr
@@ -230,14 +216,14 @@
             this.lblEmailErr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.lblEmailErr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic);
             this.lblEmailErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
-            this.lblEmailErr.Location = new System.Drawing.Point(505, 177);
+            this.lblEmailErr.Location = new System.Drawing.Point(502, 177);
             this.lblEmailErr.Name = "lblEmailErr";
             this.lblEmailErr.Size = new System.Drawing.Size(110, 17);
             this.lblEmailErr.TabIndex = 47;
             this.lblEmailErr.Text = "wrong password";
             this.lblEmailErr.Visible = false;
             // 
-            // Login
+            // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,7 +232,6 @@
             this.Controls.Add(this.lblPasswordErr);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.login_register);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.login_show);
             this.Controls.Add(this.login_password);
@@ -260,7 +245,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Name = "Login";
+            this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -281,7 +266,6 @@
         private System.Windows.Forms.TextBox login_password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label login_register;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label login_close;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label12;
