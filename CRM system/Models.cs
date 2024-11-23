@@ -29,4 +29,13 @@ namespace CRM_system.Models
         public string Address { get; set; }
         public string PostCode { get; set; }
     }
+
+    public class Fee
+    {
+        public int Id { get; set; }
+        public string FeeType { get; set; }
+        public string Amount { get; set; }
+        public string Currency { get; set; }
+        public string Description { get; set; }
+    }
 }

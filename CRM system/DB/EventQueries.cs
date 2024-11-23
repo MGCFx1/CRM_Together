@@ -16,24 +16,29 @@ namespace CRM_system.DB
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
         // Adds a new event to the database.
-        public bool AddEvent(string name, string description, string location, string contentType, string schedule, string publishStatus, string imagePath)
+        public bool AddEvent(string name, string description, int location, string contentType, string event_date, string publishStatus, string imagePath, int attendance_limit, int fee, int user_id)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
 
-                string query = "INSERT INTO Events (name, description, location, content_type, schedule, publish_status, image_path) " +
-                               "VALUES (@Name, @Description, @Location, @ContentType, @Schedule, @PublishStatus, @ImagePath);";
+                string query = "INSERT INTO Events (event_name, event_description, event_type, attendance_limit, " +
+                               "event_date, publish_status, event_image, location_id, fee_id, admin_id) " +
+                               "VALUES (@Name, @Description, @event_type, @attendance_limit, @Date," +
+                               " @PublishStatus, @ImagePath, @location_id, @fee_id, @admin_id);";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@Description", description);
-                    command.Parameters.AddWithValue("@Location", location);
-                    command.Parameters.AddWithValue("@ContentType", contentType);
-                    command.Parameters.AddWithValue("@Schedule", schedule);
+                    command.Parameters.AddWithValue("@location_id", location);
+                    command.Parameters.AddWithValue("@event_type", contentType);
+                    command.Parameters.AddWithValue("@Date", event_date);
                     command.Parameters.AddWithValue("@PublishStatus", publishStatus);
                     command.Parameters.AddWithValue("@ImagePath", imagePath);
+                    command.Parameters.AddWithValue("@attendance_limit", attendance_limit);
+                    command.Parameters.AddWithValue("@fee_id", fee);
+                    command.Parameters.AddWithValue("@admin_id", user_id);
 
                     return command.ExecuteNonQuery() > 0; // Return true if a row was inserted
                 }

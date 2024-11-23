@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,61 +32,153 @@ namespace CRM_system.Admins_Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 var eventQueries = new CRM_system.DB.EventQueries();
+                var locationQueries = new CRM_system.DB.LocationQueries();
+                var feeQueries = new CRM_system.DB.FeeQueries();
 
-                // Get values from the input fields
+                // To Manage the case of Everything
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+                // Event Values
                 string name = adEventInName.Text.Trim();
                 string description = adEventInDescription.Text.Trim();
-                string location = adEventInLoaction.Text.Trim();
-                string contentType = adEventInContentType.SelectedItem?.ToString();
+                string attendance_limit = attendLimBox.Text.Trim();
+                string event_type = adEventInContentType.SelectedItem?.ToString();
                 string schedule = adEventInSchedule.Value.ToString("yyyy-MM-dd HH:mm:ss");
                 string publishStatus = adEventInPublish.SelectedItem?.ToString();
 
-                // Validate required fields
-                if (string.IsNullOrEmpty(name))
-                {
-                    MessageBox.Show("Event Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //Loation Values
+                string address = eventLocationBox.Text.Trim();
+                string postcode = postCodeBox.Text.Trim();
+                string city = cityBox.Text.Trim();
 
-                if (string.IsNullOrEmpty(publishStatus))
-                {
-                    MessageBox.Show("Please select a publish status (Public, Private, Draft).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                // Fee Values
+                string fee_type = "Event";
+                string currency = currencyBox.Text.Trim();
+                string fee = feeBox.Text;
 
-                if (string.IsNullOrEmpty(imagePath))
-                {
-                    MessageBox.Show("Please upload an image for the event.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
 
-                // Add the event to the database
-                if (eventQueries.AddEvent(name, description, location, contentType, schedule, publishStatus, imagePath))
-                {
-                    MessageBox.Show("Event uploaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Clear fields after successful upload
-                    adEventInName.Text = string.Empty;
-                    adEventInDescription.Text = string.Empty;
-                    adEventInLoaction.Text = string.Empty;
-                    adEventInContentType.SelectedIndex = -1;
-                    adEventInSchedule.Value = DateTime.Now;
-                    adEventInPublish.SelectedIndex = -1;
-                    adlblFileName.Text = "No file chosen"; // Reset the file name display
-                    imagePath = null; // Reset the image path
-                }
-                else
-                {
-                    MessageBox.Show("Failed to upload event. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
+            //// Validate Event required fields
+            if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show($"Error uploading event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Event Name is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            // Validate required fields
+            if (string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Event Description is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate required fields
+            if (string.IsNullOrEmpty(schedule))
+            {
+                MessageBox.Show("Event Date is needed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate required fields
+            if (string.IsNullOrEmpty((attendance_limit)))
+            {
+                MessageBox.Show("Event attendee limit is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(publishStatus))
+            {
+                MessageBox.Show("Please select a publish status (Public, Private, Draft).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(imagePath))
+            {
+                MessageBox.Show("Please upload an image for the event.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(attendance_limit, out int result))
+            {
+                MessageBox.Show("Event attendee limit must be an integer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate required Location fields
+            if (string.IsNullOrEmpty((address)))
+            {
+                MessageBox.Show("Address is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Validate required fields
+            if (string.IsNullOrEmpty((city)))
+            {
+                MessageBox.Show("City is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Validate required fields
+            if (string.IsNullOrEmpty((postcode)))
+            {
+                MessageBox.Show("Postcode is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate required fields
+            if (string.IsNullOrEmpty((currency)))
+            {
+                MessageBox.Show("Please select one of the given currencies.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!float.TryParse(fee, out float result_fee))
+            {
+                MessageBox.Show("The fee must be a decimal or integer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            int location_id = locationQueries.InsertNewLocation(city, address, postcode);
+            int fee_id = feeQueries.InsertFee(fee_type, result_fee, currency, "Event Fee");
+
+            //// Add the event to the database                                                                                  //change to UserSession.ID after testing
+            if (eventQueries.AddEvent(name, description, location_id, event_type, schedule, publishStatus, imagePath, result, fee_id, 8))
+            {
+                MessageBox.Show("Event uploaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear all input fields on successful upload
+                adEventInName.Text = string.Empty;
+                adEventInDescription.Text = string.Empty;
+                eventLocationBox.Text = string.Empty;
+                attendLimBox.Text = string.Empty;
+
+
+                adEventInContentType.SelectedIndex = -1; // Reset the combo box
+                adEventInSchedule.Value = DateTime.Now; // Reset the DateTimePicker
+                adEventInPublish.SelectedIndex = -1; // Reset the combo box
+                adlblFileName.Text = "No file chosen"; // Reset the file name
+                imagePath = null; // Reset the image path
+
+                //Clear all input fields
+                //Location Values
+                eventLocationBox.Text = string.Empty;
+                postCodeBox.Text = string.Empty;
+                cityBox.Text = string.Empty;
+
+                // Fee Values
+                currencyBox.Text = string.Empty;
+                feeBox.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Failed to upload event. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Error uploading event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnUploadImage_Click(object sender, EventArgs e)
@@ -127,12 +220,25 @@ namespace CRM_system.Admins_Forms
                 // Clear all input fields
                 adEventInName.Text = string.Empty;
                 adEventInDescription.Text = string.Empty;
-                adEventInLoaction.Text = string.Empty;
+                eventLocationBox.Text = string.Empty;
+                attendLimBox.Text = string.Empty;
+
+
                 adEventInContentType.SelectedIndex = -1; // Reset the combo box
                 adEventInSchedule.Value = DateTime.Now; // Reset the DateTimePicker
                 adEventInPublish.SelectedIndex = -1; // Reset the combo box
                 adlblFileName.Text = "No file chosen"; // Reset the file name
                 imagePath = null; // Reset the image path
+
+                //Clear all input fields
+                //Location Values
+                eventLocationBox.Text = string.Empty;
+                postCodeBox.Text = string.Empty;
+                cityBox.Text = string.Empty;
+
+                // Fee Values
+                currencyBox.Text = string.Empty;
+                feeBox.Text = string.Empty;
 
                 // Hide any error labels
                 lblImageError.Visible = false;
@@ -150,6 +256,11 @@ namespace CRM_system.Admins_Forms
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }

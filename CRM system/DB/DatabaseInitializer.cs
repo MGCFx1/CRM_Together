@@ -28,7 +28,6 @@ namespace CRM_system.DB
                 var command = connection.CreateCommand();
                 command.CommandText = @"
 
-
                     CREATE TABLE IF NOT EXISTS Locations (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         city TEXT,
@@ -47,7 +46,33 @@ namespace CRM_system.DB
                         created_at TIMESTAMP DATETIME DEFAULT CURRENT_TIMESTAMP,
                         last_login TIMESTAMP DATETIME DEFAULT CURRENT_TIMESTAMP,
                         FOREIGN KEY (location_id) REFERENCES Locations(id)
-                   );";
+                   );
+
+                    CREATE TABLE IF NOT EXISTS Fee (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        fee_type TEXT CHECK (fee_type IN ('Membership', 'Event', 'Service')),
+                        amount FLOAT NOT NULL,
+                        currency TEXT CHECK (currency IN ('USD', 'GBP', 'Euro')),
+                        description TEXT
+                    );
+
+                    CREATE TABLE IF NOT EXISTS Events (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        event_name TEXT NOT NULL,
+                        event_type TEXT,
+                        event_description TEXT,
+                        attendance_limit INTEGER,
+                        publish_status TEXT CHECK (publish_status IN ('Public', 'Private', 'Draft')),
+                        event_date TEXT,
+                        location_id INTEGER,
+                        event_image BLOB,
+                        fee_id INTEGER,
+                        admin_id INTEGER,
+                        created_by_admin INTEGER,
+                        FOREIGN KEY (location_id) REFERENCES Locations(id),
+                        FOREIGN KEY (fee_id) REFERENCES Locations(id),
+                        FOREIGN KEY (admin_id) REFERENCES Users(id)
+                    );";
 
                 command.ExecuteNonQuery(); // Execute the command to create the table
 
