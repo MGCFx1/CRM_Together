@@ -23,7 +23,7 @@ namespace CRM_system
         public Users_Dashboard()
         {
             InitializeComponent();
-            pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
+            //pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
         }
 
         private void Users_Dashboard_Load(object sender, EventArgs e)
@@ -207,6 +207,26 @@ namespace CRM_system
         private void Accounts_FormClosed(object sender, FormClosedEventArgs e)
         {
             accounts = null;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation dialog
+            var result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Hide the current form 
+                this.Hide();
+
+                // Show the Landing_Page
+                var landingPage = new Landing_Page();
+                landingPage.Show();
+
+                // Dispose the current form to free up resources
+                this.Dispose();
+            }
+            // If No, do nothing
         }
     }
 }

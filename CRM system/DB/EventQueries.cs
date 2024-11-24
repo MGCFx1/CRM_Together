@@ -13,9 +13,9 @@ namespace CRM_system.DB
     public class EventQueries
     {
         // Connection string to the SQLite database
-        private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
+        private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";Version=3;";
 
-        // Adds a new event to the database.
+        // Adds a new event to the database
         public bool AddEvent(string name, string description, int location, string contentType, string event_date, string publishStatus, string imagePath, int attendance_limit, int fee, int user_id)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -45,8 +45,7 @@ namespace CRM_system.DB
             }
         }
 
-
-        // Retrieves all events from the database.
+        // Retrieves all events from the database
         public DataTable GetAllEvents()
         {
             var events = new DataTable();
@@ -55,8 +54,8 @@ namespace CRM_system.DB
             {
                 connection.Open();
 
-                string query = "SELECT id AS 'ID', name AS 'Event Name', description AS 'Description', " +
-                               "location AS 'Location', content_type AS 'Content Type', schedule AS 'Scheduled Date', " +
+                string query = "SELECT id AS 'ID', event_name AS 'Event Name', event_description AS 'Description', " +
+                               "location_id AS 'Location', event_type AS 'Content Type', event_date AS 'Scheduled Date', " +
                                "publish_status AS 'Status' FROM Events;";
 
                 using (var command = new SQLiteCommand(query, connection))
@@ -68,11 +67,10 @@ namespace CRM_system.DB
                 }
             }
 
-            return events; 
+            return events;
         }
 
-
-        // Deletes an event by ID.
+        // Deletes an event by ID
         public bool DeleteEvent(int eventId)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -89,6 +87,27 @@ namespace CRM_system.DB
                     return rowsAffected > 0; // Return true if an event was deleted
                 }
             }
+        }
+
+        // Counts the total number of active events in the database
+        public int GetActiveEventCount()
+        {
+            int activeEventCount = 0;
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Assuming "publish_status" is used to indicate active events
+                string query = "SELECT COUNT(*) FROM Events;";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    activeEventCount = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+
+            return activeEventCount;
         }
     }
 }

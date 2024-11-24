@@ -50,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.adEventCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.adUserPic7 = new System.Windows.Forms.Button();
@@ -110,29 +110,26 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 41);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(228, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 25);
+            this.label2.Size = new System.Drawing.Size(161, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Admins Dashboard";
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 665);
+            this.panel1.Size = new System.Drawing.Size(212, 540);
             this.panel1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(228, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 25);
+            this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Overview";
             // 
@@ -143,10 +140,9 @@
             this.adNotification.FlatAppearance.BorderSize = 0;
             this.adNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adNotification.Image = ((System.Drawing.Image)(resources.GetObject("adNotification.Image")));
-            this.adNotification.Location = new System.Drawing.Point(1139, 46);
-            this.adNotification.Margin = new System.Windows.Forms.Padding(4);
+            this.adNotification.Location = new System.Drawing.Point(854, 37);
             this.adNotification.Name = "adNotification";
-            this.adNotification.Size = new System.Drawing.Size(55, 53);
+            this.adNotification.Size = new System.Drawing.Size(41, 43);
             this.adNotification.TabIndex = 15;
             this.adNotification.UseVisualStyleBackColor = false;
             // 
@@ -157,22 +153,19 @@
             this.adUser.FlatAppearance.BorderSize = 0;
             this.adUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUser.Image = ((System.Drawing.Image)(resources.GetObject("adUser.Image")));
-            this.adUser.Location = new System.Drawing.Point(1201, 46);
-            this.adUser.Margin = new System.Windows.Forms.Padding(4);
+            this.adUser.Location = new System.Drawing.Point(901, 37);
             this.adUser.Name = "adUser";
-            this.adUser.Size = new System.Drawing.Size(55, 53);
+            this.adUser.Size = new System.Drawing.Size(41, 43);
             this.adUser.TabIndex = 16;
             this.adUser.UseVisualStyleBackColor = false;
-            this.adUser.Click += new System.EventHandler(this.adUser_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(33, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 17);
+            this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Quick Actions";
             // 
@@ -184,10 +177,9 @@
             this.adAddMembers_qa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adAddMembers_qa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adAddMembers_qa.ForeColor = System.Drawing.Color.White;
-            this.adAddMembers_qa.Location = new System.Drawing.Point(4, 6);
-            this.adAddMembers_qa.Margin = new System.Windows.Forms.Padding(4);
+            this.adAddMembers_qa.Location = new System.Drawing.Point(3, 5);
             this.adAddMembers_qa.Name = "adAddMembers_qa";
-            this.adAddMembers_qa.Size = new System.Drawing.Size(220, 41);
+            this.adAddMembers_qa.Size = new System.Drawing.Size(165, 33);
             this.adAddMembers_qa.TabIndex = 2;
             this.adAddMembers_qa.Text = "Add New Members";
             this.adAddMembers_qa.UseVisualStyleBackColor = false;
@@ -195,45 +187,37 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1019, 128);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(764, 104);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(271, 311);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(203, 253);
             this.flowLayoutPanel1.TabIndex = 18;
-            this.flowLayoutPanel1.Visible = false;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(1057, 154);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(793, 125);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 36);
+            this.panel3.Size = new System.Drawing.Size(149, 29);
             this.panel3.TabIndex = 19;
-            this.panel3.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.panel4.Controls.Add(this.adAddMembers_qa);
-            this.panel4.Location = new System.Drawing.Point(1043, 197);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(782, 160);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(228, 53);
+            this.panel4.Size = new System.Drawing.Size(171, 43);
             this.panel4.TabIndex = 20;
-            this.panel4.Visible = false;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.panel5.Controls.Add(this.adAppMembers_qa);
-            this.panel5.Location = new System.Drawing.Point(1043, 251);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(782, 204);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(228, 53);
+            this.panel5.Size = new System.Drawing.Size(171, 43);
             this.panel5.TabIndex = 21;
-            this.panel5.Visible = false;
             // 
             // adAppMembers_qa
             // 
@@ -243,10 +227,9 @@
             this.adAppMembers_qa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adAppMembers_qa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adAppMembers_qa.ForeColor = System.Drawing.Color.White;
-            this.adAppMembers_qa.Location = new System.Drawing.Point(4, 6);
-            this.adAppMembers_qa.Margin = new System.Windows.Forms.Padding(4);
+            this.adAppMembers_qa.Location = new System.Drawing.Point(3, 5);
             this.adAppMembers_qa.Name = "adAppMembers_qa";
-            this.adAppMembers_qa.Size = new System.Drawing.Size(220, 41);
+            this.adAppMembers_qa.Size = new System.Drawing.Size(165, 33);
             this.adAppMembers_qa.TabIndex = 2;
             this.adAppMembers_qa.Text = "Approve Membership";
             this.adAppMembers_qa.UseVisualStyleBackColor = false;
@@ -255,12 +238,10 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.panel6.Controls.Add(this.adManageEvents_qa);
-            this.panel6.Location = new System.Drawing.Point(1043, 305);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Location = new System.Drawing.Point(782, 248);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(228, 53);
+            this.panel6.Size = new System.Drawing.Size(171, 43);
             this.panel6.TabIndex = 21;
-            this.panel6.Visible = false;
             // 
             // adManageEvents_qa
             // 
@@ -270,10 +251,9 @@
             this.adManageEvents_qa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adManageEvents_qa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adManageEvents_qa.ForeColor = System.Drawing.Color.White;
-            this.adManageEvents_qa.Location = new System.Drawing.Point(4, 6);
-            this.adManageEvents_qa.Margin = new System.Windows.Forms.Padding(4);
+            this.adManageEvents_qa.Location = new System.Drawing.Point(3, 5);
             this.adManageEvents_qa.Name = "adManageEvents_qa";
-            this.adManageEvents_qa.Size = new System.Drawing.Size(220, 41);
+            this.adManageEvents_qa.Size = new System.Drawing.Size(165, 33);
             this.adManageEvents_qa.TabIndex = 2;
             this.adManageEvents_qa.Text = "Manage Events";
             this.adManageEvents_qa.UseVisualStyleBackColor = false;
@@ -282,12 +262,10 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.panel7.Controls.Add(this.adManageMembers_qa);
-            this.panel7.Location = new System.Drawing.Point(1043, 359);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Location = new System.Drawing.Point(782, 292);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(228, 53);
+            this.panel7.Size = new System.Drawing.Size(171, 43);
             this.panel7.TabIndex = 21;
-            this.panel7.Visible = false;
             // 
             // adManageMembers_qa
             // 
@@ -297,10 +275,9 @@
             this.adManageMembers_qa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adManageMembers_qa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adManageMembers_qa.ForeColor = System.Drawing.Color.White;
-            this.adManageMembers_qa.Location = new System.Drawing.Point(4, 6);
-            this.adManageMembers_qa.Margin = new System.Windows.Forms.Padding(4);
+            this.adManageMembers_qa.Location = new System.Drawing.Point(3, 5);
             this.adManageMembers_qa.Name = "adManageMembers_qa";
-            this.adManageMembers_qa.Size = new System.Drawing.Size(220, 41);
+            this.adManageMembers_qa.Size = new System.Drawing.Size(165, 33);
             this.adManageMembers_qa.TabIndex = 2;
             this.adManageMembers_qa.Text = "Manage Members";
             this.adManageMembers_qa.UseVisualStyleBackColor = false;
@@ -310,10 +287,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.panel2.Controls.Add(this.adMemberCount);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 90);
+            this.panel2.Size = new System.Drawing.Size(165, 73);
             this.panel2.TabIndex = 22;
             // 
             // adMemberCount
@@ -321,9 +297,10 @@
             this.adMemberCount.AutoSize = true;
             this.adMemberCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adMemberCount.ForeColor = System.Drawing.Color.White;
-            this.adMemberCount.Location = new System.Drawing.Point(9, 29);
+            this.adMemberCount.Location = new System.Drawing.Point(7, 24);
+            this.adMemberCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.adMemberCount.Name = "adMemberCount";
-            this.adMemberCount.Size = new System.Drawing.Size(51, 36);
+            this.adMemberCount.Size = new System.Drawing.Size(41, 29);
             this.adMemberCount.TabIndex = 2;
             this.adMemberCount.Text = "35";
             this.adMemberCount.Click += new System.EventHandler(this.adMemberCount_Click);
@@ -333,10 +310,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(9, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Total Members";
             // 
@@ -346,44 +322,41 @@
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.Controls.Add(this.panel8);
             this.flowLayoutPanel2.Controls.Add(this.panel9);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(311, 121);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(233, 98);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(468, 208);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(351, 169);
             this.flowLayoutPanel2.TabIndex = 23;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.adEventCount);
             this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(232, 4);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Location = new System.Drawing.Point(174, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(232, 90);
+            this.panel8.Size = new System.Drawing.Size(174, 73);
             this.panel8.TabIndex = 23;
             // 
-            // label6
+            // adEventCount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 36);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 36);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "35";
+            this.adEventCount.AutoSize = true;
+            this.adEventCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adEventCount.ForeColor = System.Drawing.Color.White;
+            this.adEventCount.Location = new System.Drawing.Point(9, 29);
+            this.adEventCount.Name = "adEventCount";
+            this.adEventCount.Size = new System.Drawing.Size(41, 29);
+            this.adEventCount.TabIndex = 2;
+            this.adEventCount.Text = "35";
+            this.adEventCount.Click += new System.EventHandler(this.adEventCount_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(16, 12);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 17);
+            this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Total Events";
             // 
@@ -399,10 +372,9 @@
             this.panel9.Controls.Add(this.adUserPic2);
             this.panel9.Controls.Add(this.label8);
             this.panel9.Controls.Add(this.adUserPic1);
-            this.panel9.Location = new System.Drawing.Point(4, 102);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Location = new System.Drawing.Point(3, 82);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(464, 91);
+            this.panel9.Size = new System.Drawing.Size(348, 74);
             this.panel9.TabIndex = 24;
             // 
             // adUserPic7
@@ -411,10 +383,9 @@
             this.adUserPic7.FlatAppearance.BorderSize = 0;
             this.adUserPic7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic7.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic7.Image")));
-            this.adUserPic7.Location = new System.Drawing.Point(399, 23);
-            this.adUserPic7.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic7.Location = new System.Drawing.Point(299, 19);
             this.adUserPic7.Name = "adUserPic7";
-            this.adUserPic7.Size = new System.Drawing.Size(61, 59);
+            this.adUserPic7.Size = new System.Drawing.Size(46, 48);
             this.adUserPic7.TabIndex = 7;
             this.adUserPic7.UseVisualStyleBackColor = true;
             // 
@@ -424,10 +395,9 @@
             this.adUserPic6.FlatAppearance.BorderSize = 0;
             this.adUserPic6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic6.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic6.Image")));
-            this.adUserPic6.Location = new System.Drawing.Point(335, 23);
-            this.adUserPic6.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic6.Location = new System.Drawing.Point(251, 19);
             this.adUserPic6.Name = "adUserPic6";
-            this.adUserPic6.Size = new System.Drawing.Size(57, 59);
+            this.adUserPic6.Size = new System.Drawing.Size(43, 48);
             this.adUserPic6.TabIndex = 6;
             this.adUserPic6.UseVisualStyleBackColor = true;
             // 
@@ -437,10 +407,9 @@
             this.adUserPic5.FlatAppearance.BorderSize = 0;
             this.adUserPic5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic5.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic5.Image")));
-            this.adUserPic5.Location = new System.Drawing.Point(271, 23);
-            this.adUserPic5.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic5.Location = new System.Drawing.Point(203, 19);
             this.adUserPic5.Name = "adUserPic5";
-            this.adUserPic5.Size = new System.Drawing.Size(57, 59);
+            this.adUserPic5.Size = new System.Drawing.Size(43, 48);
             this.adUserPic5.TabIndex = 5;
             this.adUserPic5.UseVisualStyleBackColor = true;
             // 
@@ -451,10 +420,9 @@
             this.adBrowseMemBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adBrowseMemBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.adBrowseMemBtn.Image = ((System.Drawing.Image)(resources.GetObject("adBrowseMemBtn.Image")));
-            this.adBrowseMemBtn.Location = new System.Drawing.Point(429, 4);
-            this.adBrowseMemBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.adBrowseMemBtn.Location = new System.Drawing.Point(322, 3);
             this.adBrowseMemBtn.Name = "adBrowseMemBtn";
-            this.adBrowseMemBtn.Size = new System.Drawing.Size(21, 25);
+            this.adBrowseMemBtn.Size = new System.Drawing.Size(16, 20);
             this.adBrowseMemBtn.TabIndex = 4;
             this.adBrowseMemBtn.UseVisualStyleBackColor = true;
             // 
@@ -464,10 +432,9 @@
             this.adUserPic4.FlatAppearance.BorderSize = 0;
             this.adUserPic4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic4.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic4.Image")));
-            this.adUserPic4.Location = new System.Drawing.Point(201, 23);
-            this.adUserPic4.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic4.Location = new System.Drawing.Point(151, 19);
             this.adUserPic4.Name = "adUserPic4";
-            this.adUserPic4.Size = new System.Drawing.Size(61, 59);
+            this.adUserPic4.Size = new System.Drawing.Size(46, 48);
             this.adUserPic4.TabIndex = 3;
             this.adUserPic4.UseVisualStyleBackColor = true;
             // 
@@ -477,10 +444,9 @@
             this.adUserPic3.FlatAppearance.BorderSize = 0;
             this.adUserPic3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic3.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic3.Image")));
-            this.adUserPic3.Location = new System.Drawing.Point(137, 23);
-            this.adUserPic3.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic3.Location = new System.Drawing.Point(103, 19);
             this.adUserPic3.Name = "adUserPic3";
-            this.adUserPic3.Size = new System.Drawing.Size(57, 59);
+            this.adUserPic3.Size = new System.Drawing.Size(43, 48);
             this.adUserPic3.TabIndex = 2;
             this.adUserPic3.UseVisualStyleBackColor = true;
             // 
@@ -490,10 +456,9 @@
             this.adUserPic2.FlatAppearance.BorderSize = 0;
             this.adUserPic2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic2.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic2.Image")));
-            this.adUserPic2.Location = new System.Drawing.Point(71, 23);
-            this.adUserPic2.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic2.Location = new System.Drawing.Point(53, 19);
             this.adUserPic2.Name = "adUserPic2";
-            this.adUserPic2.Size = new System.Drawing.Size(59, 59);
+            this.adUserPic2.Size = new System.Drawing.Size(44, 48);
             this.adUserPic2.TabIndex = 1;
             this.adUserPic2.UseVisualStyleBackColor = true;
             // 
@@ -502,10 +467,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(4, 5);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(3, 4);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 17);
+            this.label8.Size = new System.Drawing.Size(109, 13);
             this.label8.TabIndex = 3;
             this.label8.Text = "Browese Members";
             // 
@@ -515,10 +479,9 @@
             this.adUserPic1.FlatAppearance.BorderSize = 0;
             this.adUserPic1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adUserPic1.Image = ((System.Drawing.Image)(resources.GetObject("adUserPic1.Image")));
-            this.adUserPic1.Location = new System.Drawing.Point(4, 23);
-            this.adUserPic1.Margin = new System.Windows.Forms.Padding(4);
+            this.adUserPic1.Location = new System.Drawing.Point(3, 19);
             this.adUserPic1.Name = "adUserPic1";
-            this.adUserPic1.Size = new System.Drawing.Size(59, 59);
+            this.adUserPic1.Size = new System.Drawing.Size(44, 48);
             this.adUserPic1.TabIndex = 0;
             this.adUserPic1.UseVisualStyleBackColor = true;
             // 
@@ -526,20 +489,18 @@
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.flowLayoutPanel3.Controls.Add(this.panel10);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(311, 338);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(233, 275);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(468, 318);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(351, 258);
             this.flowLayoutPanel3.TabIndex = 19;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.adBrowseReqBtn);
             this.panel10.Controls.Add(this.label9);
-            this.panel10.Location = new System.Drawing.Point(4, 4);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(460, 39);
+            this.panel10.Size = new System.Drawing.Size(345, 32);
             this.panel10.TabIndex = 0;
             // 
             // adBrowseReqBtn
@@ -549,10 +510,9 @@
             this.adBrowseReqBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adBrowseReqBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.adBrowseReqBtn.Image = ((System.Drawing.Image)(resources.GetObject("adBrowseReqBtn.Image")));
-            this.adBrowseReqBtn.Location = new System.Drawing.Point(424, 4);
-            this.adBrowseReqBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.adBrowseReqBtn.Location = new System.Drawing.Point(318, 3);
             this.adBrowseReqBtn.Name = "adBrowseReqBtn";
-            this.adBrowseReqBtn.Size = new System.Drawing.Size(27, 25);
+            this.adBrowseReqBtn.Size = new System.Drawing.Size(20, 20);
             this.adBrowseReqBtn.TabIndex = 9;
             this.adBrowseReqBtn.UseVisualStyleBackColor = true;
             // 
@@ -561,10 +521,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(4, 7);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(3, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(168, 17);
+            this.label9.Size = new System.Drawing.Size(131, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Membership Requests";
             // 
@@ -577,10 +536,9 @@
             this.panel11.Controls.Add(this.adMemberReqEmail1);
             this.panel11.Controls.Add(this.adMemberReqName1);
             this.panel11.Controls.Add(this.pictureBox1);
-            this.panel11.Location = new System.Drawing.Point(311, 389);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4);
+            this.panel11.Location = new System.Drawing.Point(233, 316);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(468, 87);
+            this.panel11.Size = new System.Drawing.Size(351, 71);
             this.panel11.TabIndex = 24;
             this.panel11.Visible = false;
             // 
@@ -590,10 +548,9 @@
             this.adMemberReqDec1.FlatAppearance.BorderSize = 0;
             this.adMemberReqDec1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adMemberReqDec1.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqDec1.Image")));
-            this.adMemberReqDec1.Location = new System.Drawing.Point(396, 23);
-            this.adMemberReqDec1.Margin = new System.Windows.Forms.Padding(4);
+            this.adMemberReqDec1.Location = new System.Drawing.Point(297, 19);
             this.adMemberReqDec1.Name = "adMemberReqDec1";
-            this.adMemberReqDec1.Size = new System.Drawing.Size(53, 41);
+            this.adMemberReqDec1.Size = new System.Drawing.Size(40, 33);
             this.adMemberReqDec1.TabIndex = 5;
             this.adMemberReqDec1.UseVisualStyleBackColor = true;
             this.adMemberReqDec1.Click += new System.EventHandler(this.adMemberReqDec1_Click);
@@ -604,10 +561,9 @@
             this.adMemberReqApp1.FlatAppearance.BorderSize = 0;
             this.adMemberReqApp1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adMemberReqApp1.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqApp1.Image")));
-            this.adMemberReqApp1.Location = new System.Drawing.Point(355, 23);
-            this.adMemberReqApp1.Margin = new System.Windows.Forms.Padding(4);
+            this.adMemberReqApp1.Location = new System.Drawing.Point(266, 19);
             this.adMemberReqApp1.Name = "adMemberReqApp1";
-            this.adMemberReqApp1.Size = new System.Drawing.Size(53, 41);
+            this.adMemberReqApp1.Size = new System.Drawing.Size(40, 33);
             this.adMemberReqApp1.TabIndex = 4;
             this.adMemberReqApp1.UseVisualStyleBackColor = true;
             this.adMemberReqApp1.Click += new System.EventHandler(this.adMemberReqApp1_Click);
@@ -616,10 +572,9 @@
             // 
             this.adMemberReqInter1.AutoSize = true;
             this.adMemberReqInter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqInter1.Location = new System.Drawing.Point(80, 59);
-            this.adMemberReqInter1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqInter1.Location = new System.Drawing.Point(60, 48);
             this.adMemberReqInter1.Name = "adMemberReqInter1";
-            this.adMemberReqInter1.Size = new System.Drawing.Size(56, 18);
+            this.adMemberReqInter1.Size = new System.Drawing.Size(47, 15);
             this.adMemberReqInter1.TabIndex = 3;
             this.adMemberReqInter1.Text = "Interest";
             // 
@@ -627,10 +582,9 @@
             // 
             this.adMemberReqEmail1.AutoSize = true;
             this.adMemberReqEmail1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqEmail1.Location = new System.Drawing.Point(80, 32);
-            this.adMemberReqEmail1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqEmail1.Location = new System.Drawing.Point(60, 26);
             this.adMemberReqEmail1.Name = "adMemberReqEmail1";
-            this.adMemberReqEmail1.Size = new System.Drawing.Size(45, 18);
+            this.adMemberReqEmail1.Size = new System.Drawing.Size(39, 15);
             this.adMemberReqEmail1.TabIndex = 2;
             this.adMemberReqEmail1.Text = "Email";
             // 
@@ -638,20 +592,18 @@
             // 
             this.adMemberReqName1.AutoSize = true;
             this.adMemberReqName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqName1.Location = new System.Drawing.Point(80, 7);
-            this.adMemberReqName1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqName1.Location = new System.Drawing.Point(60, 6);
             this.adMemberReqName1.Name = "adMemberReqName1";
-            this.adMemberReqName1.Size = new System.Drawing.Size(48, 18);
+            this.adMemberReqName1.Size = new System.Drawing.Size(41, 15);
             this.adMemberReqName1.TabIndex = 1;
             this.adMemberReqName1.Text = "Name";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 52);
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -664,10 +616,9 @@
             this.panel12.Controls.Add(this.adMemberReqEmail2);
             this.panel12.Controls.Add(this.adMemberReqName2);
             this.panel12.Controls.Add(this.pictureBox2);
-            this.panel12.Location = new System.Drawing.Point(311, 479);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4);
+            this.panel12.Location = new System.Drawing.Point(233, 389);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(468, 87);
+            this.panel12.Size = new System.Drawing.Size(351, 71);
             this.panel12.TabIndex = 25;
             this.panel12.Visible = false;
             // 
@@ -677,10 +628,9 @@
             this.adMemberReqDec2.FlatAppearance.BorderSize = 0;
             this.adMemberReqDec2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adMemberReqDec2.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqDec2.Image")));
-            this.adMemberReqDec2.Location = new System.Drawing.Point(396, 23);
-            this.adMemberReqDec2.Margin = new System.Windows.Forms.Padding(4);
+            this.adMemberReqDec2.Location = new System.Drawing.Point(297, 19);
             this.adMemberReqDec2.Name = "adMemberReqDec2";
-            this.adMemberReqDec2.Size = new System.Drawing.Size(53, 41);
+            this.adMemberReqDec2.Size = new System.Drawing.Size(40, 33);
             this.adMemberReqDec2.TabIndex = 5;
             this.adMemberReqDec2.UseVisualStyleBackColor = true;
             this.adMemberReqDec2.Click += new System.EventHandler(this.adMemberReqDec2_Click);
@@ -691,10 +641,9 @@
             this.adMemberReqApp2.FlatAppearance.BorderSize = 0;
             this.adMemberReqApp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adMemberReqApp2.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqApp2.Image")));
-            this.adMemberReqApp2.Location = new System.Drawing.Point(355, 23);
-            this.adMemberReqApp2.Margin = new System.Windows.Forms.Padding(4);
+            this.adMemberReqApp2.Location = new System.Drawing.Point(266, 19);
             this.adMemberReqApp2.Name = "adMemberReqApp2";
-            this.adMemberReqApp2.Size = new System.Drawing.Size(53, 41);
+            this.adMemberReqApp2.Size = new System.Drawing.Size(40, 33);
             this.adMemberReqApp2.TabIndex = 4;
             this.adMemberReqApp2.UseVisualStyleBackColor = true;
             this.adMemberReqApp2.Click += new System.EventHandler(this.adMemberReqApp2_Click);
@@ -703,10 +652,9 @@
             // 
             this.adMemberReqInter2.AutoSize = true;
             this.adMemberReqInter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqInter2.Location = new System.Drawing.Point(80, 59);
-            this.adMemberReqInter2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqInter2.Location = new System.Drawing.Point(60, 48);
             this.adMemberReqInter2.Name = "adMemberReqInter2";
-            this.adMemberReqInter2.Size = new System.Drawing.Size(56, 18);
+            this.adMemberReqInter2.Size = new System.Drawing.Size(47, 15);
             this.adMemberReqInter2.TabIndex = 3;
             this.adMemberReqInter2.Text = "Interest";
             // 
@@ -714,10 +662,9 @@
             // 
             this.adMemberReqEmail2.AutoSize = true;
             this.adMemberReqEmail2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqEmail2.Location = new System.Drawing.Point(80, 32);
-            this.adMemberReqEmail2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqEmail2.Location = new System.Drawing.Point(60, 26);
             this.adMemberReqEmail2.Name = "adMemberReqEmail2";
-            this.adMemberReqEmail2.Size = new System.Drawing.Size(45, 18);
+            this.adMemberReqEmail2.Size = new System.Drawing.Size(39, 15);
             this.adMemberReqEmail2.TabIndex = 2;
             this.adMemberReqEmail2.Text = "Email";
             // 
@@ -725,20 +672,18 @@
             // 
             this.adMemberReqName2.AutoSize = true;
             this.adMemberReqName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqName2.Location = new System.Drawing.Point(80, 7);
-            this.adMemberReqName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqName2.Location = new System.Drawing.Point(60, 6);
             this.adMemberReqName2.Name = "adMemberReqName2";
-            this.adMemberReqName2.Size = new System.Drawing.Size(48, 18);
+            this.adMemberReqName2.Size = new System.Drawing.Size(41, 15);
             this.adMemberReqName2.TabIndex = 1;
             this.adMemberReqName2.Text = "Name";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(16, 21);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 17);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(42, 42);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -751,10 +696,9 @@
             this.panel13.Controls.Add(this.adMemberReqEmail3);
             this.panel13.Controls.Add(this.adMemberReqName3);
             this.panel13.Controls.Add(this.pictureBox3);
-            this.panel13.Location = new System.Drawing.Point(311, 569);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4);
+            this.panel13.Location = new System.Drawing.Point(233, 462);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(468, 87);
+            this.panel13.Size = new System.Drawing.Size(351, 71);
             this.panel13.TabIndex = 25;
             this.panel13.Visible = false;
             // 
@@ -764,10 +708,9 @@
             this.adMemberReqDec3.FlatAppearance.BorderSize = 0;
             this.adMemberReqDec3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adMemberReqDec3.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqDec3.Image")));
-            this.adMemberReqDec3.Location = new System.Drawing.Point(396, 23);
-            this.adMemberReqDec3.Margin = new System.Windows.Forms.Padding(4);
+            this.adMemberReqDec3.Location = new System.Drawing.Point(297, 19);
             this.adMemberReqDec3.Name = "adMemberReqDec3";
-            this.adMemberReqDec3.Size = new System.Drawing.Size(53, 41);
+            this.adMemberReqDec3.Size = new System.Drawing.Size(40, 33);
             this.adMemberReqDec3.TabIndex = 5;
             this.adMemberReqDec3.UseVisualStyleBackColor = true;
             this.adMemberReqDec3.Click += new System.EventHandler(this.adMemberReqDec3_Click);
@@ -778,10 +721,9 @@
             this.adMemberReqApp3.FlatAppearance.BorderSize = 0;
             this.adMemberReqApp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adMemberReqApp3.Image = ((System.Drawing.Image)(resources.GetObject("adMemberReqApp3.Image")));
-            this.adMemberReqApp3.Location = new System.Drawing.Point(355, 23);
-            this.adMemberReqApp3.Margin = new System.Windows.Forms.Padding(4);
+            this.adMemberReqApp3.Location = new System.Drawing.Point(266, 19);
             this.adMemberReqApp3.Name = "adMemberReqApp3";
-            this.adMemberReqApp3.Size = new System.Drawing.Size(53, 41);
+            this.adMemberReqApp3.Size = new System.Drawing.Size(40, 33);
             this.adMemberReqApp3.TabIndex = 4;
             this.adMemberReqApp3.UseVisualStyleBackColor = true;
             this.adMemberReqApp3.Click += new System.EventHandler(this.adMemberReqApp3_Click);
@@ -790,10 +732,9 @@
             // 
             this.adMemberReqInter3.AutoSize = true;
             this.adMemberReqInter3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqInter3.Location = new System.Drawing.Point(80, 59);
-            this.adMemberReqInter3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqInter3.Location = new System.Drawing.Point(60, 48);
             this.adMemberReqInter3.Name = "adMemberReqInter3";
-            this.adMemberReqInter3.Size = new System.Drawing.Size(56, 18);
+            this.adMemberReqInter3.Size = new System.Drawing.Size(47, 15);
             this.adMemberReqInter3.TabIndex = 3;
             this.adMemberReqInter3.Text = "Interest";
             // 
@@ -801,10 +742,9 @@
             // 
             this.adMemberReqEmail3.AutoSize = true;
             this.adMemberReqEmail3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqEmail3.Location = new System.Drawing.Point(80, 32);
-            this.adMemberReqEmail3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqEmail3.Location = new System.Drawing.Point(60, 26);
             this.adMemberReqEmail3.Name = "adMemberReqEmail3";
-            this.adMemberReqEmail3.Size = new System.Drawing.Size(45, 18);
+            this.adMemberReqEmail3.Size = new System.Drawing.Size(39, 15);
             this.adMemberReqEmail3.TabIndex = 2;
             this.adMemberReqEmail3.Text = "Email";
             // 
@@ -812,28 +752,26 @@
             // 
             this.adMemberReqName3.AutoSize = true;
             this.adMemberReqName3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adMemberReqName3.Location = new System.Drawing.Point(80, 7);
-            this.adMemberReqName3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adMemberReqName3.Location = new System.Drawing.Point(60, 6);
             this.adMemberReqName3.Name = "adMemberReqName3";
-            this.adMemberReqName3.Size = new System.Drawing.Size(48, 18);
+            this.adMemberReqName3.Size = new System.Drawing.Size(41, 15);
             this.adMemberReqName3.TabIndex = 1;
             this.adMemberReqName3.Text = "Name";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(16, 21);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 17);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 52);
+            this.pictureBox3.Size = new System.Drawing.Size(42, 42);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // Admins_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1357, 665);
+            this.ClientSize = new System.Drawing.Size(1018, 540);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
@@ -851,7 +789,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admins_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel3.ResumeLayout(false);
@@ -908,7 +845,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label adEventCount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
