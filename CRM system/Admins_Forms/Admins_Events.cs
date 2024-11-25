@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,10 +17,15 @@ namespace CRM_system.Admins_Forms
     public partial class Admins_Events : Form
     {
         private string imagePath; // To store the selected image path
+        private EventQueries eventQuery; // For handling event-related database queries
+
 
         public Admins_Events()
         {
             InitializeComponent();
+            eventQuery = new EventQueries(); // Initialize EventQueries
+            LoadEvents(); // Load events on form load
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -29,6 +35,7 @@ namespace CRM_system.Admins_Forms
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -180,7 +187,7 @@ namespace CRM_system.Admins_Forms
             //    MessageBox.Show($"Error uploading event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         }
-
+        //Open dialog to allow user to upload an image for the event
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
             try
@@ -212,7 +219,7 @@ namespace CRM_system.Admins_Forms
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-
+        //Discard button to clear all input fields and hide error messeges
         private void adEventsDiscardUp_Click(object sender, EventArgs e)
         {
             try
@@ -224,21 +231,9 @@ namespace CRM_system.Admins_Forms
                 attendLimBox.Text = string.Empty;
 
 
-                adEventInContentType.SelectedIndex = -1; // Reset the combo box
-                adEventInSchedule.Value = DateTime.Now; // Reset the DateTimePicker
-                adEventInPublish.SelectedIndex = -1; // Reset the combo box
-                adlblFileName.Text = "No file chosen"; // Reset the file name
-                imagePath = null; // Reset the image path
-
-                //Clear all input fields
-                //Location Values
-                eventLocationBox.Text = string.Empty;
-                postCodeBox.Text = string.Empty;
-                cityBox.Text = string.Empty;
-
-                // Fee Values
-                currencyBox.Text = string.Empty;
-                feeBox.Text = string.Empty;
+                adEventInContentType.SelectedIndex = -1; // Reset the Content Type
+                adEventInSchedule.Value = DateTime.Now; // Reset the Event date
+                adEventInPublish.SelectedIndex = -1; // Reset the publish settings
 
                 // Hide any error labels
                 lblImageError.Visible = false;
@@ -248,6 +243,35 @@ namespace CRM_system.Admins_Forms
             catch (Exception ex)
             {
                 MessageBox.Show($"Error discarding upload: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Method to retrieve and display a list of events in a DataGridView
+        private void LoadEvents()
+        {
+            try
+            {
+                // Fetch all events as a list
+                var events = eventQuery.GetAllEventsAsList();
+
+                // Bind the events to the DataGridView
+                dgEvents.DataSource = events;
+
+                
+                dgEvents.Columns["Id"].HeaderText = "Event ID";
+                dgEvents.Columns["EventName"].HeaderText = "Name";
+                dgEvents.Columns["EventType"].HeaderText = "Type";
+                dgEvents.Columns["EventDescription"].HeaderText = "Description";
+                dgEvents.Columns["AttendanceLimit"].HeaderText = "Limit";
+                dgEvents.Columns["PublishStatus"].HeaderText = "Status";
+                dgEvents.Columns["EventDate"].HeaderText = "Date";
+                dgEvents.Columns["LocationId"].HeaderText = "Location";
+                dgEvents.Columns["FeeId"].HeaderText = "Fee";
+                dgEvents.Columns["AdminId"].HeaderText = "Admin";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading events: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -264,5 +288,125 @@ namespace CRM_system.Admins_Forms
         {
 
         }
+
+        private void dgEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //Refresh Events button to refresh the event's list
+        private void btnLoadEvents_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadEvents();
+                // Inform the user that the list has been refreshed
+                MessageBox.Show("Event list refreshed successfully.", "Refreshed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                //handle any errors
+                MessageBox.Show($"Error refreshing the event list: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Button to remove any chosen events from the database
+        private void btnRemoveEvents_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if an event is selected
+                if (dgEvents.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select an event to remove.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Get the ID of the selected event
+                int selectedEventId = Convert.ToInt32(dgEvents.SelectedRows[0].Cells["Id"].Value);
+
+                // Confirm the removal
+                var confirmResult = MessageBox.Show("Are you sure you want to remove the selected event?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.No)
+                {
+                    return;
+                }
+
+                // Remove the event from the database
+                if (eventQuery.DeleteEvent(selectedEventId))
+                {
+                    MessageBox.Show("Event removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refresh the DataGridView
+                    LoadEvents();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to remove the event. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error removing event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditEvents_Click(object sender, EventArgs e)
+        {
+            if (dgEvents.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an event to edit.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int selectedEventId = Convert.ToInt32(dgEvents.SelectedRows[0].Cells["Id"].Value);
+
+            // Open the EditEventForm
+            var editForm = new Admin_Edit_Event(selectedEventId);
+            editForm.ShowDialog(); // Show the form as a modal dialog
+
+            // Refresh the event list after editing
+            LoadEvents();
+        }
+
+        private void AdSearchEvents_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get the search text from the textbox
+                string searchText = AdSearchEvents.Text.Trim();
+
+                // Cast the DataSource of dgEvents back to a list of events
+                var events = (List<Models.Event>)dgEvents.DataSource;
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Filter the events list based on the search text
+                    var filteredEvents = events.Where(ev =>
+                        ev.Id.ToString().IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        ev.EventName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        ev.EventType.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        ev.EventDescription.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        ev.PublishStatus.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
+                    // Update the DataGridView with the filtered list
+                    dgEvents.DataSource = filteredEvents;
+                }
+                else
+                {
+                    // Reload the full list of events if the search box is empty
+                    LoadEvents();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching events: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
     }
 }

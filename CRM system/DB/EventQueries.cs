@@ -40,7 +40,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@fee_id", fee);
                     command.Parameters.AddWithValue("@admin_id", user_id);
 
-                    return command.ExecuteNonQuery() > 0; // Return true if a row was inserted
+                    return command.ExecuteNonQuery() > 0; 
                 }
             }
         }
@@ -84,7 +84,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@Id", eventId);
 
                     int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; // Return true if an event was deleted
+                    return rowsAffected > 0; 
                 }
             }
         }
@@ -98,7 +98,6 @@ namespace CRM_system.DB
             {
                 connection.Open();
 
-                // Assuming "publish_status" is used to indicate active events
                 string query = "SELECT COUNT(*) FROM Events;";
 
                 using (var command = new SQLiteCommand(query, connection))
@@ -109,5 +108,114 @@ namespace CRM_system.DB
 
             return activeEventCount;
         }
+        //retrieves all event from the "Events" table and return them as list
+        public List<Models.Event> GetAllEventsAsList()
+        {
+            var events = new List<Models.Event>();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT id, event_name, event_type, event_description, attendance_limit, " +
+                               "publish_status, event_date, location_id, fee_id, admin_id " +
+                               "FROM Events;";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var ev = new Models.Event
+                            {
+                                Id = reader.GetInt32(0),
+                                EventName = reader.GetString(1),
+                                EventType = reader.GetString(2),
+                                EventDescription = reader.GetString(3),
+                                AttendanceLimit = reader.GetInt32(4),
+                                PublishStatus = reader.GetString(5),
+                                EventDate = reader.GetString(6),
+                                LocationId = reader.GetInt32(7),
+                                FeeId = reader.GetInt32(8),
+                                AdminId = reader.GetInt32(9)
+                            };
+
+                            events.Add(ev);
+                        }
+                    }
+                }
+            }
+
+            return events;
+        }
+
+        // Fetch event details by ID
+        public Event GetEventById(int eventId)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM Events WHERE id = @Id";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", eventId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Event
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("id")),
+                                EventName = reader["event_name"].ToString(),
+                                EventDescription = reader["event_description"].ToString(),
+                                EventType = reader["event_type"].ToString(),
+                                PublishStatus = reader["publish_status"].ToString(),
+                                AttendanceLimit = reader.GetInt32(reader.GetOrdinal("attendance_limit")),
+                                EventDate = reader["event_date"].ToString(),
+                                
+                                
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        //Update Event Details with PopOut Form
+        public bool UpdateEvent(Event updatedEvent)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = @"UPDATE Events
+                         SET event_name = @Name,
+                             event_description = @Description,
+                             event_type = @Type,
+                             publish_status = @Status,
+                             attendance_limit = @Limit,
+                             event_date = @Date
+                             WHERE id = @Id";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", updatedEvent.Id);
+                    command.Parameters.AddWithValue("@Name", updatedEvent.EventName);
+                    command.Parameters.AddWithValue("@Description", updatedEvent.EventDescription);
+                    command.Parameters.AddWithValue("@Type", updatedEvent.EventType);
+                    command.Parameters.AddWithValue("@Status", updatedEvent.PublishStatus);
+                    command.Parameters.AddWithValue("@Limit", updatedEvent.AttendanceLimit);
+                    command.Parameters.AddWithValue("@Date", updatedEvent.EventDate);
+
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
     }
 }

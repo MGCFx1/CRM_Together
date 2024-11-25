@@ -126,6 +126,12 @@
     <Compile Include="Admins_Forms\AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admins_Forms\Admin_Edit_Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\Admin_Edit_Event.Designer.cs">
+      <DependentUpon>Admin_Edit_Event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contacts_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admins_Forms\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\Admin_Edit_Event.resx">
+      <DependentUpon>Admin_Edit_Event.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contacts_Form.resx">
       <DependentUpon>Contacts_Form.cs</DependentUpon>

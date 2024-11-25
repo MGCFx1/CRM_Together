@@ -38,4 +38,20 @@ namespace CRM_system.Models
         public string Currency { get; set; }
         public string Description { get; set; }
     }
+
+    public class Event
+    {
+        public int Id { get; set; }
+        public string EventName { get; set; }
+        public string EventType { get; set; }
+        public string EventDescription { get; set; }
+        public int AttendanceLimit { get; set; }
+        public string EventDate { get; set; }
+        public string PublishStatus { get; set; }
+        public int LocationId { get; set; }
+        public int FeeId { get; set; }
+        public int AdminId { get; set; }
+    }
 }
+
+
