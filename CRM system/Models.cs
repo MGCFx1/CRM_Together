@@ -51,6 +51,8 @@ namespace CRM_system.Models
         public int LocationId { get; set; }
         public int FeeId { get; set; }
         public int AdminId { get; set; }
+        public string EventImage { get; set; }
+
     }
 }
 

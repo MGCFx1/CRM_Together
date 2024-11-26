@@ -148,6 +148,7 @@
     <Compile Include="DB\EventQueries.cs" />
     <Compile Include="DB\FeeQueries.cs" />
     <Compile Include="DB\LocationQueries.cs" />
+    <Compile Include="DB\UserEventsQueries.cs" />
     <Compile Include="DB\UserQueries.cs" />
     <Compile Include="eLearning_Form.cs">
       <SubType>Form</SubType>
