@@ -257,23 +257,27 @@ namespace CRM_system.Admins_Forms
                 // Bind the events to the DataGridView
                 dgEvents.DataSource = events;
 
-                
-                dgEvents.Columns["Id"].HeaderText = "Event ID";
+                // Adjust column headers to match the database schema
+                dgEvents.Columns["ID"].HeaderText = "Event ID";
                 dgEvents.Columns["EventName"].HeaderText = "Name";
-                dgEvents.Columns["EventType"].HeaderText = "Type";
                 dgEvents.Columns["EventDescription"].HeaderText = "Description";
+                dgEvents.Columns["EventType"].HeaderText = "Type";
                 dgEvents.Columns["AttendanceLimit"].HeaderText = "Limit";
                 dgEvents.Columns["PublishStatus"].HeaderText = "Status";
                 dgEvents.Columns["EventDate"].HeaderText = "Date";
-                dgEvents.Columns["LocationId"].HeaderText = "Location";
+                dgEvents.Columns["LocationCity"].HeaderText = "Location";
                 dgEvents.Columns["FeeId"].HeaderText = "Fee";
                 dgEvents.Columns["AdminId"].HeaderText = "Admin";
+
+                // Optional: Hide unwanted columns if necessary
+                // dgEvents.Columns["EventImage"].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading events: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void label4_Click(object sender, EventArgs e)
         {

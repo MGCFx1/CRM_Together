@@ -117,9 +117,22 @@ namespace CRM_system.DB
             {
                 connection.Open();
 
-                string query = "SELECT id, event_name, event_type, event_description, attendance_limit, " +
-                               "publish_status, event_date, location_id, fee_id, admin_id " +
-                               "FROM Events;";
+                string query = @"SELECT 
+                                e.id AS EventID,
+                                e.event_name AS EventName,
+                                e.event_type AS EventType,
+                                e.event_description AS EventDescription,
+                                e.attendance_limit AS AttendanceLimit,
+                                e.publish_status AS PublishStatus,
+                                e.event_date AS EventDate,
+                                l.city AS LocationCity,
+                                e.fee_id AS FeeId,
+                                e.admin_id AS AdminId
+                            FROM 
+                                Events e
+                            LEFT JOIN 
+                                Locations l ON e.location_id = l.id;
+                            ";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
@@ -136,7 +149,7 @@ namespace CRM_system.DB
                                 AttendanceLimit = reader.GetInt32(4),
                                 PublishStatus = reader.GetString(5),
                                 EventDate = reader.GetString(6),
-                                LocationId = reader.GetInt32(7),
+                                LocationCity = reader.GetString(7),
                                 FeeId = reader.GetInt32(8),
                                 AdminId = reader.GetInt32(9)
                             };

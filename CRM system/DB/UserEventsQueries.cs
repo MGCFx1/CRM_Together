@@ -123,16 +123,22 @@ namespace CRM_system.DB
                     connection.Open();
 
                     string query = @"SELECT 
-                                        e.id, 
-                                        e.event_name, 
-                                        e.event_description, 
-                                        e.event_type, 
-                                        e.attendance_limit, 
-                                        e.event_date, 
-                                        e.location_id, 
-                                        e.fee_id, 
-                                        e.event_image 
-                                    FROM Events e;";
+                                    e.id AS EventID,
+                                    e.event_name AS EventName,
+                                    e.event_description AS EventDescription,
+                                    e.event_type AS EventType,
+                                    e.attendance_limit AS AttendanceLimit,
+                                    e.event_date AS EventDate,
+                                    l.city AS LocationCity,
+                                    e.fee_id AS FeeId,
+                                    e.event_image AS EventImage
+                                FROM 
+                                    Events e
+                                LEFT JOIN 
+                                    Locations l ON l.id = e.location_id
+                                WHERE 
+                                    e.publish_status = 'Public';
+                                ";
 
                     using (var command = new SQLiteCommand(query, connection))
                     {
@@ -148,7 +154,7 @@ namespace CRM_system.DB
                                     EventType = reader.GetString(3), // Assuming EventType is used for image storage
                                     AttendanceLimit = reader.GetInt32(4),
                                     EventDate = reader.GetString(5),
-                                    LocationId = reader.GetInt32(6),
+                                    LocationCity = reader.GetString(6),
                                     FeeId = reader.GetInt32(7),
                                     EventImage = reader.IsDBNull(8) ? null : reader.GetString(8) // Load image path if available
                                 };

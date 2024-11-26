@@ -20,6 +20,19 @@ namespace CRM_system.Admins_Forms
         public AdminsPanel()
         {
             InitializeComponent();
+
+            // Modularize this block
+            if (adDashboard == null)
+            {
+                adDashboard = new Admins_Dashboard();
+                adDashboard.FormClosed += AdDashboard_FormClosed;
+                adDashboard.MdiParent = this;
+                adDashboard.Show();
+            }
+            else
+            {
+                adDashboard.Activate();
+            }
         }
 
         private void AdminsPanel_Load(object sender, EventArgs e)

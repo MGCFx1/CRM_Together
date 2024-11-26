@@ -24,6 +24,17 @@ namespace CRM_system
         {
             InitializeComponent();
             //pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
+            if (events == null)
+            {
+                events = new Events_Forms();
+                events.FormClosed += Events_FormClosed;
+                events.MdiParent = this;
+                events.Show();
+            }
+            else
+            {
+                events.Activate();
+            }
         }
 
         private void Users_Dashboard_Load(object sender, EventArgs e)
