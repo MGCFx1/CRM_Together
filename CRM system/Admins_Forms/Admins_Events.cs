@@ -408,9 +408,9 @@ namespace CRM_system.Admins_Forms
             }
         }
 
+        private void adUser_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

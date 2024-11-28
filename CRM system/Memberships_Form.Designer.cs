@@ -32,15 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCommunityMembership = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.comMember = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.workMember = new System.Windows.Forms.Button();
+            this.btnWorkspaceMembership = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -80,7 +80,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.comMember);
+            this.panel1.Controls.Add(this.btnCommunityMembership);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -92,71 +92,24 @@
             this.panel1.Size = new System.Drawing.Size(296, 309);
             this.panel1.TabIndex = 6;
             // 
-            // label3
+            // panel6
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Community";
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.panel6.Location = new System.Drawing.Point(57, 309);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(150, 20);
+            this.panel6.TabIndex = 9;
             // 
-            // label4
+            // btnCommunityMembership
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(19, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Membership";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label5.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(19, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(251, 19);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "         Free or discounted tickets to all events.\n";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label6.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(19, 139);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(270, 19);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "         Access to collaborative and creative skills ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label7.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(19, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(264, 19);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "        Participation in the annual Citizens’ Studio.\n";
+            this.btnCommunityMembership.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCommunityMembership.Location = new System.Drawing.Point(74, 253);
+            this.btnCommunityMembership.Name = "btnCommunityMembership";
+            this.btnCommunityMembership.Size = new System.Drawing.Size(133, 31);
+            this.btnCommunityMembership.TabIndex = 7;
+            this.btnCommunityMembership.Text = "Become a member";
+            this.btnCommunityMembership.UseVisualStyleBackColor = true;
+            this.btnCommunityMembership.Click += new System.EventHandler(this.btnCommunityMembership_Click);
             // 
             // label8
             // 
@@ -172,20 +125,76 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "       Free Coffee with freinds";
             // 
-            // comMember
+            // label7
             // 
-            this.comMember.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comMember.Location = new System.Drawing.Point(74, 253);
-            this.comMember.Name = "comMember";
-            this.comMember.Size = new System.Drawing.Size(133, 31);
-            this.comMember.TabIndex = 7;
-            this.comMember.Text = "Become a member";
-            this.comMember.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label7.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Location = new System.Drawing.Point(19, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(264, 19);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "        Participation in the annual Citizens’ Studio.\n";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label6.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Location = new System.Drawing.Point(19, 139);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(270, 19);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "         Access to collaborative and creative skills ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label5.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Location = new System.Drawing.Point(19, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(251, 19);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "         Free or discounted tickets to all events.\n";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(19, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Membership";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label3.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(16, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Community";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.panel5.Controls.Add(this.workMember);
+            this.panel5.Controls.Add(this.btnWorkspaceMembership);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
@@ -196,16 +205,18 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(296, 309);
             this.panel5.TabIndex = 9;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // workMember
+            // btnWorkspaceMembership
             // 
-            this.workMember.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workMember.Location = new System.Drawing.Point(73, 253);
-            this.workMember.Name = "workMember";
-            this.workMember.Size = new System.Drawing.Size(133, 31);
-            this.workMember.TabIndex = 7;
-            this.workMember.Text = "Become a member";
-            this.workMember.UseVisualStyleBackColor = true;
+            this.btnWorkspaceMembership.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWorkspaceMembership.Location = new System.Drawing.Point(73, 253);
+            this.btnWorkspaceMembership.Name = "btnWorkspaceMembership";
+            this.btnWorkspaceMembership.Size = new System.Drawing.Size(133, 31);
+            this.btnWorkspaceMembership.TabIndex = 7;
+            this.btnWorkspaceMembership.Text = "Become a member";
+            this.btnWorkspaceMembership.UseVisualStyleBackColor = true;
+            this.btnWorkspaceMembership.Click += new System.EventHandler(this.btnWorkspaceMembership_Click);
             // 
             // label9
             // 
@@ -295,14 +306,6 @@
             this.panel7.Size = new System.Drawing.Size(150, 20);
             this.panel7.TabIndex = 8;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.panel6.Location = new System.Drawing.Point(57, 309);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(150, 20);
-            this.panel6.TabIndex = 9;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
@@ -358,9 +361,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button comMember;
+        private System.Windows.Forms.Button btnCommunityMembership;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button workMember;
+        private System.Windows.Forms.Button btnWorkspaceMembership;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

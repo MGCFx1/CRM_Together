@@ -54,6 +54,16 @@ namespace CRM_system.Models
         public string EventImage { get; set; }
 
     }
+
+    //Retrieve membership details
+    public class MembershipDetails
+    {
+        public string Tier { get; set; }
+        public string MemberSince { get; set; }
+        public string Status { get; set; }
+    }
+
 }
+
 
 

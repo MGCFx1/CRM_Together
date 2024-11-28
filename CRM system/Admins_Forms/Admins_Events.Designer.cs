@@ -35,6 +35,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.attendLimBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.feeBox = new System.Windows.Forms.TextBox();
             this.postCodeBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,6 +46,8 @@
             this.adlblFileName = new System.Windows.Forms.Label();
             this.lblImageError = new System.Windows.Forms.Label();
             this.btnUploadImage = new System.Windows.Forms.Button();
+            this.adEventsDiscardUp = new System.Windows.Forms.Button();
+            this.adEventSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.adEventInSchedule = new System.Windows.Forms.DateTimePicker();
@@ -58,16 +62,10 @@
             this.adEventInContentType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.feeBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.dgEvents = new System.Windows.Forms.DataGridView();
             this.btnRefEvents = new System.Windows.Forms.Button();
             this.btnRemoveEvents = new System.Windows.Forms.Button();
             this.btnEditEvents = new System.Windows.Forms.Button();
-            this.adUser = new System.Windows.Forms.Button();
-            this.adNotification = new System.Windows.Forms.Button();
-            this.adEventsDiscardUp = new System.Windows.Forms.Button();
-            this.adEventSave = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AdSearchEvents = new System.Windows.Forms.TextBox();
@@ -164,6 +162,28 @@
             this.label10.TabIndex = 99;
             this.label10.Text = "Attendee Limit";
             this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(208, 326);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 16);
+            this.label8.TabIndex = 97;
+            this.label8.Text = "Fee";
+            // 
+            // feeBox
+            // 
+            this.feeBox.BackColor = System.Drawing.Color.White;
+            this.feeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.feeBox.Location = new System.Drawing.Point(208, 339);
+            this.feeBox.Name = "feeBox";
+            this.feeBox.Size = new System.Drawing.Size(101, 26);
+            this.feeBox.TabIndex = 96;
             // 
             // postCodeBox
             // 
@@ -268,6 +288,40 @@
             this.btnUploadImage.Text = "Upload Image";
             this.btnUploadImage.UseVisualStyleBackColor = false;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
+            // adEventsDiscardUp
+            // 
+            this.adEventsDiscardUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventsDiscardUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adEventsDiscardUp.FlatAppearance.BorderSize = 0;
+            this.adEventsDiscardUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adEventsDiscardUp.ForeColor = System.Drawing.Color.White;
+            this.adEventsDiscardUp.Image = ((System.Drawing.Image)(resources.GetObject("adEventsDiscardUp.Image")));
+            this.adEventsDiscardUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adEventsDiscardUp.Location = new System.Drawing.Point(164, 414);
+            this.adEventsDiscardUp.Name = "adEventsDiscardUp";
+            this.adEventsDiscardUp.Size = new System.Drawing.Size(124, 29);
+            this.adEventsDiscardUp.TabIndex = 89;
+            this.adEventsDiscardUp.Text = "    Discard Upload";
+            this.adEventsDiscardUp.UseVisualStyleBackColor = false;
+            this.adEventsDiscardUp.Click += new System.EventHandler(this.adEventsDiscardUp_Click);
+            // 
+            // adEventSave
+            // 
+            this.adEventSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adEventSave.FlatAppearance.BorderSize = 0;
+            this.adEventSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adEventSave.ForeColor = System.Drawing.Color.White;
+            this.adEventSave.Image = ((System.Drawing.Image)(resources.GetObject("adEventSave.Image")));
+            this.adEventSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adEventSave.Location = new System.Drawing.Point(37, 414);
+            this.adEventSave.Name = "adEventSave";
+            this.adEventSave.Size = new System.Drawing.Size(124, 29);
+            this.adEventSave.TabIndex = 78;
+            this.adEventSave.Text = "    Add an Event";
+            this.adEventSave.UseVisualStyleBackColor = false;
+            this.adEventSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -436,28 +490,6 @@
             this.label4.TabIndex = 92;
             this.label4.Text = "View, Add, and Manage Events";
             // 
-            // feeBox
-            // 
-            this.feeBox.BackColor = System.Drawing.Color.White;
-            this.feeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.feeBox.Location = new System.Drawing.Point(208, 339);
-            this.feeBox.Name = "feeBox";
-            this.feeBox.Size = new System.Drawing.Size(101, 26);
-            this.feeBox.TabIndex = 96;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(208, 326);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 16);
-            this.label8.TabIndex = 97;
-            this.label8.Text = "Fee";
-            // 
             // dgEvents
             // 
             this.dgEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -503,66 +535,6 @@
             this.btnEditEvents.UseVisualStyleBackColor = false;
             this.btnEditEvents.Click += new System.EventHandler(this.btnEditEvents_Click);
             // 
-            // adUser
-            // 
-            this.adUser.BackColor = System.Drawing.SystemColors.Control;
-            this.adUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adUser.FlatAppearance.BorderSize = 0;
-            this.adUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adUser.Image = ((System.Drawing.Image)(resources.GetObject("adUser.Image")));
-            this.adUser.Location = new System.Drawing.Point(901, 37);
-            this.adUser.Name = "adUser";
-            this.adUser.Size = new System.Drawing.Size(41, 43);
-            this.adUser.TabIndex = 94;
-            this.adUser.UseVisualStyleBackColor = false;
-            // 
-            // adNotification
-            // 
-            this.adNotification.BackColor = System.Drawing.SystemColors.Control;
-            this.adNotification.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adNotification.FlatAppearance.BorderSize = 0;
-            this.adNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adNotification.Image = ((System.Drawing.Image)(resources.GetObject("adNotification.Image")));
-            this.adNotification.Location = new System.Drawing.Point(854, 37);
-            this.adNotification.Name = "adNotification";
-            this.adNotification.Size = new System.Drawing.Size(41, 43);
-            this.adNotification.TabIndex = 93;
-            this.adNotification.UseVisualStyleBackColor = false;
-            // 
-            // adEventsDiscardUp
-            // 
-            this.adEventsDiscardUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventsDiscardUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adEventsDiscardUp.FlatAppearance.BorderSize = 0;
-            this.adEventsDiscardUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adEventsDiscardUp.ForeColor = System.Drawing.Color.White;
-            this.adEventsDiscardUp.Image = ((System.Drawing.Image)(resources.GetObject("adEventsDiscardUp.Image")));
-            this.adEventsDiscardUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adEventsDiscardUp.Location = new System.Drawing.Point(164, 414);
-            this.adEventsDiscardUp.Name = "adEventsDiscardUp";
-            this.adEventsDiscardUp.Size = new System.Drawing.Size(124, 29);
-            this.adEventsDiscardUp.TabIndex = 89;
-            this.adEventsDiscardUp.Text = "    Discard Upload";
-            this.adEventsDiscardUp.UseVisualStyleBackColor = false;
-            this.adEventsDiscardUp.Click += new System.EventHandler(this.adEventsDiscardUp_Click);
-            // 
-            // adEventSave
-            // 
-            this.adEventSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adEventSave.FlatAppearance.BorderSize = 0;
-            this.adEventSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adEventSave.ForeColor = System.Drawing.Color.White;
-            this.adEventSave.Image = ((System.Drawing.Image)(resources.GetObject("adEventSave.Image")));
-            this.adEventSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adEventSave.Location = new System.Drawing.Point(37, 414);
-            this.adEventSave.Name = "adEventSave";
-            this.adEventSave.Size = new System.Drawing.Size(124, 29);
-            this.adEventSave.TabIndex = 78;
-            this.adEventSave.Text = "    Add an Event";
-            this.adEventSave.UseVisualStyleBackColor = false;
-            this.adEventSave.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox2);
@@ -600,8 +572,6 @@
             this.Controls.Add(this.btnRemoveEvents);
             this.Controls.Add(this.btnRefEvents);
             this.Controls.Add(this.dgEvents);
-            this.Controls.Add(this.adUser);
-            this.Controls.Add(this.adNotification);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
@@ -648,8 +618,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button adUser;
-        private System.Windows.Forms.Button adNotification;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox currencyBox;
         private System.Windows.Forms.TextBox feeBox;

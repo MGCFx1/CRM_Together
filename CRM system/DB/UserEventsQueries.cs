@@ -216,5 +216,75 @@ namespace CRM_system.DB
 
             return null;
         }
+
+        public DataTable GetUserJoinedEvents(int userId)
+        {
+            var joinedEventsTable = new DataTable();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = @"
+                SELECT 
+                    e.id AS 'Event ID',
+                    e.event_name AS 'Event Name',
+                    e.event_description AS 'Description',
+                    e.event_date AS 'Date',
+                    e.event_type AS 'Type',
+                    ea.joined_at AS 'Joined At'
+                FROM EventAttendees ea
+                JOIN Events e ON ea.event_id = e.id
+                WHERE ea.user_id = @UserId;";
+
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserId", userId); // Properly assign the user ID
+                        using (var adapter = new SQLiteDataAdapter(command))
+                        {
+                            adapter.Fill(joinedEventsTable);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in GetUserJoinedEvents: {ex.Message}");
+                }
+            }
+
+            return joinedEventsTable;
+        }
+
+        public bool RemoveUserFromEvent(int userId, int eventId)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = @"
+                DELETE FROM EventAttendees
+                WHERE user_id = @UserId AND event_id = @EventId;";
+
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserId", userId);
+                        command.Parameters.AddWithValue("@EventId", eventId);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0; // Return true if a row was deleted
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in RemoveUserFromEvent: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
     }
 }

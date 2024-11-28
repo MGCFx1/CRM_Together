@@ -239,5 +239,10 @@ namespace CRM_system
             }
             // If No, do nothing
         }
+
+        private void adUserProf_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

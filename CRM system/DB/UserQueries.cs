@@ -320,7 +320,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@ID", userId);
 
                     int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; 
+                    return rowsAffected > 0;
                 }
             }
         }
@@ -339,16 +339,94 @@ namespace CRM_system.DB
                 {
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password)); 
+                    command.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.HashPassword(password));
 
                     int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; 
+                    return rowsAffected > 0;
+                }
+            }
+        }
+        //Check if user is already a member
+        public bool HasActiveMembership(int userId)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                    SELECT COUNT(*) 
+                    FROM Members 
+                    WHERE user_id = @UserId AND status = 'Active';";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
                 }
             }
         }
 
 
+        // Adds a new membership for the user.
+        public bool AddMembership(int userId, int membershipId, string startDate)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
 
+                string query = @"
+                    INSERT INTO Members (user_id, membership_id, start_date, status)
+                    VALUES (@UserId, @MembershipId, @StartDate, 'Active');";
 
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@MembershipId", membershipId);
+                    command.Parameters.AddWithValue("@StartDate", startDate);
+
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+        public MembershipDetails GetMembershipDetails(int userId)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = @"
+            SELECT 
+                mem.membership_id AS Tier,
+                mem.start_date AS MemberSince,
+                mem.status AS Status
+            FROM Members mem
+            WHERE mem.user_id = @UserId AND mem.status = 'Active';";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new MembershipDetails
+                            {
+                                Tier = reader["Tier"].ToString(),
+                                MemberSince = DateTime.Parse(reader["MemberSince"].ToString()).ToString("yyyy-MM-dd"),
+                                Status = reader["Status"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return null; // Return null if no active membership is found
+        }
     }
 }
+
+
+
+

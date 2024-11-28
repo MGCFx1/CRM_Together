@@ -41,7 +41,7 @@ namespace CRM_system
                 // Group panels
                 eventPanels = new List<Panel> { usEventPanel1, usEventPanel2, usEventPanel3 };
 
-                // Group picture boxes (ensure you add these controls in the Designer)
+                // Group picture boxes 
                 //eventPictures = new List<PictureBox> { usEventPic1, usEventPic2, usEventPic3 };
 
                 // Group labels for event details
