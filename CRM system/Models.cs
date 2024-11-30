@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Drawing;
 
 namespace CRM_system.Models
 {
@@ -51,8 +52,7 @@ namespace CRM_system.Models
         public String LocationCity { get; set; }
         public int FeeId { get; set; }
         public int AdminId { get; set; }
-        public string EventImage { get; set; }
-
+        public Image EventImage { get; set; }
     }
 
     //Retrieve membership details

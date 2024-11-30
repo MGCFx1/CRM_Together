@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace CRM_system.DB
 {
@@ -15,8 +14,48 @@ namespace CRM_system.DB
         // Connection string to the SQLite database
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";Version=3;";
 
+        private static byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+
+                if (ImageFormat.Jpeg.Equals(image.RawFormat))
+                {
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                }
+                else if (ImageFormat.Png.Equals(image.RawFormat))
+                {
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                }
+                else
+                {
+                    return null;
+                }
+                return ms.ToArray();
+            }
+        }
+
+
+        public static Image ByteArrayToImage(byte[] byteArray)
+        {
+            Console.WriteLine("Ouput be here: " + BitConverter.ToString(byteArray));
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error converting byte array to image: {ex.Message}");
+                return null;
+            }
+        }
+
+
         // Adds a new event to the database
-        public bool AddEvent(string name, string description, int location, string contentType, string event_date, string publishStatus, string imagePath, int attendance_limit, int fee, int user_id)
+        public bool AddEvent(string name, string description, int location, string contentType, string event_date, string publishStatus, Image imagePath, int attendance_limit, int fee, int user_id)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -27,6 +66,8 @@ namespace CRM_system.DB
                                "VALUES (@Name, @Description, @event_type, @attendance_limit, @Date," +
                                " @PublishStatus, @ImagePath, @location_id, @fee_id, @admin_id);";
 
+                Console.WriteLine("Converted" + BitConverter.ToString(ImageToByteArray(imagePath)));
+
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", name);
@@ -35,7 +76,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@event_type", contentType);
                     command.Parameters.AddWithValue("@Date", event_date);
                     command.Parameters.AddWithValue("@PublishStatus", publishStatus);
-                    command.Parameters.AddWithValue("@ImagePath", imagePath);
+                    command.Parameters.AddWithValue("@ImagePath", ImageToByteArray(imagePath));
                     command.Parameters.AddWithValue("@attendance_limit", attendance_limit);
                     command.Parameters.AddWithValue("@fee_id", fee);
                     command.Parameters.AddWithValue("@admin_id", user_id);
@@ -128,6 +169,7 @@ namespace CRM_system.DB
                                 l.city AS LocationCity,
                                 e.fee_id AS FeeId,
                                 e.admin_id AS AdminId
+                                --e.event_image AS EventImage
                             FROM 
                                 Events e
                             LEFT JOIN 
@@ -151,7 +193,8 @@ namespace CRM_system.DB
                                 EventDate = reader.GetString(6),
                                 LocationCity = reader.GetString(7),
                                 FeeId = reader.GetInt32(8),
-                                AdminId = reader.GetInt32(9)
+                                AdminId = reader.GetInt32(9),
+                                //EventImage = reader.IsDBNull(10) ? null : ByteArrayToImage((byte[])reader["EventImage"])
                             };
 
                             events.Add(ev);

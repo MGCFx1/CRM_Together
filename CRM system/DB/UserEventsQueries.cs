@@ -137,7 +137,8 @@ namespace CRM_system.DB
                                 LEFT JOIN 
                                     Locations l ON l.id = e.location_id
                                 WHERE 
-                                    e.publish_status = 'Public';
+                                    e.publish_status = 'Public'
+                                ORDER BY e.id DESC;
                                 ";
 
                     using (var command = new SQLiteCommand(query, connection))
@@ -156,8 +157,10 @@ namespace CRM_system.DB
                                     EventDate = reader.GetString(5),
                                     LocationCity = reader.GetString(6),
                                     FeeId = reader.GetInt32(7),
-                                    EventImage = reader.IsDBNull(8) ? null : reader.GetString(8) // Load image path if available
-                                };
+                                    EventImage = reader.IsDBNull(8) ? null : EventQueries.ByteArrayToImage((byte[])reader["EventImage"])// Load image path if available
+                            };
+                                //Console.WriteLine("Ran");
+                                //Console.WriteLine(EventQueries.ByteArrayToImage((byte[])reader["EventImage"]));
 
                                 events.Add(ev);
                             }
@@ -185,7 +188,7 @@ namespace CRM_system.DB
                     connection.Open();
 
                     string query = @"SELECT id, fee_type, amount, currency, description 
-                                     FROM Fees 
+                                     FROM Fee
                                      WHERE id = @FeeId;";
 
                     using (var command = new SQLiteCommand(query, connection))

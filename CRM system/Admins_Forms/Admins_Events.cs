@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Management;
 using System.Text;
@@ -16,7 +17,8 @@ namespace CRM_system.Admins_Forms
 {
     public partial class Admins_Events : Form
     {
-        private string imagePath; // To store the selected image path
+        //private string selectedImage; // To store the selected image path
+        Image selectedImage;
         private EventQueries eventQuery; // For handling event-related database queries
 
 
@@ -101,11 +103,11 @@ namespace CRM_system.Admins_Forms
                 return;
             }
 
-            if (string.IsNullOrEmpty(imagePath))
-            {
-                MessageBox.Show("Please upload an image for the event.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (Image.IsNullOrEmpty(selectedImage))
+            //{
+            //    MessageBox.Show("Please upload an image for the event.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             if (!int.TryParse(attendance_limit, out int result))
             {
@@ -150,7 +152,7 @@ namespace CRM_system.Admins_Forms
             int fee_id = feeQueries.InsertFee(fee_type, result_fee, currency, "Event Fee");
 
             //// Add the event to the database                                                                                  //change to UserSession.ID after testing
-            if (eventQueries.AddEvent(name, description, location_id, event_type, schedule, publishStatus, imagePath, result, fee_id, 8))
+            if (eventQueries.AddEvent(name, description, location_id, event_type, schedule, publishStatus, selectedImage, result, fee_id, 8))
             {
                 MessageBox.Show("Event uploaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -165,7 +167,7 @@ namespace CRM_system.Admins_Forms
                 adEventInSchedule.Value = DateTime.Now; // Reset the DateTimePicker
                 adEventInPublish.SelectedIndex = -1; // Reset the combo box
                 adlblFileName.Text = "No file chosen"; // Reset the file name
-                imagePath = null; // Reset the image path
+                selectedImage = null; // Reset the image path
 
                 //Clear all input fields
                 //Location Values
@@ -187,6 +189,8 @@ namespace CRM_system.Admins_Forms
             //    MessageBox.Show($"Error uploading event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         }
+
+
         //Open dialog to allow user to upload an image for the event
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
@@ -201,14 +205,22 @@ namespace CRM_system.Admins_Forms
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         // Get the file path
-                        imagePath = openFileDialog.FileName;
+                        //selectedImage = openFileDialog.FileName;
+                        // Load the selected file into an Image object
+                        selectedImage = Image.FromFile(openFileDialog.FileName);
+                        Console.WriteLine(selectedImage);
+
+                        // Display the image in a PictureBox
+                        //pictureBox1.Image = selectedImage;
+
+                        MessageBox.Show("Image uploaded and saved successfully!");
 
                         // Display the file name in the Label
-                        adlblFileName.Text = System.IO.Path.GetFileName(imagePath);
+                        //adlblFileName.Text = System.IO.Path.GetFileName(selectedImage);
 
                         // Hide any previous error
-                        lblImageError.Visible = false;
-                        Console.WriteLine($"Image Path: {imagePath}");
+                        //lblImageError.Visible = false;
+                        //Console.WriteLine($"Image Path: {selectedImage}");
                     }
                 }
             }

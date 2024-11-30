@@ -42,7 +42,7 @@ namespace CRM_system
                 eventPanels = new List<Panel> { usEventPanel1, usEventPanel2, usEventPanel3 };
 
                 // Group picture boxes 
-                //eventPictures = new List<PictureBox> { usEventPic1, usEventPic2, usEventPic3 };
+                eventPictures = new List<PictureBox> { usEventPic1, usEventPic2, usEventPic3 };
 
                 // Group labels for event details
                 eventNames = new List<Label> { usEventNamel1, usEventNamel2, usEventNamel3 };
@@ -86,16 +86,18 @@ namespace CRM_system
                 {
                     var ev = events[i];
 
-                    // Populate image (if available)
-                    //if (!string.IsNullOrEmpty(ev.EventImage) && File.Exists(ev.EventImage))
-                    //{
-                    //    eventPictures[i].Image = Image.FromFile(ev.EventImage);
-                    //    eventPictures[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    //}
-                    //else
-                    //{
-                    //    eventPictures[i].Image = null; // No image available
-                    //}
+                    eventPictures[i].Image = ev.EventImage;
+                    eventPictures[i].SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+                    //Populate image(if available)
+                    //    if (!string.IsNullOrEmpty(ev.EventImage) && File.Exists(ev.EventImage))
+                    //    {
+                    //    }
+                    //    else
+                    //    {
+                    //        eventPictures[i].Image = null; // No image available
+                    //    }
 
                     // Populate other event details
                     eventNames[i].Text = $"Event Name: {ev.EventName}";
@@ -157,6 +159,11 @@ namespace CRM_system
             {
                 MessageBox.Show($"Error joining event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void usJoinEvent2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

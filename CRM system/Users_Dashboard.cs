@@ -99,21 +99,6 @@ namespace CRM_system
 
         }
 
-        private void pnDashboard_Click(object sender, EventArgs e)
-        {
-            if (dashboard == null)
-            {
-                dashboard = new dashboard_form();
-                dashboard.FormClosed += Dashboard_FormClosed;
-                dashboard.MdiParent = this;
-                dashboard.Show();
-            }
-            else {
-            dashboard.Activate();
-
-            }
-        }
-
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             dashboard = null;
@@ -243,6 +228,22 @@ namespace CRM_system
         private void adUserProf_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pnDashboard_Click(object sender, EventArgs e)
+        {
+            if (dashboard == null)
+            {
+                dashboard = new dashboard_form();
+                dashboard.FormClosed += Dashboard_FormClosed;
+                dashboard.MdiParent = this;
+                dashboard.Show();
+            }
+            else
+            {
+                dashboard.Activate();
+
+            }
         }
     }
 }
