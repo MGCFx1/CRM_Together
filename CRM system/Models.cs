@@ -13,7 +13,8 @@ namespace CRM_system.Models
 
         // has the user been granted a membership status
         public string MembershipStatus { get; set; }
-
+        public string MembershipType { get; set; }
+        public string UserDateOfBirth { get; set; }
         // Is user an admin
         public Boolean IsAdmin { get; set; }
         public int LocationID {get; set;}

@@ -177,6 +177,27 @@ namespace CRM_system
             return Regex.IsMatch(email, emailPattern);
         }
 
+        public static bool IsValidYear(string dateString)
+        {
+            // Try to parse the input string into a DateTime object
+            DateTime date;
+            bool isValidDate = DateTime.TryParse(dateString, out date);
+
+            // If the date is valid, check if its year is less than the current year
+            if (isValidDate)
+            {
+                int currentYear = DateTime.Now.Year;
+                return date.Year <= currentYear - 13;
+            }
+            else
+            {
+                // If the date is invalid, return false (or handle it as needed)
+                Console.WriteLine("Invalid date format.");
+                return false;
+            }
+        }
+
+
         private void Signup_btn_Click(object sender, EventArgs e)
         {
             // To Manage the case of Everything
@@ -188,6 +209,7 @@ namespace CRM_system
             string email = signup_email.Text.ToLower();
             string password = signup_password.Text;
             string membership_status = "pending";
+            string date_of_birth = signup_dateOfBirth.Text;
 
             // Location Details
             string city = textInfo.ToTitleCase(Signup_city.Text);
@@ -232,6 +254,28 @@ namespace CRM_system
                 lblErrEmail.Visible = false;
             }
 
+            Console.WriteLine(date_of_birth);
+
+
+            if (!IsValidYear(date_of_birth))
+            {
+                // If none of those things are blank
+                lblErrDOB.Visible = true;
+                lblErrDOB.Text = "Invalid";
+                isError = true;
+            }
+            else if (date_of_birth.Length < 8)
+            {
+                // If none of those things are blank
+                lblErrDOB.Visible = true;
+                //lblErrDOB.Text = "Password is too weak; 8 characters required";
+                isError = true;
+            }
+            else
+            {
+                lblErrDOB.Visible = false;
+            }
+
             if (password == "")
             {
                 // If none of those things are blank
@@ -259,13 +303,13 @@ namespace CRM_system
             }
 
             int location_id = locationQuery.InsertNewLocation(city, address, postcode);
-            query.InsertNewUser(name, email, password, membership_status, false, location_id);
+            query.InsertNewUser(name, email, password, membership_status, false, location_id, "none", date_of_birth);
 
             lblErrName.Text = "";
             lblErrEmail.Text = "";
             lblErrPassword.Text = "";
 
-            MessageBox.Show("You have successfully! You'll have to wait 48hrs to be approved by the" +
+            MessageBox.Show("You have successfully! You'll have to wait 48hrs to be approved by the admin " +
                 "before you'll be able to login.", "Sign Up Successfull");
 
             //dashboard_form dashboard = new dashboard_form();

@@ -41,8 +41,10 @@ namespace CRM_system.DB
                         email TEXT NOT NULL,
                         password TEXT NOT NULL,
                         membership_status TEXT CHECK (membership_status IN ('pending', 'active', 'inactive')),
+                        membership_type TEXT CHECK (membership_type IN ('none', 'community', 'workspace')),
+                        date_of_birth TEXT,
                         is_admin INT CHECK (is_admin IN (0, 1)),
-                        location_id INTEGER, 
+                        location_id INTEGER,
                         created_at TIMESTAMP DATETIME DEFAULT CURRENT_TIMESTAMP,
                         last_login TIMESTAMP DATETIME DEFAULT CURRENT_TIMESTAMP,
                         FOREIGN KEY (location_id) REFERENCES Locations(id)

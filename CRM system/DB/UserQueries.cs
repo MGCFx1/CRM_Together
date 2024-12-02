@@ -16,7 +16,8 @@ namespace CRM_system.DB
         // Connection string to the SQLite database file
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
-        public void InsertNewUser(string name, string email, string password, string membership, Boolean isAdmin, int locationID)
+        public void InsertNewUser(string name, string email, string password, string membership, Boolean isAdmin,
+            int locationID, string membership_type, string date_of_birth)
         {
             // Establish a connection to the SQLite database
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -24,8 +25,8 @@ namespace CRM_system.DB
                 connection.Open();
 
                 // Define the SQL INSERT statement
-                string insertQuery = "INSERT INTO Users (name, email, password, membership_status, is_admin, location_id)" +
-                                     " VALUES (@name, @email, @password, @membership, @isAdmin, @location_id);";
+                string insertQuery = "INSERT INTO Users (name, email, password, membership_status, membership_type, date_of_birth, is_admin, location_id)" +
+                                     " VALUES (@name, @email, @password, @membership, @membership_type, @date_of_birth, @isAdmin, @location_id);";
 
                 // Create a command and parameterize the query
                 using (var command = new SQLiteCommand(insertQuery, connection))
@@ -34,6 +35,8 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@membership", membership);
+                    command.Parameters.AddWithValue("@membership_type", membership);
+                    command.Parameters.AddWithValue("@date_of_birth", date_of_birth);
                     command.Parameters.AddWithValue("@isAdmin", isAdmin);
                     command.Parameters.AddWithValue("@location_id", locationID);
 
@@ -45,7 +48,7 @@ namespace CRM_system.DB
                 connection.Close();
             }
         }
-        public void UpdateUser(int id, string name, string email, string password, string membership, int locationID)
+        public void UpdateUser(int id, string name, string email, string password, string membership, int locationID, string membership_type)
         {
             // Establish a connection to the SQLite database
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -54,7 +57,7 @@ namespace CRM_system.DB
 
                 // Define the SQL INSERT statement
                 string insertQuery = "UPDATE Users SET name = @name, email = @email, " +
-                    "password = @password, membership_status = @membership, location_id = @location_id" +
+                    "password = @password, membership_status = @membership, membership_type = @membership_type location_id = @location_id" +
                     " WHERE id = @id;";
 
                 // Create a command and parameterize the query
@@ -65,6 +68,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@membership", membership);
+                    command.Parameters.AddWithValue("@membership_type", membership_type);
                     command.Parameters.AddWithValue("@location_id", locationID);
 
                     // Execute the command

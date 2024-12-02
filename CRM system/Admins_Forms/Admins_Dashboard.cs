@@ -90,7 +90,7 @@ namespace CRM_system.Admins_Forms
             var currentUser = pendingUsers[0];
             string status = "active";
 
-            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
         }
 
@@ -101,7 +101,7 @@ namespace CRM_system.Admins_Forms
             var currentUser = pendingUsers[0];
             string status = "inactive";
 
-            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
         }
 
@@ -111,7 +111,7 @@ namespace CRM_system.Admins_Forms
             var currentUser = pendingUsers[1];
             string status = "active";
 
-            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
         }
 
@@ -122,7 +122,7 @@ namespace CRM_system.Admins_Forms
             var currentUser = pendingUsers[1];
             string status = "inactive";
 
-            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
         }
 
@@ -132,7 +132,7 @@ namespace CRM_system.Admins_Forms
             var currentUser = pendingUsers[2];
             string status = "active";
 
-            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
         }
 
@@ -143,7 +143,7 @@ namespace CRM_system.Admins_Forms
             var currentUser = pendingUsers[2];
             string status = "inactive";
 
-            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID);
+            userQuery.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
         }
 

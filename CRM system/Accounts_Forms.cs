@@ -148,7 +148,7 @@ namespace CRM_system
 
             List<Models.User> usersByID = query.GetUserByID(id);
 
-            query.UpdateUser(id, name, email, new_password, "active", usersByID[0].LocationID);
+            query.UpdateUser(id, name, email, new_password, "active", usersByID[0].LocationID, usersByID[0].MembershipType);
 
             lblErrname.Text = "";
             lblErrEmail.Text = "";
