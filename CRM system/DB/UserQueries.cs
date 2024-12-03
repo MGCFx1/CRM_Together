@@ -35,7 +35,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@membership", membership);
-                    command.Parameters.AddWithValue("@membership_type", membership);
+                    command.Parameters.AddWithValue("@membership_type", membership_type);
                     command.Parameters.AddWithValue("@date_of_birth", date_of_birth);
                     command.Parameters.AddWithValue("@isAdmin", isAdmin);
                     command.Parameters.AddWithValue("@location_id", locationID);
@@ -70,6 +70,31 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@membership", membership);
                     command.Parameters.AddWithValue("@membership_type", membership_type);
                     command.Parameters.AddWithValue("@location_id", locationID);
+
+                    // Execute the command
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"{rowsAffected} row(s) inserted successfully.");
+                }
+
+                connection.Close();
+            }
+        }
+
+        public void UpdateUserPassword(int id, string password)
+        {
+            // Establish a connection to the SQLite database
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Define the SQL INSERT statement
+                string insertQuery = "UPDATE Users SET password = @password WHERE id = @id;";
+
+                // Create a command and parameterize the query
+                using (var command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@password", password);
 
                     // Execute the command
                     int rowsAffected = command.ExecuteNonQuery();
@@ -248,7 +273,9 @@ namespace CRM_system.DB
                                 Email = reader.GetString(2),
                                 Password = reader.GetString(3),
                                 MembershipStatus = !reader.IsDBNull(4) ? reader.GetString(4) : "pending",
-                                IsAdmin = reader.IsDBNull(6) ? reader.GetBoolean(5) : false,
+                                UserDateOfBirth = !reader.IsDBNull(6) ? reader.GetString(6) :  "NO DOB",
+                                IsAdmin = !reader.IsDBNull(7) ? reader.GetBoolean(7) : false,
+                                LocationID = reader.GetInt32(8)
 
                             };
 
@@ -263,6 +290,8 @@ namespace CRM_system.DB
 
             return users;  // Return the list of users
         }
+
+
 
         //Method to get total number of users
         public int GetUserCount()

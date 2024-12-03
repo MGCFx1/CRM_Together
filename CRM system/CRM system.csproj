@@ -162,6 +162,12 @@
     <Compile Include="Events_Forms.Designer.cs">
       <DependentUpon>Events_Forms.cs</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Landing_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Events_Forms.resx">
       <DependentUpon>Events_Forms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Landing_Page.resx">
       <DependentUpon>Landing_Page.cs</DependentUpon>

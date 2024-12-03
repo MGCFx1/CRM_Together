@@ -44,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblPasswordErr = new System.Windows.Forms.Label();
             this.lblEmailErr = new System.Windows.Forms.Label();
+            this.resetPswLbl = new System.Windows.Forms.Label();
+            this.resetPswdLinkLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +69,7 @@
             this.login_register.ForeColor = System.Drawing.Color.White;
             this.login_register.Location = new System.Drawing.Point(619, 421);
             this.login_register.Name = "login_register";
-            this.login_register.Size = new System.Drawing.Size(79, 13);
+            this.login_register.Size = new System.Drawing.Size(101, 17);
             this.login_register.TabIndex = 8;
             this.login_register.Text = "Sign up here";
             this.login_register.Click += new System.EventHandler(this.label5_Click);
@@ -80,7 +82,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(515, 421);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 13);
+            this.label4.Size = new System.Drawing.Size(138, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Don\'t have account?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -94,7 +96,7 @@
             this.login_show.ForeColor = System.Drawing.Color.White;
             this.login_show.Location = new System.Drawing.Point(582, 329);
             this.login_show.Name = "login_show";
-            this.login_show.Size = new System.Drawing.Size(122, 20);
+            this.login_show.Size = new System.Drawing.Size(151, 24);
             this.login_show.TabIndex = 6;
             this.login_show.Text = "Show Password";
             this.login_show.UseVisualStyleBackColor = false;
@@ -126,7 +128,7 @@
             this.login_password.ForeColor = System.Drawing.Color.White;
             this.login_password.Location = new System.Drawing.Point(505, 292);
             this.login_password.Name = "login_password";
-            this.login_password.Size = new System.Drawing.Size(208, 26);
+            this.login_password.Size = new System.Drawing.Size(208, 30);
             this.login_password.TabIndex = 4;
             this.login_password.TextChanged += new System.EventHandler(this.login_password_TextChanged);
             // 
@@ -138,7 +140,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(505, 277);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
             // 
@@ -149,7 +151,7 @@
             this.login_email.ForeColor = System.Drawing.Color.White;
             this.login_email.Location = new System.Drawing.Point(505, 211);
             this.login_email.Name = "login_email";
-            this.login_email.Size = new System.Drawing.Size(208, 26);
+            this.login_email.Size = new System.Drawing.Size(208, 30);
             this.login_email.TabIndex = 2;
             // 
             // label2
@@ -160,7 +162,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(505, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 16);
+            this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email Address";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -173,7 +175,7 @@
             this.login_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_close.Location = new System.Drawing.Point(746, 22);
             this.login_close.Name = "login_close";
-            this.login_close.Size = new System.Drawing.Size(20, 20);
+            this.login_close.Size = new System.Drawing.Size(26, 25);
             this.login_close.TabIndex = 2;
             this.login_close.Text = "X";
             this.login_close.Click += new System.EventHandler(this.login_close_Click);
@@ -197,7 +199,7 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(500, 152);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 16);
+            this.label12.Size = new System.Drawing.Size(180, 20);
             this.label12.TabIndex = 13;
             this.label12.Text = "Sign in to your account";
             // 
@@ -209,7 +211,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(499, 125);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 25);
+            this.label7.Size = new System.Drawing.Size(201, 29);
             this.label7.TabIndex = 12;
             this.label7.Text = "Welcome back!";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -222,7 +224,7 @@
             this.lblPasswordErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
             this.lblPasswordErr.Location = new System.Drawing.Point(579, 276);
             this.lblPasswordErr.Name = "lblPasswordErr";
-            this.lblPasswordErr.Size = new System.Drawing.Size(84, 13);
+            this.lblPasswordErr.Size = new System.Drawing.Size(110, 17);
             this.lblPasswordErr.TabIndex = 46;
             this.lblPasswordErr.Text = "wrong password";
             this.lblPasswordErr.Visible = false;
@@ -235,16 +237,44 @@
             this.lblEmailErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
             this.lblEmailErr.Location = new System.Drawing.Point(606, 194);
             this.lblEmailErr.Name = "lblEmailErr";
-            this.lblEmailErr.Size = new System.Drawing.Size(84, 13);
+            this.lblEmailErr.Size = new System.Drawing.Size(110, 17);
             this.lblEmailErr.TabIndex = 47;
             this.lblEmailErr.Text = "wrong password";
             this.lblEmailErr.Visible = false;
             // 
+            // resetPswLbl
+            // 
+            this.resetPswLbl.AutoSize = true;
+            this.resetPswLbl.BackColor = System.Drawing.Color.White;
+            this.resetPswLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetPswLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.resetPswLbl.Location = new System.Drawing.Point(551, 466);
+            this.resetPswLbl.Name = "resetPswLbl";
+            this.resetPswLbl.Size = new System.Drawing.Size(153, 17);
+            this.resetPswLbl.TabIndex = 48;
+            this.resetPswLbl.Text = "Forgot your password?";
+            // 
+            // resetPswdLinkLbl
+            // 
+            this.resetPswdLinkLbl.AutoSize = true;
+            this.resetPswdLinkLbl.BackColor = System.Drawing.Color.White;
+            this.resetPswdLinkLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetPswdLinkLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetPswdLinkLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.resetPswdLinkLbl.Location = new System.Drawing.Point(570, 483);
+            this.resetPswdLinkLbl.Name = "resetPswdLinkLbl";
+            this.resetPswdLinkLbl.Size = new System.Drawing.Size(102, 17);
+            this.resetPswdLinkLbl.TabIndex = 49;
+            this.resetPswdLinkLbl.Text = "Reset it here";
+            this.resetPswdLinkLbl.Click += new System.EventHandler(this.resetPswdLinkLbl_Click);
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.resetPswdLinkLbl);
+            this.Controls.Add(this.resetPswLbl);
             this.Controls.Add(this.lblEmailErr);
             this.Controls.Add(this.lblPasswordErr);
             this.Controls.Add(this.label3);
@@ -291,6 +321,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPasswordErr;
         private System.Windows.Forms.Label lblEmailErr;
+        private System.Windows.Forms.Label resetPswLbl;
+        private System.Windows.Forms.Label resetPswdLinkLbl;
     }
 }
 
