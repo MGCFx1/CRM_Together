@@ -17,7 +17,7 @@ namespace CRM_system.DB
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
         public void InsertNewUser(string name, string email, string password, string membership, Boolean isAdmin,
-            int locationID, string membership_type, string date_of_birth)
+     int locationID, string membership_type, string date_of_birth)
         {
             // Establish a connection to the SQLite database
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -42,7 +42,27 @@ namespace CRM_system.DB
 
                     // Execute the command
                     int rowsAffected = command.ExecuteNonQuery();
-                    Console.WriteLine($"{rowsAffected} row(s) inserted successfully.");
+
+                    if (rowsAffected > 0)
+                    {
+                        // Get the ID of the newly created user
+                        long newUserId = connection.LastInsertRowId;
+
+                        // Add a notification for the new user
+                        string notificationQuery = "INSERT INTO Notifications (user_id, type, message)" +
+                                                   " VALUES (@userId, 'Account Created', @message);";
+
+                        using (var notificationCommand = new SQLiteCommand(notificationQuery, connection))
+                        {
+                            string message = $"Welcome {name}! Your account has been created successfully.";
+                            notificationCommand.Parameters.AddWithValue("@userId", newUserId);
+                            notificationCommand.Parameters.AddWithValue("@message", message);
+
+                            notificationCommand.ExecuteNonQuery();
+                        }
+
+                        Console.WriteLine("Notification added for the new user.");
+                    }
                 }
 
                 connection.Close();
@@ -458,8 +478,71 @@ namespace CRM_system.DB
             }
             return null; // Return null if no active membership is found
         }
+        public void AddNotification(int userId, string type, string message)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO Notifications (user_id, type, message) VALUES (@userId, @type, @message);";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@type", type);
+                    command.Parameters.AddWithValue("@message", message);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public DataTable GetNotificationsByUserId(int userId)
+        {
+            DataTable notifications = new DataTable();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT id, type, message, created_at FROM Notifications WHERE user_id = @UserId ORDER BY created_at DESC;";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    using (var adapter = new SQLiteDataAdapter(command))
+                    {
+                        adapter.Fill(notifications);
+                    }
+                }
+            }
+
+            return notifications;
+        }
+
+
+        public bool DeleteNotificationById(int notificationId)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM Notifications WHERE id = @NotificationId;";
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NotificationId", notificationId);
+
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
+
     }
 }
+
+
+
 
 
 

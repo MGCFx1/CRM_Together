@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM_system.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace CRM_system
 {
     public partial class Users_Dashboard : Form
     {
+        private int CurrentUserId; // To store the logged-in user's ID
+
         dashboard_form dashboard;
         Memberships_Form memberships;
         Events_Forms events;
@@ -20,10 +23,12 @@ namespace CRM_system
         Accounts_Forms accounts;
 
         bool sidebarExpand;
-        public Users_Dashboard()
+        public Users_Dashboard(int userId)
         {
             InitializeComponent();
             //pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
+            CurrentUserId = userId; // Set the logged-in user's ID
+
             if (events == null)
             {
                 events = new Events_Forms();
@@ -244,6 +249,12 @@ namespace CRM_system
                 dashboard.Activate();
 
             }
+        }
+
+        private void adNotification_Click(object sender, EventArgs e)
+        {
+            NotificationsForm notificationsForm = new NotificationsForm(CurrentUserId);
+            notificationsForm.Show();
         }
     }
 }

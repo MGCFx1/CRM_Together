@@ -82,10 +82,8 @@ namespace CRM_system
 
             List<Models.User> usersWithEmail = query.GetUserByEmail(email);
 
-
             if (email == "")
             {
-                // If none of those things are blank
                 lblEmailErr.Visible = true;
                 lblEmailErr.Text = "Email cannot be blank";
                 isError = true;
@@ -99,7 +97,6 @@ namespace CRM_system
             else if (!(usersWithEmail.Count > 0))
             {
                 lblEmailErr.Text = "Email does not exist";
-                //If something goes wrong
                 lblEmailErr.Visible = true;
                 isError = true;
             }
@@ -110,7 +107,6 @@ namespace CRM_system
 
             if (password == "")
             {
-                // If none of those things are blank
                 lblPasswordErr.Visible = true;
                 lblPasswordErr.Text = "Password cannot be blank";
                 isError = true;
@@ -132,7 +128,6 @@ namespace CRM_system
                 lblEmailErr.Visible = true;
                 isError = true;
             }
-            
 
             if (isError)
             {
@@ -143,18 +138,21 @@ namespace CRM_system
 
             if (usersWithEmail[0].MembershipStatus == "pending")
             {
-                MessageBox.Show("Please wait for admin approval. Thank you for your patience",
-                    "Waiting for Admin Approval");
+                MessageBox.Show(
+                    "Please wait for admin approval. Thank you for your patience",
+                    "Waiting for Admin Approval"
+                );
                 return;
             }
 
             if (usersWithEmail[0].MembershipStatus == "inactive")
             {
-                MessageBox.Show("Sorry, it seems like the admin believes there are no memberships available at this moment. Please try again later.",
-                    "Admin Rejected Membership");
+                MessageBox.Show(
+                    "Sorry, it seems like the admin believes there are no memberships available at this moment. Please try again later.",
+                    "Admin Rejected Membership"
+                );
                 return;
             }
-
 
             if (usersWithEmail != null && usersWithEmail.Count > 0)
             {
@@ -163,12 +161,12 @@ namespace CRM_system
                 UserSession.Email = usersWithEmail[0].Email;
             }
 
+            // Pass the user ID to the Users_Dashboard constructor
+            int userId = usersWithEmail[0].Id;
+
             this.Hide();
-            Users_Dashboard dashboard_Form = new Users_Dashboard();
+            Users_Dashboard dashboard_Form = new Users_Dashboard(userId); // Pass userId here
             dashboard_Form.Show();
-            //lblEmailErr.Text = "Successful login";
-            //lblEmailErr.Visible = true;
-            
         }
 
         private void login_close_Click(object sender, EventArgs e)

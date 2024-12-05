@@ -25,22 +25,40 @@ namespace CRM_system.DB
                 {
                     connection.Open();
 
+                    // Add user to the event
                     string query = "INSERT OR IGNORE INTO EventAttendees (event_id, user_id) VALUES (@EventId, @UserId);";
-
                     using (var command = new SQLiteCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@EventId", eventId);
                         command.Parameters.AddWithValue("@UserId", userId);
 
-                        return command.ExecuteNonQuery() > 0;
+                        // Check if the insertion was successful
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            // Add a notification for the user
+                            string notificationQuery = "INSERT INTO Notifications (user_id, type, message) VALUES (@UserId, 'Joined Event', @Message);";
+                            using (var notificationCommand = new SQLiteCommand(notificationQuery, connection))
+                            {
+                                // Customize the notification message (you can expand this logic)
+                                string message = $"You have successfully joined the event with ID: {eventId}.";
+
+                                notificationCommand.Parameters.AddWithValue("@UserId", userId);
+                                notificationCommand.Parameters.AddWithValue("@Message", message);
+
+                                notificationCommand.ExecuteNonQuery();
+                            }
+
+                            return true; // Event joined and notification added
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error in AddUserToEvent: {ex.Message}");
-                return false;
             }
+
+            return false; // Return false if the operation fails
         }
 
         /// <summary>
@@ -158,7 +176,7 @@ namespace CRM_system.DB
                                     LocationCity = reader.GetString(6),
                                     FeeId = reader.GetInt32(7),
                                     EventImage = reader.IsDBNull(8) ? null : EventQueries.ByteArrayToImage((byte[])reader["EventImage"])// Load image path if available
-                            };
+                                };
                                 //Console.WriteLine("Ran");
                                 //Console.WriteLine(EventQueries.ByteArrayToImage((byte[])reader["EventImage"]));
 
@@ -268,6 +286,7 @@ namespace CRM_system.DB
                 {
                     connection.Open();
 
+                    // Remove user from the event
                     string query = @"
                 DELETE FROM EventAttendees
                 WHERE user_id = @UserId AND event_id = @EventId;";
@@ -278,7 +297,29 @@ namespace CRM_system.DB
                         command.Parameters.AddWithValue("@EventId", eventId);
 
                         int rowsAffected = command.ExecuteNonQuery();
-                        return rowsAffected > 0; // Return true if a row was deleted
+
+                        // Check if a row was deleted
+                        if (rowsAffected > 0)
+                        {
+                            // Add a notification for the user
+                            string notificationQuery = @"
+                        INSERT INTO Notifications (user_id, type, message)
+                        VALUES (@UserId, 'Left Event', @Message);";
+
+                            using (var notificationCommand = new SQLiteCommand(notificationQuery, connection))
+                            {
+                                string message = $"You have successfully left the event with ID: {eventId}.";
+
+                                notificationCommand.Parameters.AddWithValue("@UserId", userId);
+                                notificationCommand.Parameters.AddWithValue("@Message", message);
+
+                                notificationCommand.ExecuteNonQuery();
+                            }
+
+                            return true; // Successfully removed and notification added
+                        }
+
+                        return false; // No row was deleted
                     }
                 }
                 catch (Exception ex)
@@ -288,6 +329,5 @@ namespace CRM_system.DB
                 }
             }
         }
-
     }
 }
