@@ -57,8 +57,9 @@ namespace CRM_system.DB
 
                 // Define the SQL INSERT statement
                 string insertQuery = "UPDATE Users SET name = @name, email = @email, " +
-                    "password = @password, membership_status = @membership, membership_type = @membership_type location_id = @location_id" +
-                    " WHERE id = @id;";
+                                     "password = @password, membership_status = @membership, " +
+                                     "membership_type = @membership_type, location_id = @location_id " + // Add the comma here
+                                     "WHERE id = @id;";
 
                 // Create a command and parameterize the query
                 using (var command = new SQLiteCommand(insertQuery, connection))
@@ -175,7 +176,7 @@ namespace CRM_system.DB
                                 Email = reader.GetString(2),  // Third column (Email)
                                 Password = reader.GetString(3),  // Fourth column (Password)
                                 MembershipStatus = reader.GetString(4),  // Third column (Email)
-                                LocationID = !reader.IsDBNull(6) ? reader.GetInt32(6) : 0
+                                LocationID = !reader.IsDBNull(8) ? reader.GetInt32(8) : 0
                             };
 
                             // Add the user to the list

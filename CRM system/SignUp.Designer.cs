@@ -63,6 +63,7 @@ namespace CRM_system
             this.signup_dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.DOBLbl = new System.Windows.Forms.Label();
             this.lblErrDOB = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@ namespace CRM_system
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(35, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 20);
+            this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 24;
             this.label5.Text = "Full Name";
             this.label5.Click += new System.EventHandler(this.label5_Click_1);
@@ -88,7 +89,7 @@ namespace CRM_system
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label6.Location = new System.Drawing.Point(40, 344);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 16);
+            this.label6.Size = new System.Drawing.Size(80, 14);
             this.label6.TabIndex = 13;
             this.label6.Text = "Street Address";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -100,7 +101,7 @@ namespace CRM_system
             this.signup_fullname.ForeColor = System.Drawing.Color.White;
             this.signup_fullname.Location = new System.Drawing.Point(28, 111);
             this.signup_fullname.Name = "signup_fullname";
-            this.signup_fullname.Size = new System.Drawing.Size(228, 30);
+            this.signup_fullname.Size = new System.Drawing.Size(228, 26);
             this.signup_fullname.TabIndex = 10;
             this.signup_fullname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -113,7 +114,7 @@ namespace CRM_system
             this.register_login.ForeColor = System.Drawing.Color.White;
             this.register_login.Location = new System.Drawing.Point(221, 494);
             this.register_login.Name = "register_login";
-            this.register_login.Size = new System.Drawing.Size(86, 17);
+            this.register_login.Size = new System.Drawing.Size(67, 13);
             this.register_login.TabIndex = 8;
             this.register_login.Text = "Login here";
             this.register_login.Click += new System.EventHandler(this.register_login_Click);
@@ -126,7 +127,7 @@ namespace CRM_system
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(63, 494);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 17);
+            this.label4.Size = new System.Drawing.Size(132, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Already have an account?";
             // 
@@ -149,12 +150,13 @@ namespace CRM_system
             // Signup_close
             // 
             this.Signup_close.AutoSize = true;
-            this.Signup_close.BackColor = System.Drawing.Color.White;
+            this.Signup_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.Signup_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Signup_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Signup_close.ForeColor = System.Drawing.Color.White;
             this.Signup_close.Location = new System.Drawing.Point(746, 22);
             this.Signup_close.Name = "Signup_close";
-            this.Signup_close.Size = new System.Drawing.Size(26, 25);
+            this.Signup_close.Size = new System.Drawing.Size(20, 20);
             this.Signup_close.TabIndex = 7;
             this.Signup_close.Text = "X";
             this.Signup_close.Click += new System.EventHandler(this.label5_Click);
@@ -176,7 +178,7 @@ namespace CRM_system
             this.login_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_close.Location = new System.Drawing.Point(746, 24);
             this.login_close.Name = "login_close";
-            this.login_close.Size = new System.Drawing.Size(26, 25);
+            this.login_close.Size = new System.Drawing.Size(20, 20);
             this.login_close.TabIndex = 6;
             this.login_close.Text = "X";
             this.login_close.Click += new System.EventHandler(this.login_close_Click);
@@ -189,7 +191,7 @@ namespace CRM_system
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(21, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(273, 36);
+            this.label7.Size = new System.Drawing.Size(223, 29);
             this.label7.TabIndex = 9;
             this.label7.Text = "Create an account";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -202,7 +204,7 @@ namespace CRM_system
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(23, 57);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(155, 25);
+            this.label12.Size = new System.Drawing.Size(128, 20);
             this.label12.TabIndex = 11;
             this.label12.Text = "Let\'s get started!";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -215,7 +217,7 @@ namespace CRM_system
             this.Sign.ForeColor = System.Drawing.Color.White;
             this.Sign.Location = new System.Drawing.Point(35, 161);
             this.Sign.Name = "Sign";
-            this.Sign.Size = new System.Drawing.Size(118, 20);
+            this.Sign.Size = new System.Drawing.Size(95, 16);
             this.Sign.TabIndex = 26;
             this.Sign.Text = "Email Address";
             this.Sign.Click += new System.EventHandler(this.label13_Click);
@@ -227,7 +229,7 @@ namespace CRM_system
             this.signup_email.ForeColor = System.Drawing.Color.White;
             this.signup_email.Location = new System.Drawing.Point(28, 175);
             this.signup_email.Name = "signup_email";
-            this.signup_email.Size = new System.Drawing.Size(228, 30);
+            this.signup_email.Size = new System.Drawing.Size(228, 26);
             this.signup_email.TabIndex = 25;
             this.signup_email.TextChanged += new System.EventHandler(this.signup_email_TextChanged);
             // 
@@ -239,7 +241,7 @@ namespace CRM_system
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(35, 226);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 28;
             this.label2.Text = "Password";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -252,7 +254,7 @@ namespace CRM_system
             this.signup_password.Location = new System.Drawing.Point(28, 240);
             this.signup_password.Name = "signup_password";
             this.signup_password.PasswordChar = '*';
-            this.signup_password.Size = new System.Drawing.Size(259, 30);
+            this.signup_password.Size = new System.Drawing.Size(259, 26);
             this.signup_password.TabIndex = 27;
             this.signup_password.TextChanged += new System.EventHandler(this.signup_password_TextChanged);
             // 
@@ -264,7 +266,7 @@ namespace CRM_system
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(35, 296);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 20);
+            this.label14.Size = new System.Drawing.Size(58, 16);
             this.label14.TabIndex = 30;
             this.label14.Text = "Address";
             this.label14.Click += new System.EventHandler(this.label14_Click);
@@ -276,7 +278,7 @@ namespace CRM_system
             this.signup_address.ForeColor = System.Drawing.Color.White;
             this.signup_address.Location = new System.Drawing.Point(28, 310);
             this.signup_address.Name = "signup_address";
-            this.signup_address.Size = new System.Drawing.Size(228, 30);
+            this.signup_address.Size = new System.Drawing.Size(228, 26);
             this.signup_address.TabIndex = 29;
             this.signup_address.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
@@ -288,7 +290,7 @@ namespace CRM_system
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(35, 382);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 20);
+            this.label16.Size = new System.Drawing.Size(70, 16);
             this.label16.TabIndex = 34;
             this.label16.Text = "Post Code";
             this.label16.Click += new System.EventHandler(this.label16_Click);
@@ -300,7 +302,7 @@ namespace CRM_system
             this.signup_post_code.ForeColor = System.Drawing.Color.White;
             this.signup_post_code.Location = new System.Drawing.Point(28, 396);
             this.signup_post_code.Name = "signup_post_code";
-            this.signup_post_code.Size = new System.Drawing.Size(97, 30);
+            this.signup_post_code.Size = new System.Drawing.Size(97, 26);
             this.signup_post_code.TabIndex = 33;
             this.signup_post_code.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -312,7 +314,7 @@ namespace CRM_system
             this.signup_interestlabel.ForeColor = System.Drawing.Color.White;
             this.signup_interestlabel.Location = new System.Drawing.Point(156, 382);
             this.signup_interestlabel.Name = "signup_interestlabel";
-            this.signup_interestlabel.Size = new System.Drawing.Size(65, 20);
+            this.signup_interestlabel.Size = new System.Drawing.Size(50, 16);
             this.signup_interestlabel.TabIndex = 36;
             this.signup_interestlabel.Text = "Interest";
             this.signup_interestlabel.Click += new System.EventHandler(this.signup_interestlabel_Click);
@@ -325,7 +327,7 @@ namespace CRM_system
             this.city_label.ForeColor = System.Drawing.Color.White;
             this.city_label.Location = new System.Drawing.Point(278, 296);
             this.city_label.Name = "city_label";
-            this.city_label.Size = new System.Drawing.Size(38, 20);
+            this.city_label.Size = new System.Drawing.Size(29, 16);
             this.city_label.TabIndex = 38;
             this.city_label.Text = "City";
             // 
@@ -336,7 +338,7 @@ namespace CRM_system
             this.Signup_city.ForeColor = System.Drawing.Color.White;
             this.Signup_city.Location = new System.Drawing.Point(271, 310);
             this.Signup_city.Name = "Signup_city";
-            this.Signup_city.Size = new System.Drawing.Size(112, 30);
+            this.Signup_city.Size = new System.Drawing.Size(112, 26);
             this.Signup_city.TabIndex = 37;
             // 
             // lblErrPassword
@@ -347,7 +349,7 @@ namespace CRM_system
             this.lblErrPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
             this.lblErrPassword.Location = new System.Drawing.Point(124, 220);
             this.lblErrPassword.Name = "lblErrPassword";
-            this.lblErrPassword.Size = new System.Drawing.Size(110, 17);
+            this.lblErrPassword.Size = new System.Drawing.Size(84, 13);
             this.lblErrPassword.TabIndex = 40;
             this.lblErrPassword.Text = "wrong password";
             this.lblErrPassword.Visible = false;
@@ -370,7 +372,7 @@ namespace CRM_system
             "Creating"});
             this.comboBox1.Location = new System.Drawing.Point(150, 396);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 28);
+            this.comboBox1.Size = new System.Drawing.Size(215, 24);
             this.comboBox1.TabIndex = 41;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -409,7 +411,7 @@ namespace CRM_system
             this.lblErrEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
             this.lblErrEmail.Location = new System.Drawing.Point(157, 155);
             this.lblErrEmail.Name = "lblErrEmail";
-            this.lblErrEmail.Size = new System.Drawing.Size(110, 17);
+            this.lblErrEmail.Size = new System.Drawing.Size(84, 13);
             this.lblErrEmail.TabIndex = 44;
             this.lblErrEmail.Text = "wrong password";
             this.lblErrEmail.Visible = false;
@@ -422,7 +424,7 @@ namespace CRM_system
             this.lblErrName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
             this.lblErrName.Location = new System.Drawing.Point(126, 91);
             this.lblErrName.Name = "lblErrName";
-            this.lblErrName.Size = new System.Drawing.Size(110, 17);
+            this.lblErrName.Size = new System.Drawing.Size(84, 13);
             this.lblErrName.TabIndex = 45;
             this.lblErrName.Text = "wrong password";
             this.lblErrName.Visible = false;
@@ -439,7 +441,7 @@ namespace CRM_system
             this.signup_dateOfBirth.Location = new System.Drawing.Point(306, 246);
             this.signup_dateOfBirth.Margin = new System.Windows.Forms.Padding(4);
             this.signup_dateOfBirth.Name = "signup_dateOfBirth";
-            this.signup_dateOfBirth.Size = new System.Drawing.Size(129, 24);
+            this.signup_dateOfBirth.Size = new System.Drawing.Size(129, 21);
             this.signup_dateOfBirth.TabIndex = 83;
             // 
             // DOBLbl
@@ -450,7 +452,7 @@ namespace CRM_system
             this.DOBLbl.ForeColor = System.Drawing.Color.White;
             this.DOBLbl.Location = new System.Drawing.Point(302, 234);
             this.DOBLbl.Name = "DOBLbl";
-            this.DOBLbl.Size = new System.Drawing.Size(105, 20);
+            this.DOBLbl.Size = new System.Drawing.Size(79, 16);
             this.DOBLbl.TabIndex = 84;
             this.DOBLbl.Text = "Date of Birth";
             // 
@@ -462,17 +464,32 @@ namespace CRM_system
             this.lblErrDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(57)))));
             this.lblErrDOB.Location = new System.Drawing.Point(303, 270);
             this.lblErrDOB.Name = "lblErrDOB";
-            this.lblErrDOB.Size = new System.Drawing.Size(110, 17);
+            this.lblErrDOB.Size = new System.Drawing.Size(84, 13);
             this.lblErrDOB.TabIndex = 85;
             this.lblErrDOB.Text = "wrong password";
             this.lblErrDOB.Visible = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(713, 20);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(27, 22);
+            this.btnBack.TabIndex = 90;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.button2_Click);
+            // 
             // SignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblErrDOB);
             this.Controls.Add(this.DOBLbl);
             this.Controls.Add(this.signup_dateOfBirth);
@@ -549,5 +566,6 @@ namespace CRM_system
         private DateTimePicker signup_dateOfBirth;
         private Label DOBLbl;
         private Label lblErrDOB;
+        private Button btnBack;
     }
 }

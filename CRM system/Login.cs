@@ -207,5 +207,19 @@ namespace CRM_system
 
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            {
+                // Create an instance of the Landing_Page form
+                Landing_Page landingPage = new Landing_Page();
+
+                // Show the Landing_Page form
+                landingPage.Show();
+
+                // Close or hide the current form
+                this.Close(); // Or use this.Hide();
+            }
+        }
     }
 }
