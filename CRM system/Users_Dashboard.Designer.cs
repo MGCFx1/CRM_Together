@@ -140,7 +140,7 @@
             this.pnDashboard.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.pnDashboard.Size = new System.Drawing.Size(212, 49);
             this.pnDashboard.TabIndex = 2;
-            this.pnDashboard.Text = "              Dashboard";
+            this.pnDashboard.Text = "         Dashboard";
             this.pnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pnDashboard.UseVisualStyleBackColor = true;
             this.pnDashboard.Click += new System.EventHandler(this.pnDashboard_Click);
@@ -194,7 +194,7 @@
             this.PnEvents.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.PnEvents.Size = new System.Drawing.Size(214, 42);
             this.PnEvents.TabIndex = 1;
-            this.PnEvents.Text = "              Events";
+            this.PnEvents.Text = "         Events";
             this.PnEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PnEvents.UseVisualStyleBackColor = true;
             this.PnEvents.Click += new System.EventHandler(this.PnEvents_Click);
@@ -221,7 +221,7 @@
             this.PneLearning.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.PneLearning.Size = new System.Drawing.Size(214, 42);
             this.PneLearning.TabIndex = 1;
-            this.PneLearning.Text = "              E-Learning";
+            this.PneLearning.Text = "         E-Learning";
             this.PneLearning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PneLearning.UseVisualStyleBackColor = true;
             this.PneLearning.Click += new System.EventHandler(this.PneLearning_Click);
@@ -248,7 +248,7 @@
             this.pnContacts.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.pnContacts.Size = new System.Drawing.Size(214, 42);
             this.pnContacts.TabIndex = 1;
-            this.pnContacts.Text = "              Contacts";
+            this.pnContacts.Text = "         Contacts";
             this.pnContacts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pnContacts.UseVisualStyleBackColor = true;
             this.pnContacts.Click += new System.EventHandler(this.pnContacts_Click);
@@ -276,7 +276,7 @@
             this.btnLogout.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(214, 42);
             this.btnLogout.TabIndex = 1;
-            this.btnLogout.Text = "              Log Out";
+            this.btnLogout.Text = "         Log Out";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -303,7 +303,7 @@
             this.pnAccount.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.pnAccount.Size = new System.Drawing.Size(210, 46);
             this.pnAccount.TabIndex = 1;
-            this.pnAccount.Text = "              Account";
+            this.pnAccount.Text = "         Account";
             this.pnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pnAccount.UseVisualStyleBackColor = true;
             this.pnAccount.Click += new System.EventHandler(this.pnAccount_Click);

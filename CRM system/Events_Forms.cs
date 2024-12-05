@@ -1,7 +1,6 @@
 ﻿using CRM_system.DB;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,111 +14,128 @@ namespace CRM_system
     {
         private UserEventsQueries userEventsQueries;
 
-        // Lists to group controls for event panels
-        private List<Panel> eventPanels;
-        private List<PictureBox> eventPictures;
-        private List<Label> eventNames;
-        private List<Label> eventDescriptions;
-        private List<Label> eventLocations;
-        private List<Label> eventSchedules;
-        private List<Label> eventPrices;
-        private List<Button> eventJoinButtons;
-
         public Events_Forms()
         {
             InitializeComponent();
             userEventsQueries = new UserEventsQueries(); // Initialize UserEventsQueries
-            InitializeEventControls(); // Group event controls
-            LoadEventPanels(); // Load events into panels
+            LoadEventPanels(); // Load events dynamically
         }
 
-        // Method to group controls for event panels
-        private void InitializeEventControls()
-        {
-            try
-            {
-                // Group panels
-                eventPanels = new List<Panel> { usEventPanel1, usEventPanel2, usEventPanel3 };
-
-                // Group picture boxes 
-                eventPictures = new List<PictureBox> { usEventPic1, usEventPic2, usEventPic3 };
-
-                // Group labels for event details
-                eventNames = new List<Label> { usEventNamel1, usEventNamel2, usEventNamel3 };
-                eventDescriptions = new List<Label> { usEventDesc1, usEventDesc2, usEventDesc3 };
-                eventLocations = new List<Label> { usEventLocationl1, usEventLocationl2, usEventLocationl3 };
-                eventSchedules = new List<Label> { usEventSchedule1, usEventSchedule2, usEventSchedule3 };
-                eventPrices = new List<Label> { usEventPrice1, usEventPrice2, usEventPrice3 };
-
-                // Group join buttons
-                eventJoinButtons = new List<Button> { usJoinEvent1, usJoinEvent2, usJoinEvent3 };
-
-                // Assign click event handlers for join buttons
-                foreach (var button in eventJoinButtons)
-                {
-                    button.Click += JoinEvent_Click;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error initializing controls: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Method to load events into the event panels
+        // Method to dynamically load event panels
         private void LoadEventPanels()
         {
             try
             {
+                // Clear existing controls
+                FlowPanelEvents.Controls.Clear();
+
                 // Retrieve all events
                 var events = userEventsQueries.GetAllEventsForCards();
 
-                // Ensure the events list is not null
                 if (events == null || events.Count == 0)
                 {
                     MessageBox.Show("No events found to display.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                // Loop through the panels and populate controls with event data
-                for (int i = 0; i < eventPanels.Count && i < events.Count; i++)
+                foreach (var ev in events)
                 {
-                    var ev = events[i];
+                    // Create a new panel for the event
+                    Panel eventPanel = new Panel
+                    {
+                        Size = new Size(240, 396), // Adjusted size for three panels in a row
+                        BackColor = Color.FromArgb(19, 19, 19),
+                        Margin = new Padding(5)
+                    };
 
-                    eventPictures[i].Image = ev.EventImage;
-                    eventPictures[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                    // Create the event image
+                    PictureBox eventPic = new PictureBox
+                    {
+                        Size = new Size(243, 139),
+                        Image = ev.EventImage, // Set the image from the event
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Location = new Point(0, 0)
+                    };
 
+                    // Create the event name label
+                    Label eventName = new Label
+                    {
+                        Text = ev.EventName,
+                        Font = new Font("Arial", 12, FontStyle.Bold),
+                        ForeColor = Color.White,
+                        Size = new Size(240, 42),
+                        AutoSize = false,
+                        Location = new Point(2, 145)
+                    };
 
-                    //Populate image(if available)
-                    //    if (!string.IsNullOrEmpty(ev.EventImage) && File.Exists(ev.EventImage))
-                    //    {
-                    //    }
-                    //    else
-                    //    {
-                    //        eventPictures[i].Image = null; // No image available
-                    //    }
+                    // Create the event description label
+                    Label eventDesc = new Label
+                    {
+                        Text = ev.EventDescription,
+                        Font = new Font("Arial", 9),
+                        ForeColor = Color.LightGray,
+                        Size = new Size(240, 85),
+                        AutoSize = false,
+                        Location = new Point(2, 190)
+                    };
 
-                    // Populate other event details
-                    eventNames[i].Text = $"Event Name: {ev.EventName}";
-                    eventDescriptions[i].Text = $"Description: {ev.EventDescription}";
-                    eventLocations[i].Text = $"Location ID: {ev.LocationCity}"; // Replace with actual location name if available
-                    eventSchedules[i].Text = $"Date: {ev.EventDate}";
+                    // Create the event location label
+                    Label eventLocation = new Label
+                    {
+                        Text = $"Location: {ev.LocationCity}",
+                        Font = new Font("Arial", 9),
+                        ForeColor = Color.LightGray,
+                        Size = new Size(106, 16),
+                        Location = new Point(2, 273)
+                    };
 
-                    // Fetch and display fee details
-                    var fee = userEventsQueries.GetFeeDetails(ev.FeeId);
-                    eventPrices[i].Text = fee != null ? $"Price: {fee.Amount} {fee.Currency}" : "Price: Free";
+                    // Create the event schedule label
+                    Label eventSchedule = new Label
+                    {
+                        Text = $"Date: {ev.EventDate}",
+                        Font = new Font("Arial", 9),
+                        ForeColor = Color.LightGray,
+                        Size = new Size(106, 16),
+                        Location = new Point(4, 300)
+                    };
 
-                    // Set the event ID as the button's Tag
-                    eventJoinButtons[i].Tag = ev.Id;
+                    // Create the event price label
+                    Label eventPrice = new Label
+                    {
+                        Text = ev.FeeAmount != "0"
+                            ? $"Price: {ev.FeeAmount} {ev.FeeCurrency}"
+                            : "Price: Free",
+                        Font = new Font("Arial", 10),
+                        ForeColor = Color.White,
+                        Size = new Size(106, 16),
+                        Location = new Point(3, 330)
+                    };
 
-                    // Make the panel visible
-                    eventPanels[i].Visible = true;
-                }
+                    // Create the join event button
+                    Button joinEventButton = new Button
+                    {
+                        Text = "Join Event",
+                        BackColor = Color.FromArgb(255, 87, 87),
+                        ForeColor = Color.White,
+                        FlatStyle = FlatStyle.Flat,
+                        Size = new Size(127, 31),
+                        Location = new Point(50, 357),
+                        Tag = ev.Id // Store the event ID
+                    };
+                    joinEventButton.FlatAppearance.BorderSize = 0;
+                    joinEventButton.Click += JoinEvent_Click; // Attach the click event
 
-                // Hide unused panels
-                for (int i = events.Count; i < eventPanels.Count; i++)
-                {
-                    eventPanels[i].Visible = false;
+                    // Add controls to the panel
+                    eventPanel.Controls.Add(eventPic);
+                    eventPanel.Controls.Add(eventName);
+                    eventPanel.Controls.Add(eventDesc);
+                    eventPanel.Controls.Add(eventLocation);
+                    eventPanel.Controls.Add(eventSchedule);
+                    eventPanel.Controls.Add(eventPrice);
+                    eventPanel.Controls.Add(joinEventButton);
+
+                    // Add the panel to the FlowLayoutPanel
+                    FlowPanelEvents.Controls.Add(eventPanel);
                 }
             }
             catch (Exception ex)
@@ -133,26 +149,20 @@ namespace CRM_system
         {
             try
             {
-                // Ensure the sender is a button
                 if (sender is Button joinButton && joinButton.Tag is int eventId)
                 {
                     int userId = UserSession.ID; // Replace with your actual logged-in user's ID
 
-                    // Add the user to the event
                     if (userEventsQueries.AddUserToEvent(userId, eventId))
                     {
                         MessageBox.Show("Successfully joined the event!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        joinButton.Enabled = false; // Disable the button after joining
-                        joinButton.Text = "Joined"; // Update button text
+                        joinButton.Enabled = false;
+                        joinButton.Text = "Joined";
                     }
                     else
                     {
                         MessageBox.Show("Failed to join the event. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("No event selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -161,7 +171,12 @@ namespace CRM_system
             }
         }
 
-        private void usJoinEvent2_Click(object sender, EventArgs e)
+        private void FlowPanelEvents_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void usEventDesc1_Click(object sender, EventArgs e)
         {
 
         }

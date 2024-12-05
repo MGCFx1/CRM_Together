@@ -141,23 +141,27 @@ namespace CRM_system.DB
                     connection.Open();
 
                     string query = @"SELECT 
-                                    e.id AS EventID,
-                                    e.event_name AS EventName,
-                                    e.event_description AS EventDescription,
-                                    e.event_type AS EventType,
-                                    e.attendance_limit AS AttendanceLimit,
-                                    e.event_date AS EventDate,
-                                    l.city AS LocationCity,
-                                    e.fee_id AS FeeId,
-                                    e.event_image AS EventImage
-                                FROM 
-                                    Events e
-                                LEFT JOIN 
-                                    Locations l ON l.id = e.location_id
-                                WHERE 
-                                    e.publish_status = 'Public'
-                                ORDER BY e.id DESC;
-                                ";
+                            e.id AS EventID,
+                            e.event_name AS EventName,
+                            e.event_description AS EventDescription,
+                            e.event_type AS EventType,
+                            e.attendance_limit AS AttendanceLimit,
+                            e.event_date AS EventDate,
+                            l.city AS LocationCity,
+                            e.fee_id AS FeeId,
+                            f.amount AS FeeAmount,
+                            f.currency AS FeeCurrency,
+                            e.event_image AS EventImage
+                        FROM 
+                            Events e
+                        LEFT JOIN 
+                            Locations l ON l.id = e.location_id
+                        LEFT JOIN
+                            Fee f ON f.id = e.fee_id
+                        WHERE 
+                            e.publish_status = 'Public'
+                        ORDER BY e.id DESC;
+                        ";
 
                     using (var command = new SQLiteCommand(query, connection))
                     {
@@ -170,15 +174,15 @@ namespace CRM_system.DB
                                     Id = reader.GetInt32(0),
                                     EventName = reader.GetString(1),
                                     EventDescription = reader.GetString(2),
-                                    EventType = reader.GetString(3), // Assuming EventType is used for image storage
+                                    EventType = reader.GetString(3),
                                     AttendanceLimit = reader.GetInt32(4),
                                     EventDate = reader.GetString(5),
-                                    LocationCity = reader.GetString(6),
-                                    FeeId = reader.GetInt32(7),
-                                    EventImage = reader.IsDBNull(8) ? null : EventQueries.ByteArrayToImage((byte[])reader["EventImage"])// Load image path if available
+                                    LocationCity = reader.IsDBNull(6) ? "Unknown City" : reader.GetString(6),
+                                    FeeId = reader.IsDBNull(7) ? 0 : reader.GetInt32(7),
+                                    FeeAmount = reader.IsDBNull(8) ? "0" : reader.GetDecimal(8).ToString("F2"),
+                                    FeeCurrency = reader.IsDBNull(9) ? "N/A" : reader.GetString(9),
+                                    EventImage = reader.IsDBNull(10) ? null : EventQueries.ByteArrayToImage((byte[])reader["EventImage"]) // Load image if available
                                 };
-                                //Console.WriteLine("Ran");
-                                //Console.WriteLine(EventQueries.ByteArrayToImage((byte[])reader["EventImage"]));
 
                                 events.Add(ev);
                             }
@@ -193,6 +197,7 @@ namespace CRM_system.DB
 
             return events;
         }
+
 
         /// <summary>
         /// Retrieves fee details for a given fee ID.

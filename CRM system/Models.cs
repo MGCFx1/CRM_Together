@@ -52,6 +52,8 @@ namespace CRM_system.Models
         public string PublishStatus { get; set; }
         public String LocationCity { get; set; }
         public int FeeId { get; set; }
+        public string FeeAmount { get; set; }
+        public string FeeCurrency { get; set; }
         public int AdminId { get; set; }
         public Image EventImage { get; set; }
     }

@@ -135,6 +135,7 @@ namespace CRM_system.Admins_Forms
             adLearning = null;
         }
 
+        //Admin Sign Out Button
         private void signoutAdmin_Click(object sender, EventArgs e)
         {
             // Display a confirmation dialog
