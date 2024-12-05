@@ -44,6 +44,8 @@
             this.adbtLearning = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.signoutAdmin = new System.Windows.Forms.Button();
             this.adSidebar.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,6 +54,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // Signup_close
@@ -75,6 +78,7 @@
             this.adSidebar.Controls.Add(this.panel2);
             this.adSidebar.Controls.Add(this.panel3);
             this.adSidebar.Controls.Add(this.panel4);
+            this.adSidebar.Controls.Add(this.panel6);
             this.adSidebar.Controls.Add(this.panel5);
             this.adSidebar.Location = new System.Drawing.Point(0, 0);
             this.adSidebar.Name = "adSidebar";
@@ -198,7 +202,7 @@
             this.panel4.Controls.Add(this.adbtLearning);
             this.panel4.Location = new System.Drawing.Point(3, 302);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(211, 179);
+            this.panel4.Size = new System.Drawing.Size(211, 112);
             this.panel4.TabIndex = 16;
             // 
             // adbtLearning
@@ -211,9 +215,9 @@
             this.adbtLearning.ForeColor = System.Drawing.Color.White;
             this.adbtLearning.Image = ((System.Drawing.Image)(resources.GetObject("adbtLearning.Image")));
             this.adbtLearning.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adbtLearning.Location = new System.Drawing.Point(3, -1);
+            this.adbtLearning.Location = new System.Drawing.Point(6, 0);
             this.adbtLearning.Name = "adbtLearning";
-            this.adbtLearning.Size = new System.Drawing.Size(202, 65);
+            this.adbtLearning.Size = new System.Drawing.Size(202, 42);
             this.adbtLearning.TabIndex = 14;
             this.adbtLearning.Text = "              eLearning";
             this.adbtLearning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,7 +227,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(3, 487);
+            this.panel5.Location = new System.Drawing.Point(3, 478);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(211, 52);
             this.panel5.TabIndex = 14;
@@ -238,6 +242,34 @@
             this.label2.Size = new System.Drawing.Size(173, 28);
             this.label2.TabIndex = 13;
             this.label2.Text = "Logged in as admin";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.panel6.Controls.Add(this.signoutAdmin);
+            this.panel6.Location = new System.Drawing.Point(3, 420);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(211, 52);
+            this.panel6.TabIndex = 14;
+            // 
+            // signoutAdmin
+            // 
+            this.signoutAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.signoutAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signoutAdmin.FlatAppearance.BorderSize = 0;
+            this.signoutAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signoutAdmin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
+            this.signoutAdmin.ForeColor = System.Drawing.Color.White;
+            this.signoutAdmin.Image = ((System.Drawing.Image)(resources.GetObject("signoutAdmin.Image")));
+            this.signoutAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.signoutAdmin.Location = new System.Drawing.Point(6, 7);
+            this.signoutAdmin.Name = "signoutAdmin";
+            this.signoutAdmin.Size = new System.Drawing.Size(202, 42);
+            this.signoutAdmin.TabIndex = 15;
+            this.signoutAdmin.Text = "              Sign Out";
+            this.signoutAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.signoutAdmin.UseVisualStyleBackColor = false;
+            this.signoutAdmin.Click += new System.EventHandler(this.signoutAdmin_Click);
             // 
             // AdminsPanel
             // 
@@ -262,6 +294,7 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +317,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button signoutAdmin;
     }
 }
