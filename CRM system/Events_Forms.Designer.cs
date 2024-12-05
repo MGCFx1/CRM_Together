@@ -41,10 +41,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.userEventsSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.FlowPanelEvents.SuspendLayout();
             this.usEventPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usEventPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // FlowPanelEvents
@@ -176,11 +182,49 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Events";
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.userEventsSearch);
+            this.panel4.Location = new System.Drawing.Point(517, 78);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(230, 28);
+            this.panel4.TabIndex = 14;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(7, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // userEventsSearch
+            // 
+            this.userEventsSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.userEventsSearch.Location = new System.Drawing.Point(34, 3);
+            this.userEventsSearch.Name = "userEventsSearch";
+            this.userEventsSearch.Size = new System.Drawing.Size(192, 23);
+            this.userEventsSearch.TabIndex = 0;
+            this.userEventsSearch.TextChanged += new System.EventHandler(this.userEventsSearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(386, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Search for events by Name";
+            // 
             // Events_Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label1);
@@ -189,11 +233,15 @@
             this.Name = "Events_Forms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Events_Forms";
+            this.Load += new System.EventHandler(this.Events_Forms_Load);
             this.FlowPanelEvents.ResumeLayout(false);
             this.usEventPanel1.ResumeLayout(false);
             this.usEventPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usEventPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +260,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox userEventsSearch;
+        private System.Windows.Forms.Label label3;
     }
 }

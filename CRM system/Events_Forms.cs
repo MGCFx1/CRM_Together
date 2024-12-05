@@ -22,7 +22,7 @@ namespace CRM_system
         }
 
         // Method to dynamically load event panels
-        private void LoadEventPanels()
+        private void LoadEventPanels(string searchQuery = "")
         {
             try
             {
@@ -32,9 +32,26 @@ namespace CRM_system
                 // Retrieve all events
                 var events = userEventsQueries.GetAllEventsForCards();
 
+                // Filter events based on the search query (case-insensitive, by event name)
+                if (!string.IsNullOrEmpty(searchQuery))
+                {
+                    events = events.Where(ev => ev.EventName != null && ev.EventName.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+                }
+
                 if (events == null || events.Count == 0)
                 {
-                    MessageBox.Show("No events found to display.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Show a message if no matching events are found
+                    Label noEventsLabel = new Label
+                    {
+                        Text = "No events found.",
+                        Font = new Font("Arial", 12, FontStyle.Italic),
+                        ForeColor = Color.Gray,
+                        AutoSize = true,
+                        Dock = DockStyle.Fill,
+                        TextAlign = ContentAlignment.MiddleCenter
+                    };
+
+                    FlowPanelEvents.Controls.Add(noEventsLabel);
                     return;
                 }
 
@@ -171,12 +188,30 @@ namespace CRM_system
             }
         }
 
+     
+
+
         private void FlowPanelEvents_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void usEventDesc1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Event handler for search box text change
+        private void userEventsSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Get the search query from the text box
+            string query = userEventsSearch.Text.Trim();
+
+            // Reload the event panels based on the search query
+            LoadEventPanels(query);
+        }
+
+        private void Events_Forms_Load(object sender, EventArgs e)
         {
 
         }
