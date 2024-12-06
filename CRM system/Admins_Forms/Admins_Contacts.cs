@@ -81,6 +81,9 @@ namespace CRM_system.Admins_Forms
                 adMemberList.Columns["Name"].HeaderText = "Full Name";
                 adMemberList.Columns["Email"].HeaderText = "Email Address";
                 adMemberList.Columns["Membership Status"].HeaderText = "Status";
+                adMemberList.Columns["Membership Type"].HeaderText = "Membership Type";
+                adMemberList.Columns["last_login"].HeaderText = "Last Login";
+
             }
             catch (Exception ex)
             {
@@ -112,7 +115,8 @@ namespace CRM_system.Admins_Forms
                     dv.RowFilter = $"Convert(ID, 'System.String') LIKE '%{searchText}%' " +
                                    $"OR Name LIKE '%{searchText}%' " +
                                    $"OR Email LIKE '%{searchText}%' " +
-                                   $"OR [Membership Status] LIKE '%{searchText}%'";
+                                   $"OR [Membership Status] LIKE '%{searchText}%' " +
+                                   $"OR [Membership Type] LIKE '%{searchText}%'";
                 }
                 else
                 {

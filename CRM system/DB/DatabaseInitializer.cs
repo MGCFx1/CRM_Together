@@ -28,6 +28,14 @@ namespace CRM_system.DB
                 var command = connection.CreateCommand();
                 command.CommandText = @"
 
+                    CREATE TABLE IF NOT EXISTS Notifications(
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        user_id INT,
+                        type TEXT,
+                        message TEXT,
+                        created_at TIMESTAMP DATETIME DEFAULT CURRENT_TIMESTAMP
+                    );
+
                     CREATE TABLE IF NOT EXISTS Locations (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         city TEXT,

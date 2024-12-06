@@ -9,13 +9,13 @@ namespace CRM_system
     public partial class NotificationsForm : Form
     {
         private int _userId; // User ID for fetching notifications
-        private DB.UserQueries _query; // To access UserQueries methods
+        private DB.NotificationQueries _query; // To access UserQueries methods
 
         public NotificationsForm(int userId)
         {
             InitializeComponent();
             _userId = userId;
-            _query = new DB.UserQueries();
+            _query = new DB.NotificationQueries();
         }
 
         private void NotificationsForm_Load(object sender, EventArgs e)

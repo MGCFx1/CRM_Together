@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace CRM_system.Models
 {
@@ -67,6 +68,16 @@ namespace CRM_system.Models
     }
 
 }
+
+public class Notifcations
+{
+    public int Id { get; set; }
+    public int UserID { get; set; }
+    public string Type { get; set; }
+    public string CreatedAt { get; set; }
+}
+
+
 
 
 

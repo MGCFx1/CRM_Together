@@ -58,10 +58,17 @@ namespace CRM_system
         // For login: maybe create a helper file too
         public static bool IsPasswordValid(string password, string hashedPassword)
         {
-
-            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-
-            return isPasswordValid;
+            try
+            {
+                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+                return isPasswordValid;
+            }
+            catch (Exception ex) // Catch any exception
+            {
+                // Log the error or handle it as needed
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return false; // Return false in case of an error
+            }
         }
 
         // To check if a user's email is valid
@@ -161,8 +168,10 @@ namespace CRM_system
                 UserSession.Email = usersWithEmail[0].Email;
             }
 
+
             // Pass the user ID to the Users_Dashboard constructor
             int userId = usersWithEmail[0].Id;
+            query.UserLastLogin(userId);
 
             this.Hide();
             Users_Dashboard dashboard_Form = new Users_Dashboard(userId); // Pass userId here

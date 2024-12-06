@@ -17,7 +17,7 @@ namespace CRM_system.DB
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";version=3;";
 
         public void InsertNewUser(string name, string email, string password, string membership, Boolean isAdmin,
-     int locationID, string membership_type, string date_of_birth)
+                                  int locationID, string membership_type, string date_of_birth)
         {
             // Establish a connection to the SQLite database
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -336,6 +336,8 @@ namespace CRM_system.DB
             return count;
         }
 
+        
+
         //Retrieve all members in a list
         public DataTable GetAllMemberContacts()
         {
@@ -345,7 +347,8 @@ namespace CRM_system.DB
             {
                 connection.Open();
 
-                string query = "SELECT id AS 'ID', name AS 'Name', email AS 'Email', membership_status AS 'Membership Status' FROM Users;";
+                string query = "SELECT id AS 'ID', name AS 'Name', email AS 'Email', membership_status AS 'Membership Status', " +
+                    "membership_type AS 'Membership Type', last_login FROM Users WHERE is_admin=0;";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
@@ -376,6 +379,30 @@ namespace CRM_system.DB
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }
+            }
+        }
+
+        public void UserLastLogin(int id)
+        {
+            // Establish a connection to the SQLite database
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Define the SQL INSERT statement
+                string insertQuery = "UPDATE Users SET last_login = CURRENT_TIMESTAMP WHERE id = @id;"; // Add the comma here
+
+                // Create a command and parameterize the query
+                using (var command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+
+                    // Execute the command
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"{rowsAffected} row(s) updated successfully.");
+                }
+
+                connection.Close();
             }
         }
 
@@ -478,66 +505,6 @@ namespace CRM_system.DB
             }
             return null; // Return null if no active membership is found
         }
-        public void AddNotification(int userId, string type, string message)
-        {
-            using (var connection = new SQLiteConnection(ConnectionString))
-            {
-                connection.Open();
-
-                string query = "INSERT INTO Notifications (user_id, type, message) VALUES (@userId, @type, @message);";
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@userId", userId);
-                    command.Parameters.AddWithValue("@type", type);
-                    command.Parameters.AddWithValue("@message", message);
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
-
-        public DataTable GetNotificationsByUserId(int userId)
-        {
-            DataTable notifications = new DataTable();
-
-            using (var connection = new SQLiteConnection(ConnectionString))
-            {
-                connection.Open();
-
-                string query = "SELECT id, type, message, created_at FROM Notifications WHERE user_id = @UserId ORDER BY created_at DESC;";
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@UserId", userId);
-
-                    using (var adapter = new SQLiteDataAdapter(command))
-                    {
-                        adapter.Fill(notifications);
-                    }
-                }
-            }
-
-            return notifications;
-        }
-
-
-        public bool DeleteNotificationById(int notificationId)
-        {
-            using (var connection = new SQLiteConnection(ConnectionString))
-            {
-                connection.Open();
-
-                string query = "DELETE FROM Notifications WHERE id = @NotificationId;";
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@NotificationId", notificationId);
-
-                    return command.ExecuteNonQuery() > 0;
-                }
-            }
-        }
-
-
-
     }
 }
 
