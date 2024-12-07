@@ -67,17 +67,28 @@ namespace CRM_system.Models
         public string Status { get; set; }
     }
 
+    public class Contents
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string ContentType { get; set; }
+        public string Description { get; set; }
+        public int AdminID { get; set; }
+        public int TierRequirement { get; set; }
+        public string Currency {  get; set; }
+        public string Amount { get; set; }
+        public string PublishStatus { get; set; }
+        public string ContentImage { get; set; }
+        public int FeeID { get; set; }
+        public string CreatedAt { get; set; }
+        public string UpdatedAt { get; set; }
+    }
+    public class Notifcations
+    {
+        public int Id { get; set; }
+        public int UserID { get; set; }
+        public string Type { get; set; }
+        public string CreatedAt { get; set; }
+    }
+
 }
-
-public class Notifcations
-{
-    public int Id { get; set; }
-    public int UserID { get; set; }
-    public string Type { get; set; }
-    public string CreatedAt { get; set; }
-}
-
-
-
-
-

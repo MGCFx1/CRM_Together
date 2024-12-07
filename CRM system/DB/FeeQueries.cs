@@ -52,5 +52,51 @@ namespace CRM_system.DB
 
             return newFeeId;
         }
+        // Check if any user with a the same email exists
+        public List<Models.Fee> GetFeeById(int id)
+        {
+            var fees = new List<Models.Fee>();
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Define the SQL SELECT statement
+                string selectQuery = "SELECT * FROM fee WHERE id=@id;";
+
+
+                // Create a command to execute the query
+                using (var command = new SQLiteCommand(selectQuery, connection))
+                {
+                    // Add the email parameter to the command
+                    command.Parameters.AddWithValue("@id", id);
+
+                    // Execute the query and get the result
+                    using (var reader = command.ExecuteReader())
+
+                    {
+                        while (reader.Read())
+                        {
+                            // Assuming the USERS table has columns like Id, Username, Email, and Password
+                            var fee = new Models.Fee
+                            {
+                                Id = reader.GetInt32(0),  // First column (Id
+                                Currency = reader.GetString(1),
+                                Amount = reader.GetString(2),
+                                FeeType = reader.GetString(3)
+
+                            };
+
+                            // Add the user to the list
+                            fees.Add(fee);
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return fees;  // Return the list of users
+        }
     }
 }
