@@ -1,4 +1,5 @@
 ﻿using CRM_system.Models;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -282,6 +283,135 @@ namespace CRM_system.DB
 
             return joinedEventsTable;
         }
+
+        public void GenerateEventsReport()
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            string query = @"SELECT 
+                            e.id AS 'Event ID',
+                            e.event_name AS 'Event Name',
+                            e.event_type AS 'Event Type',
+                            e.event_description AS 'Event Description',
+                            e.event_date AS 'Event Date',
+                            e.publish_status AS 'Publish Status',
+                            e.attendance_limit AS 'Attendance Limit',
+                            ROUND((COUNT(ea.user_id) * 100.0) / e.attendance_limit, 2) || '%' AS 'Attendance Percentage',
+                            COUNT(ea.user_id) AS 'Total Attendees',
+                            f.currency AS 'Currency',
+                            f.amount AS 'Amount'
+                            FROM Events e LEFT JOIN 
+                            EventAttendees ea ON e.id = ea.event_id 
+                            LEFT JOIN 
+                            Fee f ON e.fee_id = f.id
+                            GROUP BY 
+                            e.id, e.event_name, e.event_type, e.event_description, e.attendance_limit, 'Total Attendees', 'Attendance Percentage', e.event_date, e.publish_status, f.currency, f.amount;
+                        ";
+
+            // Path for the Reports folder
+            string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string reportsFolder = Path.Combine(projectDirectory, "..", "..", "Reports");
+
+            // Ensure the Reports folder exists
+            if (!Directory.Exists(reportsFolder))
+            {
+                Directory.CreateDirectory(reportsFolder);
+            }
+
+            // File path for the Excel file
+            string filePath = Path.Combine(reportsFolder, "EventReport.xlsx");
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(query, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    // Load the data into a DataTable
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    // Create the Excel file
+                    using (var package = new ExcelPackage())
+                    {
+                        var worksheet = package.Workbook.Worksheets.Add("Users");
+                        worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
+
+                        // Save the file in the Reports folder
+                        FileInfo fileInfo = new FileInfo(filePath);
+                        package.SaveAs(fileInfo);
+
+                        Console.WriteLine($"Excel report generated at: {filePath}");
+                    }
+                }
+            }
+        }
+
+        public void GenerateUsersReport()
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            string query = @"SELECT u.id AS 'User ID', 
+                            u.name AS 'Name', 
+                            u.email AS 'Email', 
+                            u.membership_status AS 'Membership Status', 
+                            u.membership_type AS 'Membership Type',
+                            u.date_of_birth AS 'Date of Birth',
+                            l.city AS 'City',
+                            u.created_at, 
+                            u.last_login,
+                            COUNT(ea.event_id) AS 'Events Joined',
+                            ROUND((COUNT(ea.event_id) * 100.0) / (SELECT COUNT(*) FROM Events), 2) || '%' AS 'Participation Percentage'
+                            FROM USERS u 
+                            LEFT JOIN
+                            locations l ON l.id=u.location_id
+                            LEFT JOIN 
+                            EventAttendees ea ON u.id = ea.user_id                          
+                            WHERE is_admin=0
+                            GROUP BY 
+                            u.id, u.name, u.email, u.membership_status, u.membership_type, 
+                            u.date_of_birth, u.created_at, u.last_login;
+                            ";
+
+            // Path for the Reports folder
+            string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string reportsFolder = Path.Combine(projectDirectory, "..", "..", "Reports");
+
+            // Ensure the Reports folder exists
+            if (!Directory.Exists(reportsFolder))
+            {
+                Directory.CreateDirectory(reportsFolder);
+            }
+
+            // File path for the Excel file
+            string filePath = Path.Combine(reportsFolder, "UsersReport.xlsx");
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(query, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    // Load the data into a DataTable
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    // Create the Excel file
+                    using (var package = new ExcelPackage())
+                    {
+                        var worksheet = package.Workbook.Worksheets.Add("Users");
+                        worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
+
+                        // Save the file in the Reports folder
+                        FileInfo fileInfo = new FileInfo(filePath);
+                        package.SaveAs(fileInfo);
+
+                        Console.WriteLine($"Excel report generated at: {filePath}");
+                    }
+                }
+            }
+        }
+
 
         public bool RemoveUserFromEvent(int userId, int eventId)
         {

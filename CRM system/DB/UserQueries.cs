@@ -24,9 +24,11 @@ namespace CRM_system.DB
             {
                 connection.Open();
 
-                // Define the SQL INSERT statement
-                string insertQuery = "INSERT INTO Users (name, email, password, membership_status, membership_type, date_of_birth, is_admin, location_id)" +
-                                     " VALUES (@name, @email, @password, @membership, @membership_type, @date_of_birth, @isAdmin, @location_id);";
+                string insertQuery = @"
+                                    INSERT INTO Users 
+                                    (name, email, password, membership_status, membership_type, date_of_birth, is_admin, location_id)
+                                    VALUES 
+                                    (@name, @email, @password, @membership, @membership_type, @date_of_birth, @isAdmin, @location_id);";
 
                 // Create a command and parameterize the query
                 using (var command = new SQLiteCommand(insertQuery, connection))
@@ -39,6 +41,7 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@date_of_birth", date_of_birth);
                     command.Parameters.AddWithValue("@isAdmin", isAdmin);
                     command.Parameters.AddWithValue("@location_id", locationID);
+
 
                     // Execute the command
                     int rowsAffected = command.ExecuteNonQuery();

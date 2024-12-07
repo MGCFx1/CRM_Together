@@ -17,12 +17,14 @@ namespace CRM_system.Admins_Forms
     {
         private DB.UserQueries userQuery;
         private DB.EventQueries eventQuery;
+        private DB.UserEventsQueries userEventsQuery;
 
         public Admins_Dashboard()
         {
             InitializeComponent();
             userQuery = new DB.UserQueries();
             eventQuery = new DB.EventQueries(); // Initialize EventQueries
+            userEventsQuery = new DB.UserEventsQueries();
             LoadData();
             Console.WriteLine("Dashboard Initialized!");
         }
@@ -155,6 +157,16 @@ namespace CRM_system.Admins_Forms
         private void adMemberCount_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void reportGenBtn_Click(object sender, EventArgs e)
+        {
+            userEventsQuery.GenerateEventsReport();
+        }
+
+        private void usrReportGenBtn_Click(object sender, EventArgs e)
+        {
+            userEventsQuery.GenerateUsersReport();
         }
     }
 }
