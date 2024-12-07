@@ -26,7 +26,8 @@ namespace CRM_system
         public Users_Dashboard(int userId)
         {
             InitializeComponent();
-            //pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
+
+            pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
             CurrentUserId = userId; // Set the logged-in user's ID
 
             if (events == null)
