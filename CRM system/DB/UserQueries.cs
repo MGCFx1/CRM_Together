@@ -416,8 +416,8 @@ namespace CRM_system.DB
             {
                 connection.Open();
 
-                string query = "INSERT INTO Users (name, email, password, membership_status) " +
-                               "VALUES (@Name, @Email, @Password, 'active');";
+                string query = "INSERT INTO Users (name, email, password, membership_status, membership_type, is_admin) " +
+                               "VALUES (@Name, @Email, @Password, 'active', 'none', 0);";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
