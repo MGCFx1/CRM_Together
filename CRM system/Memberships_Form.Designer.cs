@@ -205,7 +205,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(296, 309);
             this.panel5.TabIndex = 9;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // btnWorkspaceMembership
             // 
@@ -322,7 +321,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(190, 30);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Memberships_Form
             // 

@@ -21,7 +21,9 @@ namespace CRM_system
             LoadEventPanels(); // Load events dynamically
         }
 
-        // Method to dynamically load event panels
+        /// <summary>
+        /// Method to dynamically load and generate event panels once more are created.
+        /// </summary>
         private void LoadEventPanels(string searchQuery = "")
         {
             try
@@ -161,7 +163,9 @@ namespace CRM_system
             }
         }
 
-        // Click event handler for "Join Event" buttons
+        /// <summary>
+        /// Handles the click event for "Join Event" buttons.
+        /// </summary>
         private void JoinEvent_Click(object sender, EventArgs e)
         {
             try
@@ -188,20 +192,9 @@ namespace CRM_system
             }
         }
 
-     
-
-
-        private void FlowPanelEvents_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void usEventDesc1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // Event handler for search box text change
+        /// <summary>
+        /// Event handler for search box text change
+        /// </summary>
         private void userEventsSearch_TextChanged(object sender, EventArgs e)
         {
             // Get the search query from the text box
@@ -211,9 +204,5 @@ namespace CRM_system
             LoadEventPanels(query);
         }
 
-        private void Events_Forms_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

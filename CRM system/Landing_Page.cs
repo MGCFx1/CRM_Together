@@ -1,37 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRM_system
 {
     public partial class Landing_Page : Form
     {
-        private DB.UserQueries query;
         public Landing_Page()
         {
             InitializeComponent();
-            query = new DB.UserQueries();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Button to close and confirm with the user.
+        /// </summary>
         private void Signup_close_Click(object sender, EventArgs e)
         {
-            // Display a confirmation dialog
             var result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Check the user's response
@@ -43,20 +26,9 @@ namespace CRM_system
             // If the user clicks No, do nothing and return to the application
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            using (Pen pen = new Pen(Color.Black, 10)) // black colourr, 10 pixels wide
-            {
-                e.Graphics.DrawLine(pen, 10, 10, 200, 10); // Draw line from (10, 10) to (200, 10)
-            }
-        
-    }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Navigates to the Login form when Login button is pressed
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             Login sForm = new Login();
@@ -64,6 +36,9 @@ namespace CRM_system
             this.Hide();
         }
 
+        /// <summary>
+        /// Navigates to the SignUp button is pressed
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
             SignUp sForm = new SignUp();
@@ -71,21 +46,9 @@ namespace CRM_system
             this.Hide();
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Landing_Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Navigates to the Admin Login form.
+        /// </summary>
         private void adminLoginLbl_Click(object sender, EventArgs e)
         {
             this.Hide();

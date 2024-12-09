@@ -136,6 +136,7 @@ namespace CRM_system.Admins_Forms.ContactsSubmenu
 
         }
 
+        //Buttons for membership acceptance and declines 
         private void button5_Click(object sender, EventArgs e)
         {
             var currentUser = pendingUsers[0];

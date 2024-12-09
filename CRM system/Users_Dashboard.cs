@@ -1,12 +1,4 @@
-﻿using CRM_system.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CRM_system
@@ -15,6 +7,7 @@ namespace CRM_system
     {
         private int CurrentUserId; // To store the logged-in user's ID
 
+        //References to all the forms that can be opened in the the sidebar.
         dashboard_form dashboard;
         Memberships_Form memberships;
         Events_Forms events;
@@ -27,6 +20,7 @@ namespace CRM_system
         {
             InitializeComponent();
 
+            // Set the user's account name in the sidebar
             pnAccount.Text = "           " + UserSession.Name.Split(' ')[0] + "'s \n           Account";
             CurrentUserId = userId; // Set the logged-in user's ID
 
@@ -43,11 +37,10 @@ namespace CRM_system
             }
         }
 
-        private void Users_Dashboard_Load(object sender, EventArgs e)
-        {
 
-        }
-
+        /// <summary>
+        /// Timer to handle sidebar expand/collapse animation
+        /// </summary>
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -68,30 +61,29 @@ namespace CRM_system
                 {
                     sidebarExpand = true;
                     sidebarTimer.Stop();
-
-                
-
                 }
             }
 
         }
 
+        //Activate the timer when menu button is clicked
         private void menuButton_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
         }
-
+        //Activate timer when the title is clicked
         private void NavTitle_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
         }
 
+        /// <summary>
+        /// Button to close the application
+        /// </summary>
         private void Signup_close_Click(object sender, EventArgs e)
         {
             // Display a confirmation dialog
             var result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            // Check the user's response
             if (result == DialogResult.Yes)
             {
                 // If the user clicks Yes, close the application
@@ -100,16 +92,17 @@ namespace CRM_system
             // If the user clicks No, do nothing and return to the application
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Reset the dashboard reference when the form is closed
+        /// </summary>
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             dashboard = null;
         }
 
+        /// <summary>
+        /// Hnaldes the membership button sidebar to open the memberships form
+        /// </summary>
         private void pnMemberships_Click(object sender, EventArgs e)
         {
             if (memberships == null)
@@ -125,11 +118,15 @@ namespace CRM_system
             }
         }
 
+        //Reset the memberships form reference when closed.
         private void Memberships_FormClosed(object sender, FormClosedEventArgs e)
         {
             memberships = null;
         }
 
+        /// <summary>
+        /// All handlers are similar to the membership button logic.
+        /// </summary>
         private void PnEvents_Click(object sender, EventArgs e)
         {
             if (events == null)
@@ -211,31 +208,6 @@ namespace CRM_system
             accounts = null;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            // Display a confirmation dialog
-            var result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                // Hide the current form 
-                this.Hide();
-
-                // Show the Landing_Page
-                var landingPage = new Landing_Page();
-                landingPage.Show();
-
-                // Dispose the current form to free up resources
-                this.Dispose();
-            }
-            // If No, do nothing
-        }
-
-        private void adUserProf_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pnDashboard_Click(object sender, EventArgs e)
         {
             if (dashboard == null)
@@ -252,10 +224,34 @@ namespace CRM_system
             }
         }
 
+        /// <summary>
+        /// Button for user's log out and redirection to landing page
+        /// </summary>
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation dialog
+            var result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            { 
+                this.Hide();
+
+                // Redirect user to the landing page
+                var landingPage = new Landing_Page();
+                landingPage.Show();
+                this.Dispose();// Dispose the current form to free up resources
+            }
+            // If No, do nothing
+        }
+
+        /// <summary>
+        /// Button for the notifications to activiate the notification form
+        /// </summary>
         private void adNotification_Click(object sender, EventArgs e)
         {
             NotificationsForm notificationsForm = new NotificationsForm(CurrentUserId);
             notificationsForm.Show();
         }
+
     }
 }

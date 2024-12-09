@@ -78,7 +78,6 @@ namespace CRM_system
             this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 24;
             this.label5.Text = "Full Name";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // label6
             // 
@@ -92,7 +91,6 @@ namespace CRM_system
             this.label6.Size = new System.Drawing.Size(80, 14);
             this.label6.TabIndex = 13;
             this.label6.Text = "Street Address";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // signup_fullname
             // 
@@ -103,7 +101,6 @@ namespace CRM_system
             this.signup_fullname.Name = "signup_fullname";
             this.signup_fullname.Size = new System.Drawing.Size(228, 26);
             this.signup_fullname.TabIndex = 10;
-            this.signup_fullname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // register_login
             // 
@@ -181,7 +178,6 @@ namespace CRM_system
             this.login_close.Size = new System.Drawing.Size(20, 20);
             this.login_close.TabIndex = 6;
             this.login_close.Text = "X";
-            this.login_close.Click += new System.EventHandler(this.login_close_Click);
             // 
             // label7
             // 
@@ -207,7 +203,6 @@ namespace CRM_system
             this.label12.Size = new System.Drawing.Size(128, 20);
             this.label12.TabIndex = 11;
             this.label12.Text = "Let\'s get started!";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // Sign
             // 
@@ -220,7 +215,6 @@ namespace CRM_system
             this.Sign.Size = new System.Drawing.Size(95, 16);
             this.Sign.TabIndex = 26;
             this.Sign.Text = "Email Address";
-            this.Sign.Click += new System.EventHandler(this.label13_Click);
             // 
             // signup_email
             // 
@@ -231,7 +225,6 @@ namespace CRM_system
             this.signup_email.Name = "signup_email";
             this.signup_email.Size = new System.Drawing.Size(228, 26);
             this.signup_email.TabIndex = 25;
-            this.signup_email.TextChanged += new System.EventHandler(this.signup_email_TextChanged);
             // 
             // label2
             // 
@@ -244,7 +237,6 @@ namespace CRM_system
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 28;
             this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // signup_password
             // 
@@ -269,7 +261,6 @@ namespace CRM_system
             this.label14.Size = new System.Drawing.Size(58, 16);
             this.label14.TabIndex = 30;
             this.label14.Text = "Address";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // signup_address
             // 
@@ -280,7 +271,6 @@ namespace CRM_system
             this.signup_address.Name = "signup_address";
             this.signup_address.Size = new System.Drawing.Size(228, 26);
             this.signup_address.TabIndex = 29;
-            this.signup_address.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // label16
             // 
@@ -293,7 +283,6 @@ namespace CRM_system
             this.label16.Size = new System.Drawing.Size(70, 16);
             this.label16.TabIndex = 34;
             this.label16.Text = "Post Code";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // signup_post_code
             // 
@@ -304,7 +293,6 @@ namespace CRM_system
             this.signup_post_code.Name = "signup_post_code";
             this.signup_post_code.Size = new System.Drawing.Size(97, 26);
             this.signup_post_code.TabIndex = 33;
-            this.signup_post_code.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // signup_interestlabel
             // 
@@ -317,7 +305,6 @@ namespace CRM_system
             this.signup_interestlabel.Size = new System.Drawing.Size(50, 16);
             this.signup_interestlabel.TabIndex = 36;
             this.signup_interestlabel.Text = "Interest";
-            this.signup_interestlabel.Click += new System.EventHandler(this.signup_interestlabel_Click);
             // 
             // city_label
             // 
@@ -374,7 +361,6 @@ namespace CRM_system
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(215, 24);
             this.comboBox1.TabIndex = 41;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // signup_pswrd_show
             // 
@@ -527,7 +513,6 @@ namespace CRM_system
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.SignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

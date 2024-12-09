@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
@@ -25,16 +18,9 @@ namespace CRM_system
             locationQuery = new DB.LocationQueries();
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_close_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Closes the application after confirming with the user.
+        /// </summary>
         private void label5_Click(object sender, EventArgs e)
         {
             // Display a confirmation dialog
@@ -49,45 +35,34 @@ namespace CRM_system
             // If the user clicks No, do nothing and return to the application
         }
 
+        /// <summary>
+        /// Navigates to the Login form when user presses login
+        /// </summary>
         private void register_login_Click(object sender, EventArgs e)
         {
             Login sForm = new Login();
             sForm.Show();
             this.Hide();
-
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-            label7.BackColor = Color.Transparent;
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signup_email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // To check if a user's email is valid
+        /// <summary>
+        /// Validates the format of an email address.
+        /// </summary>
+        /// <param name="email">The email address to validate.</param>
+        /// <returns>True if the email format is valid, otherwise false.</returns>
         public static bool IsValidEmail(string email)
         {
             // Regular expression pattern for validating email
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
             // Use Regex.IsMatch to check if the input matches the pattern
             return Regex.IsMatch(email, emailPattern);
         }
 
+        /// <summary>
+        /// Validates if the entered date is a valid date and ensures the user is at least 13 years old.
+        /// </summary>
+        /// <param name="dateString">The date string to validate.</param>
+        /// <returns>True if the date is valid and the user is at least 13 years old, otherwise false.</returns>
         public static bool IsValidYear(string dateString)
         {
             // Try to parse the input string into a DateTime object
@@ -108,7 +83,9 @@ namespace CRM_system
             }
         }
 
-
+        /// <summary>
+        /// Handles  resetting the user's password, including validation and database updates.
+        /// </summary>
         private void Signup_btn_Click(object sender, EventArgs e)
         {
             // To Manage the case of Everything
@@ -123,7 +100,7 @@ namespace CRM_system
             // Location Details
             string postcode = signup_post_code.Text.ToUpper();
 
-            List <Models.User> usersWithEmail = query.GetUserByEmail(email);
+            List<Models.User> usersWithEmail = query.GetUserByEmail(email);
             var locations = new List<Models.Location>();
 
             if (email == "")
@@ -132,7 +109,8 @@ namespace CRM_system
                 lblErrEmail.Visible = true;
                 lblErrEmail.Text = "Email cannot be blank";
                 isError = true;
-            } else if (!(usersWithEmail.Count > 0))
+            }
+            else if (!(usersWithEmail.Count > 0))
             {
                 lblErrEmail.Text = "No such user exists";
                 //If something goes wrong
@@ -158,13 +136,14 @@ namespace CRM_system
                 lblPostCodeErr.Text = "Post Code Cannot Be Blank";
                 isError = true;
             }
-            else if (postcode != locations[0].PostCode) 
+            else if (postcode != locations[0].PostCode)
             {
                 // If none of those things are blank
                 lblPostCodeErr.Visible = true;
                 lblPostCodeErr.Text = "Wrong Post Code";
                 isError = true;
-            } else
+            }
+            else
             {
                 lblPostCodeErr.Visible = false;
             }
@@ -204,7 +183,7 @@ namespace CRM_system
                 password = BCrypt.Net.BCrypt.HashPassword(password);
             }
 
-            if (isError) 
+            if (isError)
             {
                 return;
             }
@@ -218,36 +197,6 @@ namespace CRM_system
             Login login = new Login();
             login.Show();
             this.Hide();
-        }
-
-        private void lblErrDOB_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signup_pswrd_showhide_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signup_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

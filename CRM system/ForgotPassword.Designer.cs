@@ -131,7 +131,6 @@ namespace CRM_system
             this.login_close.Size = new System.Drawing.Size(26, 25);
             this.login_close.TabIndex = 6;
             this.login_close.Text = "X";
-            this.login_close.Click += new System.EventHandler(this.login_close_Click);
             // 
             // label7
             // 
@@ -144,7 +143,6 @@ namespace CRM_system
             this.label7.Size = new System.Drawing.Size(275, 36);
             this.label7.TabIndex = 9;
             this.label7.Text = "Forgot Password?";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label12
             // 
@@ -157,7 +155,6 @@ namespace CRM_system
             this.label12.Size = new System.Drawing.Size(259, 25);
             this.label12.TabIndex = 11;
             this.label12.Text = "No problem, you can reset it!";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // Sign
             // 
@@ -170,7 +167,6 @@ namespace CRM_system
             this.Sign.Size = new System.Drawing.Size(118, 20);
             this.Sign.TabIndex = 26;
             this.Sign.Text = "Email Address";
-            this.Sign.Click += new System.EventHandler(this.label13_Click);
             // 
             // signup_email
             // 
@@ -181,7 +177,6 @@ namespace CRM_system
             this.signup_email.Name = "signup_email";
             this.signup_email.Size = new System.Drawing.Size(394, 30);
             this.signup_email.TabIndex = 25;
-            this.signup_email.TextChanged += new System.EventHandler(this.signup_email_TextChanged);
             // 
             // signup_pswrd_hide
             // 
@@ -243,7 +238,6 @@ namespace CRM_system
             this.lblErrDOB.TabIndex = 85;
             this.lblErrDOB.Text = "wrong password";
             this.lblErrDOB.Visible = false;
-            this.lblErrDOB.Click += new System.EventHandler(this.lblErrDOB_Click);
             // 
             // lblErrPassword
             // 
@@ -349,7 +343,6 @@ namespace CRM_system
             this.Name = "ForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.SignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

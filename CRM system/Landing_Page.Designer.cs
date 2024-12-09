@@ -110,7 +110,6 @@
             this.label1.Size = new System.Drawing.Size(407, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "BEGIN YOUR JOURNEY WITH";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -147,7 +146,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = resources.GetString("label4.Text");
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 
@@ -157,7 +155,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(800, 544);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // label5
             // 
@@ -245,7 +242,7 @@
             // 
             // adminLoginLbl
             // 
-            this.adminLoginLbl.BackColor = System.Drawing.Color.White;
+            this.adminLoginLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.adminLoginLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminLoginLbl.Font = new System.Drawing.Font("Segoe UI Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLoginLbl.ForeColor = System.Drawing.Color.Black;
@@ -285,7 +282,6 @@
             this.Name = "Landing_Page";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Landing_Page_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

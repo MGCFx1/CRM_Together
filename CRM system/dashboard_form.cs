@@ -19,17 +19,17 @@ namespace CRM_system
         public dashboard_form()
         {
             InitializeComponent();
-            userEventsQueries = new UserEventsQueries(); // Initialize the database query handler
-            userQueries = new UserQueries(); // Initialize the queries class
+            userEventsQueries = new UserEventsQueries(); // Initialize the database query
+            userQueries = new UserQueries(); // Initialize the user queries class
 
             lblUserName.Text = $"Welcome, {UserSession.Name}"; // Display the logged-in user's name
             LoadJoinedEvents(); // Load all events joined by the user
             LoadMembershipDetails();// Load membership details
-
-
         }
 
-        // Method to load all events joined by the user
+        /// <summary>
+        /// Method to load all events joined by the user
+        /// </summary>
         private void LoadJoinedEvents()
         {
             try
@@ -51,7 +51,9 @@ namespace CRM_system
             }
         }
 
-        // Format the DataGridView columns
+        /// <summary>
+        ///Formats the datagridview for the joined events.
+        /// </summary>
         private void FormatJoinedEventsGrid()
         {
             dgJoinedEvents.AutoGenerateColumns = true; // Allow columns to auto-generate from the data source
@@ -61,12 +63,18 @@ namespace CRM_system
             dgJoinedEvents.ReadOnly = true; // Make the grid read-only
         }
 
+        /// <summary>
+        ///Button to Referesh the joined event list
+        /// </summary>
         private void RefreshJoinedEvents_Click(object sender, EventArgs e)
         {
             LoadJoinedEvents(); // Refresh the joined events
             MessageBox.Show("Events List Refreshed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        ///Button to leave an event in users dashboard
+        /// </summary
         private void dgLeaveEvent_Click(object sender, EventArgs e)
         {
             try
@@ -108,6 +116,9 @@ namespace CRM_system
             }
        }
 
+        /// <summary>
+        ///Loads the logged in user's membership details to update the dashboard UI
+        /// </summary>
         private void LoadMembershipDetails()
         {
             try
@@ -134,26 +145,6 @@ namespace CRM_system
             {
                 MessageBox.Show($"Error loading membership details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void dashboard_form_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUserName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usMemberStatusLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgJoinedEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

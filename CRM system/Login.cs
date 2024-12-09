@@ -1,13 +1,7 @@
 ﻿using CRM_system.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRM_system
@@ -21,16 +15,9 @@ namespace CRM_system
             query = new DB.UserQueries();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Toggles the visibility of the password field.
+        /// </summary>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (login_show.Checked)
@@ -43,68 +30,75 @@ namespace CRM_system
             }
         }
 
+        /// <summary>
+        /// Navigates to the SignUp form.
+        /// </summary>
         private void label5_Click(object sender, EventArgs e)
         {
-            SignUp sForm = new SignUp();
-            sForm.Show();
+            var signUpForm = new SignUp();
+            signUpForm.Show();
             this.Hide();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        // For login: maybe create a helper file too
+        /// <summary>
+        /// Verifies if the provided password matches the hashed password.
+        /// </summary>
+        /// <param name="password">Plain text password.</param>
+        /// <param name="hashedPassword">Hashes the password in the db.</param>
+        /// <returns>True if the password matches. False if it doesn't.</returns>
         public static bool IsPasswordValid(string password, string hashedPassword)
         {
             try
             {
-                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-                return isPasswordValid;
+                return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
             }
-            catch (Exception ex) // Catch any exception
+            catch (Exception ex)
             {
-                // Log the error or handle it as needed
                 Console.WriteLine($"An error occurred: {ex.Message}");
-                return false; // Return false in case of an error
+                return false;
             }
         }
 
-        // To check if a user's email is valid
+        /// <summary>
+        /// Validates an email address format using a regular expression.
+        /// </summary>
+        /// <param name="email">Email address to validate.</param>
+        /// <returns>True if the email format is valid; otherwise, false.</returns>
         public static bool IsValidEmail(string email)
         {
-            // Regular expression pattern for validating email
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            // Use Regex.IsMatch to check if the input matches the pattern
             return Regex.IsMatch(email, emailPattern);
         }
 
+        /// <summary>
+        /// Handles the login process, including input validation and user authentication.
+        /// </summary>
         private void login_btn_Click(object sender, EventArgs e)
         {
-            Boolean isError = false;
-            string email = login_email.Text;
+            bool isError = false;
+            string email = login_email.Text.Trim();
             string password = login_password.Text;
 
+            // Fetch user details based on email
             List<Models.User> usersWithEmail = query.GetUserByEmail(email);
 
-            if (email == "")
+            // Validate email input
+            if (string.IsNullOrWhiteSpace(email))
             {
                 lblEmailErr.Visible = true;
-                lblEmailErr.Text = "Email cannot be blank";
+                lblEmailErr.Text = "Email cannot be blank.";
                 isError = true;
             }
             else if (!IsValidEmail(email))
             {
-                lblEmailErr.Text = "Sorry, that doesn't seem like a valid email";
                 lblEmailErr.Visible = true;
+                lblEmailErr.Text = "Invalid email format.";
                 isError = true;
             }
-            else if (!(usersWithEmail.Count > 0))
+            else if (usersWithEmail.Count == 0)
             {
-                lblEmailErr.Text = "Email does not exist";
                 lblEmailErr.Visible = true;
+                lblEmailErr.Text = "Email does not exist.";
                 isError = true;
             }
             else
@@ -112,16 +106,17 @@ namespace CRM_system
                 lblEmailErr.Visible = false;
             }
 
-            if (password == "")
+            // Validate password input
+            if (string.IsNullOrWhiteSpace(password))
             {
                 lblPasswordErr.Visible = true;
-                lblPasswordErr.Text = "Password cannot be blank";
+                lblPasswordErr.Text = "Password cannot be blank.";
                 isError = true;
             }
             else if (usersWithEmail.Count > 0 && !IsPasswordValid(password, usersWithEmail[0].Password))
             {
-                lblPasswordErr.Text = "Sorry, incorrect password";
                 lblPasswordErr.Visible = true;
+                lblPasswordErr.Text = "Incorrect password.";
                 isError = true;
             }
             else
@@ -129,104 +124,75 @@ namespace CRM_system
                 lblPasswordErr.Visible = false;
             }
 
-            if (usersWithEmail.Count > 0 && usersWithEmail[0].IsAdmin == true)
+            // Check admin restriction
+            if (usersWithEmail.Count > 0 && usersWithEmail[0].IsAdmin)
             {
-                lblEmailErr.Text = "Sorry, you are not an admin.";
                 lblEmailErr.Visible = true;
+                lblEmailErr.Text = "You are not authorized to access this area.";
                 isError = true;
             }
 
-            if (isError)
+            if (isError) return; // Stop further processing if there are validation errors
+
+            // Membership status checks
+            var user = usersWithEmail[0];
+            if (user.MembershipStatus == "pending")
             {
+                MessageBox.Show("Your membership is pending admin approval.", "Pending Approval");
                 return;
             }
 
-            Console.WriteLine("Status: " + usersWithEmail[0].MembershipStatus);
-
-            if (usersWithEmail[0].MembershipStatus == "pending")
+            if (user.MembershipStatus == "inactive")
             {
-                MessageBox.Show(
-                    "Please wait for admin approval. Thank you for your patience",
-                    "Waiting for Admin Approval"
-                );
+                MessageBox.Show("Your membership has been rejected by the admin.", "Membership Inactive");
                 return;
             }
 
-            if (usersWithEmail[0].MembershipStatus == "inactive")
-            {
-                MessageBox.Show(
-                    "Sorry, it seems like the admin believes there are no memberships available at this moment. Please try again later.",
-                    "Admin Rejected Membership"
-                );
-                return;
-            }
+            // Set user session details
+            UserSession.ID = user.Id;
+            UserSession.Name = user.Name;
+            UserSession.Email = user.Email;
 
-            if (usersWithEmail != null && usersWithEmail.Count > 0)
-            {
-                UserSession.ID = usersWithEmail[0].Id;
-                UserSession.Name = usersWithEmail[0].Name;
-                UserSession.Email = usersWithEmail[0].Email;
-            }
+            // Log the user's last login time
+            query.UserLastLogin(user.Id);
 
-
-            // Pass the user ID to the Users_Dashboard constructor
-            int userId = usersWithEmail[0].Id;
-            query.UserLastLogin(userId);
-
+            // Navigate to the dashboard
             this.Hide();
-            Users_Dashboard dashboard_Form = new Users_Dashboard(userId); // Pass userId here
-            dashboard_Form.Show();
+            var dashboardForm = new Users_Dashboard(user.Id);
+            dashboardForm.Show();
         }
 
+        /// <summary>
+        /// Closes the application after user confirmation.
+        /// </summary>
         private void login_close_Click(object sender, EventArgs e)
         {
-            // Display a confirmation dialog
             var result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Check the user's response
             if (result == DialogResult.Yes)
             {
-                // If the user clicks Yes, close the application
                 Application.Exit();
             }
-            // If the user clicks No, do nothing and return to the application
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_password_TextChanged(object sender, EventArgs e)
-        {
-            login_password.PasswordChar = '*';
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Directs the user to the reset password form
+        /// </summary>
         private void resetPswdLinkLbl_Click(object sender, EventArgs e)
         {
-            ForgotPassword forgotPassword = new ForgotPassword();
-            forgotPassword.Show();
-
+            var forgotPasswordForm = new ForgotPassword();
+            forgotPasswordForm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// A back button to take the user back to the landing page.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
-            {
-                // Create an instance of the Landing_Page form
-                Landing_Page landingPage = new Landing_Page();
-
-                // Show the Landing_Page form
-                landingPage.Show();
-
-                // Close or hide the current form
-                this.Close(); // Or use this.Hide();
-            }
+            var landingPage = new Landing_Page();
+            landingPage.Show();
+            this.Close();
         }
     }
 }

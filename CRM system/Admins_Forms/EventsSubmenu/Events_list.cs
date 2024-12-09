@@ -8,12 +8,12 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
 {
     public partial class Events_list : Form
     {
-        private EventQueries eventQuery; // For handling event-related database queries
+        private EventQueries eventQuery; // For handling events database queries
 
         public Events_list()
         {
             InitializeComponent();
-            eventQuery = new EventQueries(); // Initialize EventQueries
+            eventQuery = new EventQueries(); // Initialize the EventQueries
             LoadEvents(); // Load events on form load
         }
 
@@ -39,8 +39,6 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
                 dgEvents.Columns["LocationCity"].HeaderText = "Location";
                 dgEvents.Columns["FeeId"].HeaderText = "Fee";
                 dgEvents.Columns["AdminId"].HeaderText = "Admin";
-
-                // Optional: Hide unwanted columns if necessary
                 // dgEvents.Columns["EventImage"].Visible = false;
             }
             catch (Exception ex)
@@ -149,7 +147,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
             try
             {
                 LoadEvents();
-                // Inform the user that the list has been refreshed
+                // Notify the user that the list has been refreshed
                 MessageBox.Show("Event list refreshed successfully.", "Refreshed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -186,7 +184,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
                 {
                     MessageBox.Show("Event removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Refresh the DataGridView
+                    // Refresh the DataGridView after romeving event
                     LoadEvents();
                 }
                 else

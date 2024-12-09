@@ -18,19 +18,7 @@ namespace CRM_system
         public Memberships_Form()
         {
             InitializeComponent();
-            userQueries = new UserQueries(); // Initialize the UserQueries instance
-
-           
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
+            userQueries = new UserQueries(); // Initialize the UserQueries instance   
         }
 
         private void btnCommunityMembership_Click(object sender, EventArgs e)
@@ -43,8 +31,9 @@ namespace CRM_system
             SaveMembership(2);
         }
 
-        // Saves the selected membership to the database.
-  
+        /// <summary>
+        /// Saves the selected membership to the database.
+        /// </summary>
         private void SaveMembership(int membershipId)
         {
             try

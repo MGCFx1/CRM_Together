@@ -20,13 +20,15 @@ namespace CRM_system
         public Accounts_Forms()
         {
             InitializeComponent();
-            query = new DB.UserQueries();
-            id = UserSession.ID;
-            accFullName.Text = UserSession.Name;
-            accEmailAddress.Text = UserSession.Email;
+            query = new DB.UserQueries(); // Initialize the database query object
+            id = UserSession.ID; // Retrieve the logged-in user's ID
+            accFullName.Text = UserSession.Name; // Display the user's full name
+            accEmailAddress.Text = UserSession.Email; // Display the user's email
         }
 
-        // For login: maybe create a helper file too
+        /// <summary>
+        /// Validates whether a provided password matches the hashed password.
+        /// </summary>
         public static bool IsPasswordValid(string password, string hashedPassword)
         {
 
@@ -35,7 +37,9 @@ namespace CRM_system
             return isPasswordValid;
         }
 
-        // To check if a user's email is valid
+        /// <summary>
+        /// Validates whether an email address is in a valid format.
+        /// </summary>
         public static bool IsValidEmail(string email)
         {
             // Regular expression pattern for validating email
@@ -45,11 +49,14 @@ namespace CRM_system
             return Regex.IsMatch(email, emailPattern);
         }
 
+        /// <summary>
+        /// Saves the changes to the user account information
+        /// <param name="email">Email address to validate.</param>
+        /// <returns>True if the email format is valid; otherwise, false.</returns>
+        /// </summary>
         private void accSaveChanges_Click(object sender, EventArgs e)
         {
-            // To Manage the case of Everything
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-
             id = UserSession.ID;
             string name = accFullName.Text;
             string email = accEmailAddress.Text;
@@ -58,14 +65,7 @@ namespace CRM_system
 
             // User Details
             Boolean isError = false;
-
-            //// Location Details
-            //string city = textInfo.ToTitleCase(Signup_city.Text);
-            //string address = textInfo.ToTitleCase(signup_address.Text);
-            //string postcode = signup_post_code.Text.ToUpper();
-
             List<Models.User> usersWithEmail = query.GetUserByEmail(email);
-
 
             if (name == "" || name.Length < 4)
             {

@@ -23,7 +23,9 @@ namespace CRM_system
             LoadNotifications(_userId);
         }
 
-        // Load notifications for the logged-in user
+        /// <summary>
+        /// Load notifications for the logged in user and generate new notification panels. 
+        /// </summary>
         private void LoadNotifications(int userId)
         {
             try
@@ -135,7 +137,9 @@ namespace CRM_system
             }
         }
 
-        // Erase a notification
+        /// <summary>
+        /// Erase tje notification from the notificiation list
+        /// </summary>
         private void EraseNotification(int notificationId, Panel notificationPanel)
         {
             try
@@ -157,44 +161,12 @@ namespace CRM_system
             }
         }
 
-      
-
-        private void NotifPanel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void FlowPanelNotifications_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void NotifErase1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NotifMessege1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NotifDate1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NotifTitle1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NotifIcon1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Button to close the notification form
+        /// </summary>
         private void NotifCloseForm_Click(object sender, EventArgs e)
         {
-            this.Close(); // Closes the NotificationsForm
+            this.Close(); 
         }
     }
 }

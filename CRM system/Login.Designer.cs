@@ -59,7 +59,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(799, 543);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // login_register
             // 
@@ -86,7 +85,6 @@
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Don\'t have account?";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // login_show
             // 
@@ -131,7 +129,6 @@
             this.login_password.Name = "login_password";
             this.login_password.Size = new System.Drawing.Size(208, 26);
             this.login_password.TabIndex = 4;
-            this.login_password.TextChanged += new System.EventHandler(this.login_password_TextChanged);
             // 
             // label3
             // 
@@ -166,7 +163,6 @@
             this.label2.Size = new System.Drawing.Size(95, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email Address";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // login_close
             // 
@@ -216,7 +212,6 @@
             this.label7.Size = new System.Drawing.Size(161, 25);
             this.label7.TabIndex = 12;
             this.label7.Text = "Welcome back!";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblPasswordErr
             // 
@@ -313,7 +308,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

@@ -24,7 +24,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
                 // Fetch all attendees for all events
                 var allAttendees = eventQueries.GetAllEventAttendees();
 
-                // Bind the attendees data to the DataGridView
+                // Bind the attendees data to DataGridView
                 dgEventsAttendees.DataSource = allAttendees;
 
                 // Format the DataGridView
@@ -35,14 +35,11 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
                 MessageBox.Show($"Error loading all event attendees: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
-        // Format the DataGridView
+         
+        // Format the DataGridView for attendees
         private void FormatAttendeesGrid()
         {
-            dgEventsAttendees.AutoGenerateColumns = true; // Auto-generate columns from the data source
+            dgEventsAttendees.AutoGenerateColumns = true; 
             dgEventsAttendees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgEventsAttendees.AllowUserToAddRows = false; // Disable adding rows manually
             dgEventsAttendees.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Ensure full rows are selected
@@ -52,9 +49,8 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
         // Event handler for loading attendees when the form is loaded
         private void Events_Attendees_Load(object sender, EventArgs e)
         {
-            LoadAllEventAttendees(); // Load attendees for all events
+            LoadAllEventAttendees(); 
         }
-
 
         // Button to refresh attendees list  
         private void btnRefattendees_Click(object sender, EventArgs e)
@@ -64,7 +60,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
                 // Reload all attendees for all events
                 LoadAllEventAttendees();
 
-                // Notify the user
+                // Notify the user with pop notification
                 MessageBox.Show("Attendees List Refreshed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -73,6 +69,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
             }
         }
 
+        // Button click event to refresh the attendees list
         private void btnRemoveAttendees_Click(object sender, EventArgs e)
         {
             try
@@ -113,7 +110,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
             }
         }
 
-        //Search for an attendee
+        //Search for an attendee dynamically with TextChanged 
         private void SearchEventAttendees_TextChanged(object sender, EventArgs e)
         {
             try

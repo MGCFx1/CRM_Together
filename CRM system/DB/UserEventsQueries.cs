@@ -63,72 +63,6 @@ namespace CRM_system.DB
         }
 
         /// <summary>
-        /// Checks if a user is already joined to a specific event.
-        /// </summary>
-        public bool IsUserJoined(int userId, int eventId)
-        {
-            try
-            {
-                using (var connection = new SQLiteConnection(ConnectionString))
-                {
-                    connection.Open();
-
-                    string query = "SELECT COUNT(*) FROM EventAttendees WHERE event_id = @EventId AND user_id = @UserId;";
-
-                    using (var command = new SQLiteCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@EventId", eventId);
-                        command.Parameters.AddWithValue("@UserId", userId);
-
-                        return Convert.ToInt32(command.ExecuteScalar()) > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in IsUserJoined: {ex.Message}");
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Retrieves all events joined by a specific user.
-        /// </summary>
-        public List<int> GetEventsJoinedByUser(int userId)
-        {
-            var joinedEvents = new List<int>();
-
-            try
-            {
-                using (var connection = new SQLiteConnection(ConnectionString))
-                {
-                    connection.Open();
-
-                    string query = "SELECT event_id FROM EventAttendees WHERE user_id = @UserId;";
-
-                    using (var command = new SQLiteCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@UserId", userId);
-
-                        using (var reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                joinedEvents.Add(reader.GetInt32(0));
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in GetEventsJoinedByUser: {ex.Message}");
-            }
-
-            return joinedEvents;
-        }
-
-        /// <summary>
         /// Retrieves event details for populating event cards in the UI.
         /// </summary>
         public List<Event> GetAllEventsForCards()
@@ -197,51 +131,6 @@ namespace CRM_system.DB
             }
 
             return events;
-        }
-
-
-        /// <summary>
-        /// Retrieves fee details for a given fee ID.
-        /// </summary>
-        public Fee GetFeeDetails(int feeId)
-        {
-            try
-            {
-                using (var connection = new SQLiteConnection(ConnectionString))
-                {
-                    connection.Open();
-
-                    string query = @"SELECT id, fee_type, amount, currency, description 
-                                     FROM Fee
-                                     WHERE id = @FeeId;";
-
-                    using (var command = new SQLiteCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@FeeId", feeId);
-
-                        using (var reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                return new Fee
-                                {
-                                    Id = reader.GetInt32(0),
-                                    FeeType = reader.GetString(1),
-                                    Amount = reader.GetString(2),
-                                    Currency = reader.GetString(3),
-                                    Description = reader.GetString(4)
-                                };
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in GetFeeDetails: {ex.Message}");
-            }
-
-            return null;
         }
 
         public DataTable GetUserJoinedEvents(int userId)

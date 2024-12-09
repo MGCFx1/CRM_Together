@@ -18,11 +18,11 @@ namespace CRM_system.Models
         public string UserDateOfBirth { get; set; }
         // Is user an admin
         public Boolean IsAdmin { get; set; }
-        public int LocationID {get; set;}
+        public int LocationID { get; set; }
         public string CreatedAt { get; set; }
         // When the user last logged in
         public string LastLogin { get; set; }
-        
+
     }
 
     public class Location
@@ -75,7 +75,7 @@ namespace CRM_system.Models
         public string Description { get; set; }
         public int AdminID { get; set; }
         public int TierRequirement { get; set; }
-        public string Currency {  get; set; }
+        public string Currency { get; set; }
         public string Amount { get; set; }
         public string PublishStatus { get; set; }
         public string ContentImage { get; set; }

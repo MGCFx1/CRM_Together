@@ -61,7 +61,6 @@
             this.FlowPanelEvents.Name = "FlowPanelEvents";
             this.FlowPanelEvents.Size = new System.Drawing.Size(769, 399);
             this.FlowPanelEvents.TabIndex = 3;
-            this.FlowPanelEvents.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowPanelEvents_Paint);
             // 
             // usEventPanel1
             // 
@@ -133,7 +132,6 @@
             this.usEventDesc1.Size = new System.Drawing.Size(243, 85);
             this.usEventDesc1.TabIndex = 2;
             this.usEventDesc1.Text = "Events Description";
-            this.usEventDesc1.Click += new System.EventHandler(this.usEventDesc1_Click);
             // 
             // usEventNamel1
             // 
@@ -233,7 +231,6 @@
             this.Name = "Events_Forms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Events_Forms";
-            this.Load += new System.EventHandler(this.Events_Forms_Load);
             this.FlowPanelEvents.ResumeLayout(false);
             this.usEventPanel1.ResumeLayout(false);
             this.usEventPanel1.PerformLayout();

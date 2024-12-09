@@ -35,7 +35,7 @@ namespace CRM_system.DB
             }
         }
 
-
+        // Converts a byte array to the image.
         public static Image ByteArrayToImage(byte[] byteArray)
         {
             Console.WriteLine("Ouput be here: " + BitConverter.ToString(byteArray));
@@ -86,31 +86,6 @@ namespace CRM_system.DB
             }
         }
 
-        // Retrieves all events from the database
-        public DataTable GetAllEvents()
-        {
-            var events = new DataTable();
-
-            using (var connection = new SQLiteConnection(ConnectionString))
-            {
-                connection.Open();
-
-                string query = "SELECT id AS 'ID', event_name AS 'Event Name', event_description AS 'Description', " +
-                               "location_id AS 'Location', event_type AS 'Content Type', event_date AS 'Scheduled Date', " +
-                               "publish_status AS 'Status' FROM Events;";
-
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    using (var adapter = new SQLiteDataAdapter(command))
-                    {
-                        adapter.Fill(events);
-                    }
-                }
-            }
-
-            return events;
-        }
-
         // Deletes an event by ID
         public bool DeleteEvent(int eventId)
         {
@@ -149,6 +124,7 @@ namespace CRM_system.DB
 
             return activeEventCount;
         }
+
         //retrieves all event from the "Events" table and return them as list
         public List<Models.Event> GetAllEventsAsList()
         {
@@ -337,10 +313,5 @@ namespace CRM_system.DB
                 return false;
             }
         }
-
-
-
-
-
     }
 }

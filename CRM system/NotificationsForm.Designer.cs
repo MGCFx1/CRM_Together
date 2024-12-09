@@ -50,7 +50,6 @@
             this.FlowPanelNotifications.Name = "FlowPanelNotifications";
             this.FlowPanelNotifications.Size = new System.Drawing.Size(396, 495);
             this.FlowPanelNotifications.TabIndex = 2;
-            this.FlowPanelNotifications.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowPanelNotifications_Paint);
             // 
             // NotifPanel1
             // 

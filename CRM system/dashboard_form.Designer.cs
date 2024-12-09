@@ -91,7 +91,6 @@
             this.lblUserName.Size = new System.Drawing.Size(174, 42);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "Welcome, NAME";
-            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
             // 
             // pictureBox1
             // 
@@ -209,7 +208,6 @@
             this.usMemberStatusLabel.Size = new System.Drawing.Size(81, 13);
             this.usMemberStatusLabel.TabIndex = 4;
             this.usMemberStatusLabel.Text = "Member Status:";
-            this.usMemberStatusLabel.Click += new System.EventHandler(this.usMemberStatusLabel_Click);
             // 
             // dashboard_form
             // 
@@ -227,7 +225,6 @@
             this.Name = "dashboard_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dashboard_form";
-            this.Load += new System.EventHandler(this.dashboard_form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
