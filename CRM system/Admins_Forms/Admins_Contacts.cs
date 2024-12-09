@@ -255,18 +255,7 @@ namespace CRM_system.Admins_Forms
                 MessageBox.Show($"Error adding member: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -303,6 +292,100 @@ namespace CRM_system.Admins_Forms
 
             userQueries.UpdateUser(currentUser.Id, currentUser.Name, currentUser.Email, currentUser.Password, status, currentUser.LocationID, currentUser.MembershipType);
             ReinitializeForm();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Admins_Contacts_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void adMemberbtn_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string fullName = adFullNameAdd.Text.Trim();
+                string email = adEmailAddressAdd.Text.Trim();
+                string password = adPasswordAdd.Text.Trim();
+
+                // Validation flags
+                bool isValid = true;
+
+                // Email validation
+                if (string.IsNullOrEmpty(email) || !IsValidEmail(email))
+                {
+                    lblEmailError.Text = "Please enter a valid email address.";
+                    lblEmailError.Visible = true;
+                    isValid = false;
+                }
+                else
+                {
+                    lblEmailError.Visible = false;
+                }
+
+                // Password validation
+                if (string.IsNullOrEmpty(password) || password.Length < 8)
+                {
+                    lblPasswordError.Text = "Password must be at least 8 characters.";
+                    lblPasswordError.Visible = true;
+                    isValid = false;
+                }
+                else
+                {
+                    lblPasswordError.Visible = false;
+                }
+
+                if (!isValid)
+                {
+                    return;
+                }
+
+                if (userQueries.AddNewMember(fullName, email, password))
+                {
+                    MessageBox.Show("Member added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refresh the DataGridView to show the new member
+                    LoadMemberContacts();
+
+                    // Clear input fields and hide error labels
+                    adFullNameAdd.Text = string.Empty;
+                    adEmailAddressAdd.Text = string.Empty;
+                    adPasswordAdd.Text = string.Empty;
+                    adInterestAdd.Text = string.Empty;
+
+                    lblEmailError.Visible = false;
+                    lblPasswordError.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add the member. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding member: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -129,12 +129,6 @@
     <Compile Include="Admins_Forms\Admins_Dashboard.Designer.cs">
       <DependentUpon>Admins_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admins_Forms\Admins_Events.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admins_Forms\Admins_Events.Designer.cs">
-      <DependentUpon>Admins_Events.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admins_Forms\Admins_Learning.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admins_Forms\Admins_Dashboard.resx">
       <DependentUpon>Admins_Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admins_Forms\Admins_Events.resx">
-      <DependentUpon>Admins_Events.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admins_Forms\Admins_Learning.resx">
       <DependentUpon>Admins_Learning.cs</DependentUpon>
