@@ -150,5 +150,10 @@ namespace CRM_system
         {
 
         }
+
+        private void dgJoinedEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

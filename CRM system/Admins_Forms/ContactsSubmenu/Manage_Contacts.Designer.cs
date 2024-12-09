@@ -295,7 +295,7 @@
             this.flowLayoutPanel4.Controls.Add(this.panel16);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(630, 112);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(360, 173);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(360, 167);
             this.flowLayoutPanel4.TabIndex = 64;
             // 
             // panel17

@@ -272,6 +272,75 @@ namespace CRM_system.DB
             }
         }
 
+        //Get all events for the eveent attendees list.
+        public DataTable GetAllEventAttendees()
+        {
+            DataTable attendeesTable = new DataTable();
+
+            string query = @"
+        SELECT 
+            ea.id AS AttendeeID,
+            u.id AS UserID,
+            u.name AS UserName,
+            e.id AS EventID,
+            e.event_name AS EventName,
+            ea.joined_at AS JoinedAt
+        FROM 
+            EventAttendees ea
+        JOIN 
+            Users u ON ea.user_id = u.id
+        JOIN 
+            Events e ON ea.event_id = e.id
+        ORDER BY 
+            ea.joined_at DESC;
+    ";
+
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var adapter = new SQLiteDataAdapter(command))
+                    {
+                        adapter.Fill(attendeesTable);
+                    }
+                }
+            }
+
+            return attendeesTable;
+        }
+
+        //Remove attendee from admins event attendees form
+        public bool RemoveEventAttendee(int attendeeId)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string query = "DELETE FROM EventAttendees WHERE id = @AttendeeID";
+
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@AttendeeID", attendeeId);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0; // Return true if a row was deleted
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error removing attendee: {ex.Message}");
+                return false;
+            }
+        }
+
+
+
+
 
     }
 }

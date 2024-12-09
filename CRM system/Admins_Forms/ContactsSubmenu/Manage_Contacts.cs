@@ -10,7 +10,7 @@ namespace CRM_system.Admins_Forms.ContactsSubmenu
     public partial class Manage_Contacts : Form
     {
         private DB.UserQueries userQueries;
-        private DataTable contacts; // Store contacts for filtering
+        //private DataTable contacts; // Store contacts for filtering
         private List<Models.User> pendingUsers;
 
         public Manage_Contacts()
