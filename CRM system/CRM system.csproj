@@ -159,6 +159,48 @@
     <Compile Include="Admins_Forms\Admin_Edit_Content.Designer.cs">
       <DependentUpon>Admin_Edit_Content.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admins_Forms\ContactsSubmenu\Contacts_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\ContactsSubmenu\Contacts_List.Designer.cs">
+      <DependentUpon>Contacts_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\ContactsSubmenu\Contacts_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\ContactsSubmenu\Contacts_Reports.Designer.cs">
+      <DependentUpon>Contacts_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\ContactsSubmenu\Manage_Contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\ContactsSubmenu\Manage_Contacts.Designer.cs">
+      <DependentUpon>Manage_Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_Attendees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_Attendees.Designer.cs">
+      <DependentUpon>Events_Attendees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_list.Designer.cs">
+      <DependentUpon>Events_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_management.Designer.cs">
+      <DependentUpon>Events_management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admins_Forms\EventsSubmenu\Events_Reports.Designer.cs">
+      <DependentUpon>Events_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contacts_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +305,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admins_Forms\Admin_Edit_Event.resx">
       <DependentUpon>Admin_Edit_Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\ContactsSubmenu\Contacts_List.resx">
+      <DependentUpon>Contacts_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\ContactsSubmenu\Contacts_Reports.resx">
+      <DependentUpon>Contacts_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\ContactsSubmenu\Manage_Contacts.resx">
+      <DependentUpon>Manage_Contacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\EventsSubmenu\Events_Attendees.resx">
+      <DependentUpon>Events_Attendees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\EventsSubmenu\Events_list.resx">
+      <DependentUpon>Events_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\EventsSubmenu\Events_management.resx">
+      <DependentUpon>Events_management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admins_Forms\EventsSubmenu\Events_Reports.resx">
+      <DependentUpon>Events_Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contacts_Form.resx">
       <DependentUpon>Contacts_Form.cs</DependentUpon>

@@ -424,5 +424,10 @@ namespace CRM_system.Admins_Forms
         {
 
         }
+
+        private void adEventInName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

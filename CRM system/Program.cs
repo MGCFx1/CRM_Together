@@ -23,7 +23,7 @@ namespace CRM_system
             var dbInitializer = new DatabaseInitializer();
             dbInitializer.InitializeDatabase();
 
-            Application.Run(new Admins_Dashboard());
+            Application.Run(new AdminsPanel());
 
         }
     }

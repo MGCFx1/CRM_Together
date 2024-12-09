@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admins_Events));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,8 +47,6 @@
             this.adlblFileName = new System.Windows.Forms.Label();
             this.lblImageError = new System.Windows.Forms.Label();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            this.adEventsDiscardUp = new System.Windows.Forms.Button();
-            this.adEventSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.adEventInSchedule = new System.Windows.Forms.DateTimePicker();
@@ -67,14 +66,20 @@
             this.btnRemoveEvents = new System.Windows.Forms.Button();
             this.btnEditEvents = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AdSearchEvents = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.adEventSave = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.adEventsDiscardUp = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,8 +103,6 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.currencyBox);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.adEventsDiscardUp);
-            this.panel2.Controls.Add(this.adEventSave);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.adEventInSchedule);
@@ -112,9 +115,9 @@
             this.panel2.Controls.Add(this.eventLocationBox);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.adEventInContentType);
-            this.panel2.Location = new System.Drawing.Point(223, 80);
+            this.panel2.Location = new System.Drawing.Point(222, 91);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(321, 451);
+            this.panel2.Size = new System.Drawing.Size(321, 403);
             this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -289,40 +292,6 @@
             this.btnUploadImage.UseVisualStyleBackColor = false;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
-            // adEventsDiscardUp
-            // 
-            this.adEventsDiscardUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventsDiscardUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adEventsDiscardUp.FlatAppearance.BorderSize = 0;
-            this.adEventsDiscardUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adEventsDiscardUp.ForeColor = System.Drawing.Color.White;
-            this.adEventsDiscardUp.Image = ((System.Drawing.Image)(resources.GetObject("adEventsDiscardUp.Image")));
-            this.adEventsDiscardUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adEventsDiscardUp.Location = new System.Drawing.Point(164, 414);
-            this.adEventsDiscardUp.Name = "adEventsDiscardUp";
-            this.adEventsDiscardUp.Size = new System.Drawing.Size(124, 29);
-            this.adEventsDiscardUp.TabIndex = 89;
-            this.adEventsDiscardUp.Text = "    Discard Upload";
-            this.adEventsDiscardUp.UseVisualStyleBackColor = false;
-            this.adEventsDiscardUp.Click += new System.EventHandler(this.adEventsDiscardUp_Click);
-            // 
-            // adEventSave
-            // 
-            this.adEventSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.adEventSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.adEventSave.FlatAppearance.BorderSize = 0;
-            this.adEventSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adEventSave.ForeColor = System.Drawing.Color.White;
-            this.adEventSave.Image = ((System.Drawing.Image)(resources.GetObject("adEventSave.Image")));
-            this.adEventSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adEventSave.Location = new System.Drawing.Point(37, 414);
-            this.adEventSave.Name = "adEventSave";
-            this.adEventSave.Size = new System.Drawing.Size(124, 29);
-            this.adEventSave.TabIndex = 78;
-            this.adEventSave.Text = "    Add an Event";
-            this.adEventSave.UseVisualStyleBackColor = false;
-            this.adEventSave.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -426,6 +395,7 @@
             this.adEventInName.Name = "adEventInName";
             this.adEventInName.Size = new System.Drawing.Size(298, 26);
             this.adEventInName.TabIndex = 72;
+            this.adEventInName.TextChanged += new System.EventHandler(this.adEventInName_TextChanged);
             // 
             // eventLocationBox
             // 
@@ -473,27 +443,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(228, 33);
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(227, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 20);
+            this.label2.Size = new System.Drawing.Size(122, 21);
             this.label2.TabIndex = 91;
             this.label2.Text = "Admins Events";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(228, 52);
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(227, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 20);
+            this.label4.Size = new System.Drawing.Size(221, 21);
             this.label4.TabIndex = 92;
             this.label4.Text = "View, Add, and Manage Events";
             // 
             // dgEvents
             // 
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEvents.Location = new System.Drawing.Point(550, 80);
+            this.dgEvents.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.dgEvents.Location = new System.Drawing.Point(549, 91);
             this.dgEvents.Name = "dgEvents";
             this.dgEvents.Size = new System.Drawing.Size(456, 181);
             this.dgEvents.TabIndex = 98;
@@ -502,8 +476,8 @@
             // btnRefEvents
             // 
             this.btnRefEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
-            this.btnRefEvents.ForeColor = System.Drawing.Color.White;
-            this.btnRefEvents.Location = new System.Drawing.Point(550, 268);
+            this.btnRefEvents.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefEvents.Location = new System.Drawing.Point(549, 279);
             this.btnRefEvents.Name = "btnRefEvents";
             this.btnRefEvents.Size = new System.Drawing.Size(97, 29);
             this.btnRefEvents.TabIndex = 99;
@@ -515,7 +489,7 @@
             // 
             this.btnRemoveEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.btnRemoveEvents.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveEvents.Location = new System.Drawing.Point(646, 268);
+            this.btnRemoveEvents.Location = new System.Drawing.Point(645, 279);
             this.btnRemoveEvents.Name = "btnRemoveEvents";
             this.btnRemoveEvents.Size = new System.Drawing.Size(97, 29);
             this.btnRemoveEvents.TabIndex = 100;
@@ -527,7 +501,7 @@
             // 
             this.btnEditEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.btnEditEvents.ForeColor = System.Drawing.Color.White;
-            this.btnEditEvents.Location = new System.Drawing.Point(742, 267);
+            this.btnEditEvents.Location = new System.Drawing.Point(741, 278);
             this.btnEditEvents.Name = "btnEditEvents";
             this.btnEditEvents.Size = new System.Drawing.Size(97, 29);
             this.btnEditEvents.TabIndex = 101;
@@ -539,19 +513,10 @@
             // 
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.AdSearchEvents);
-            this.panel5.Location = new System.Drawing.Point(836, 267);
+            this.panel5.Location = new System.Drawing.Point(835, 278);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(170, 28);
             this.panel5.TabIndex = 102;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 28);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // AdSearchEvents
             // 
@@ -562,11 +527,88 @@
             this.AdSearchEvents.TabIndex = 0;
             this.AdSearchEvents.TextChanged += new System.EventHandler(this.AdSearchEvents_TextChanged);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.Control;
+            this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(549, 72);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 19);
+            this.label14.TabIndex = 103;
+            this.label14.Text = "Events List";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.Control;
+            this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(218, 69);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(102, 19);
+            this.label15.TabIndex = 104;
+            this.label15.Text = "Add an Event";
+            // 
+            // adEventSave
+            // 
+            this.adEventSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adEventSave.FlatAppearance.BorderSize = 0;
+            this.adEventSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adEventSave.ForeColor = System.Drawing.Color.White;
+            this.adEventSave.Image = ((System.Drawing.Image)(resources.GetObject("adEventSave.Image")));
+            this.adEventSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adEventSave.Location = new System.Drawing.Point(253, 498);
+            this.adEventSave.Name = "adEventSave";
+            this.adEventSave.Size = new System.Drawing.Size(124, 29);
+            this.adEventSave.TabIndex = 78;
+            this.adEventSave.Text = "    Add an Event";
+            this.adEventSave.UseVisualStyleBackColor = false;
+            this.adEventSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // adEventsDiscardUp
+            // 
+            this.adEventsDiscardUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.adEventsDiscardUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adEventsDiscardUp.FlatAppearance.BorderSize = 0;
+            this.adEventsDiscardUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adEventsDiscardUp.ForeColor = System.Drawing.Color.White;
+            this.adEventsDiscardUp.Image = ((System.Drawing.Image)(resources.GetObject("adEventsDiscardUp.Image")));
+            this.adEventsDiscardUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.adEventsDiscardUp.Location = new System.Drawing.Point(379, 498);
+            this.adEventsDiscardUp.Name = "adEventsDiscardUp";
+            this.adEventsDiscardUp.Size = new System.Drawing.Size(124, 29);
+            this.adEventsDiscardUp.TabIndex = 89;
+            this.adEventsDiscardUp.Text = "    Discard Upload";
+            this.adEventsDiscardUp.UseVisualStyleBackColor = false;
+            this.adEventsDiscardUp.Click += new System.EventHandler(this.adEventsDiscardUp_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(209, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(190, 30);
+            this.pictureBox1.TabIndex = 105;
+            this.pictureBox1.TabStop = false;
+            // 
             // Admins_Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 540);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.adEventSave);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.btnEditEvents);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnRemoveEvents);
@@ -576,6 +618,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.adEventsDiscardUp);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admins_Events";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -589,6 +633,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,5 +680,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox AdSearchEvents;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
