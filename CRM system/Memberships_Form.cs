@@ -13,12 +13,12 @@ namespace CRM_system
 {
     public partial class Memberships_Form : Form
     {
-        private UserQueries userQueries;
+        private MembershipQueries membershipQueries;
 
         public Memberships_Form()
         {
             InitializeComponent();
-            userQueries = new UserQueries(); // Initialize the UserQueries instance   
+            membershipQueries = new MembershipQueries(); // Initialize the MembershipQueries instance
         }
 
         private void btnCommunityMembership_Click(object sender, EventArgs e)
@@ -41,14 +41,19 @@ namespace CRM_system
                 int userId = UserSession.ID; // Get the logged-in user's ID
 
                 // Check if the user already has an active membership
-                if (userQueries.HasActiveMembership(userId))
+                if (membershipQueries.HasActiveMembership(userId))
                 {
                     MessageBox.Show("You already have an active membership.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
+                // Fetch the duration from the Memberships table
+                int durationInDays = membershipQueries.GetMembershipDuration(membershipId);
+                DateTime startDate = DateTime.UtcNow;
+                DateTime validUntil = startDate.AddDays(durationInDays);
+
                 // Add the membership for the user
-                bool success = userQueries.AddMembership(userId, membershipId, DateTime.UtcNow.ToString("yyyy-MM-dd"));
+                bool success = membershipQueries.AddMembership(userId, membershipId, startDate.ToString("yyyy-MM-dd"), validUntil.ToString("yyyy-MM-dd"));
                 if (success)
                 {
                     MessageBox.Show("Membership successfully activated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -63,8 +68,6 @@ namespace CRM_system
                 MessageBox.Show($"Error activating membership: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
-
-
-  

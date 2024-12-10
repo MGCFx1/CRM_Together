@@ -15,13 +15,15 @@ namespace CRM_system
     {
         private UserEventsQueries userEventsQueries;
         private UserQueries userQueries;
+        private MembershipQueries membershipQueries;
+
 
         public dashboard_form()
         {
             InitializeComponent();
             userEventsQueries = new UserEventsQueries(); // Initialize the database query
             userQueries = new UserQueries(); // Initialize the user queries class
-
+            membershipQueries = new MembershipQueries(); // Initialize the MembershipQueries instance
             lblUserName.Text = $"Welcome, {UserSession.Name}"; // Display the logged-in user's name
             LoadJoinedEvents(); // Load all events joined by the user
             LoadMembershipDetails();// Load membership details
@@ -125,20 +127,22 @@ namespace CRM_system
             {
                 int userId = UserSession.ID; // Get the logged-in user's ID
 
-                // Retrieve membership details from the database using UserQueries
-                var membershipDetails = userQueries.GetMembershipDetails(userId);
+                // Retrieve membership details from the database using MembershipQueries
+                var membershipDetails = membershipQueries.GetMembershipDetails(userId);
 
                 if (membershipDetails != null)
                 {
-                    usMemberTierLabel.Text = $"Tier: {membershipDetails.Tier}";
+                    usMemberTierLabel.Text = $"Membership: {membershipDetails.Tier}";
                     usMemberSinceLabel.Text = $"Member Since: {membershipDetails.MemberSince}";
                     usMemberStatusLabel.Text = $"Status: {membershipDetails.Status}";
+                    usMemberUntillLabel.Text = $"Valid Until: {membershipDetails.ValidUntil}";
                 }
                 else
                 {
-                    usMemberTierLabel.Text = "Tier: Not a Member";
+                    usMemberTierLabel.Text = "Membership: Not a Member";
                     usMemberSinceLabel.Text = "Member Since: N/A";
                     usMemberStatusLabel.Text = "Status: None";
+                    usMemberUntillLabel.Text = "Valid Until: N/A";
                 }
             }
             catch (Exception ex)

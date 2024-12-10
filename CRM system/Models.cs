@@ -62,8 +62,9 @@ namespace CRM_system.Models
     //Retrieve membership details
     public class MembershipDetails
     {
-        public string Tier { get; set; }
+        public string Tier { get; set; } 
         public string MemberSince { get; set; }
+        public string ValidUntil { get; set; }
         public string Status { get; set; }
     }
 
