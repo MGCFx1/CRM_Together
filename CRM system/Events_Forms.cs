@@ -101,7 +101,7 @@ namespace CRM_system
                     // Create the event location label
                     Label eventLocation = new Label
                     {
-                        Text = $"Location: {ev.LocationCity}",
+                        Text = ev.LocationCity,
                         Font = new Font("Arial", 9),
                         ForeColor = Color.LightGray,
                         Size = new Size(106, 16),

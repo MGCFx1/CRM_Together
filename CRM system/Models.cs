@@ -51,7 +51,7 @@ namespace CRM_system.Models
         public int AttendanceLimit { get; set; }
         public string EventDate { get; set; }
         public string PublishStatus { get; set; }
-        public String LocationCity { get; set; }
+        public string LocationCity { get; set; }
         public int FeeId { get; set; }
         public string FeeAmount { get; set; }
         public string FeeCurrency { get; set; }
