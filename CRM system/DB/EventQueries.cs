@@ -38,7 +38,6 @@ namespace CRM_system.DB
         // Converts a byte array to the image.
         public static Image ByteArrayToImage(byte[] byteArray)
         {
-            Console.WriteLine("Ouput be here: " + BitConverter.ToString(byteArray));
             try
             {
                 using (MemoryStream ms = new MemoryStream(byteArray))
