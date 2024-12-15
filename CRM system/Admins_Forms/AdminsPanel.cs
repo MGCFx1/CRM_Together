@@ -60,6 +60,19 @@ namespace CRM_system.Admins_Forms
             adbtContactsList.Click += AdbtContactsList_Click;
             adbtManageContacts.Click += AdbtManageContacts_Click;
             adbtContactsReports.Click += AdbtContactsReports_Click;
+
+            // Take to Admin Dashboard
+            if (adDashboard == null)
+            {
+                adDashboard = new Admins_Dashboard();
+                adDashboard.FormClosed += AdDashboard_FormClosed;
+                adDashboard.MdiParent = this;
+                adDashboard.Show();
+            }
+            else
+            {
+                adDashboard.Activate();
+            }
         }
 
         // Method to handle sign out
