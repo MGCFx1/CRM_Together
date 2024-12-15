@@ -16,16 +16,16 @@ namespace CRM_system.Admins_Forms
             this.contentQueries = new ContentQueries();
             this.contentId = contentId;
 
-            LoadContentDetails(); // Load the event data into the form fields
+            LoadContentDetails(); // Load the content data into the form fields
         }
 
-        //Fetch and load the event details into the form based on EventID
+        //Fetch and load the content details into the form based on EventID
         private void LoadContentDetails()
         {
-            //try
-            //{
+            try
+            {
                 Console.WriteLine("ID: " + this.contentId);
-                // Fetch event details by ID
+                // Fetch content details by ID
                 var contentDetails = contentQueries.GetContentById(contentId);
 
                 if (contentDetails != null)
@@ -41,24 +41,14 @@ namespace CRM_system.Admins_Forms
                 else
                 {
                     MessageBox.Show("Content not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close(); // Close the form if the event is not found
+                    this.Close(); // Close the form if the content is not found
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error loading content details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    this.Close(); // Close the form on error
-            //}
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
+            }
+            catch (Exception ex)
+            {
+                    MessageBox.Show($"Error loading content details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close(); // Close the form on error
+            }
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -66,12 +56,12 @@ namespace CRM_system.Admins_Forms
 
         }
 
-        //Save Button to save and update the event details
+        //Save Button to save and update the content details
         private void PopEventSave_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-               // Create an updated content object with details from the form fields.
+            try
+            {
+                // Create an updated content object with details from the form fields.
 
                 var updatedContent = new Contents
                 {
@@ -85,21 +75,21 @@ namespace CRM_system.Admins_Forms
 
                 };
 
-                // Save the updated event
+                // Save the updated content
                 if (contentQueries.updateContent(updatedContent))
                 {
-                    MessageBox.Show("Event updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Content updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close(); // Close the form after saving
                 }
                 else
                 {
-                    MessageBox.Show("Failed to update event. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to update content. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error saving event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving content: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Triggers when Discard button is pressed to close the form without saving

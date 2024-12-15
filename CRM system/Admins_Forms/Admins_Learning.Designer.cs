@@ -30,14 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cityBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.attendLimBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.contentFeeLbl = new System.Windows.Forms.Label();
             this.feeBox = new System.Windows.Forms.TextBox();
-            this.postCodeBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.contentCurrencyLbl = new System.Windows.Forms.Label();
             this.currencyBox = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,8 +50,6 @@
             this.contentTypeLbl = new System.Windows.Forms.Label();
             this.adContentInDescription = new System.Windows.Forms.RichTextBox();
             this.adContentInName = new System.Windows.Forms.TextBox();
-            this.eventLocationBox = new System.Windows.Forms.TextBox();
-            this.contentAdLbl = new System.Windows.Forms.Label();
             this.adInContentType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,14 +79,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.panel2.Controls.Add(this.cityBox);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.attendLimBox);
-            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.contentFeeLbl);
             this.panel2.Controls.Add(this.feeBox);
-            this.panel2.Controls.Add(this.postCodeBox);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.contentCurrencyLbl);
             this.panel2.Controls.Add(this.currencyBox);
             this.panel2.Controls.Add(this.panel3);
@@ -109,8 +95,6 @@
             this.panel2.Controls.Add(this.contentTypeLbl);
             this.panel2.Controls.Add(this.adContentInDescription);
             this.panel2.Controls.Add(this.adContentInName);
-            this.panel2.Controls.Add(this.eventLocationBox);
-            this.panel2.Controls.Add(this.contentAdLbl);
             this.panel2.Controls.Add(this.adInContentType);
             this.panel2.Location = new System.Drawing.Point(297, 98);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -118,55 +102,6 @@
             this.panel2.Size = new System.Drawing.Size(428, 555);
             this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // cityBox
-            // 
-            this.cityBox.BackColor = System.Drawing.Color.White;
-            this.cityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.cityBox.Location = new System.Drawing.Point(289, 251);
-            this.cityBox.Margin = new System.Windows.Forms.Padding(4);
-            this.cityBox.Name = "cityBox";
-            this.cityBox.Size = new System.Drawing.Size(127, 30);
-            this.cityBox.TabIndex = 100;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(255, 258);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 20);
-            this.label13.TabIndex = 101;
-            this.label13.Text = "City";
-            // 
-            // attendLimBox
-            // 
-            this.attendLimBox.BackColor = System.Drawing.Color.White;
-            this.attendLimBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attendLimBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.attendLimBox.Location = new System.Drawing.Point(284, 306);
-            this.attendLimBox.Margin = new System.Windows.Forms.Padding(4);
-            this.attendLimBox.Name = "attendLimBox";
-            this.attendLimBox.Size = new System.Drawing.Size(132, 30);
-            this.attendLimBox.TabIndex = 98;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(285, 288);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 20);
-            this.label10.TabIndex = 99;
-            this.label10.Text = "Attendee Limit";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // contentFeeLbl
             // 
@@ -191,30 +126,6 @@
             this.feeBox.Name = "feeBox";
             this.feeBox.Size = new System.Drawing.Size(133, 30);
             this.feeBox.TabIndex = 96;
-            // 
-            // postCodeBox
-            // 
-            this.postCodeBox.BackColor = System.Drawing.Color.White;
-            this.postCodeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postCodeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.postCodeBox.Location = new System.Drawing.Point(289, 213);
-            this.postCodeBox.Margin = new System.Windows.Forms.Padding(4);
-            this.postCodeBox.Name = "postCodeBox";
-            this.postCodeBox.Size = new System.Drawing.Size(127, 30);
-            this.postCodeBox.TabIndex = 96;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(291, 193);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 20);
-            this.label9.TabIndex = 97;
-            this.label9.Text = "Postcode";
             // 
             // contentCurrencyLbl
             // 
@@ -451,30 +362,6 @@
             this.adContentInName.Size = new System.Drawing.Size(396, 30);
             this.adContentInName.TabIndex = 72;
             // 
-            // eventLocationBox
-            // 
-            this.eventLocationBox.BackColor = System.Drawing.Color.White;
-            this.eventLocationBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventLocationBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.eventLocationBox.Location = new System.Drawing.Point(12, 213);
-            this.eventLocationBox.Margin = new System.Windows.Forms.Padding(4);
-            this.eventLocationBox.Name = "eventLocationBox";
-            this.eventLocationBox.Size = new System.Drawing.Size(269, 30);
-            this.eventLocationBox.TabIndex = 74;
-            // 
-            // contentAdLbl
-            // 
-            this.contentAdLbl.AutoSize = true;
-            this.contentAdLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.contentAdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contentAdLbl.ForeColor = System.Drawing.Color.White;
-            this.contentAdLbl.Location = new System.Drawing.Point(13, 193);
-            this.contentAdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.contentAdLbl.Name = "contentAdLbl";
-            this.contentAdLbl.Size = new System.Drawing.Size(118, 20);
-            this.contentAdLbl.TabIndex = 75;
-            this.contentAdLbl.Text = "Event Address";
-            // 
             // adInContentType
             // 
             this.adInContentType.BackColor = System.Drawing.Color.White;
@@ -640,7 +527,6 @@
         private System.Windows.Forms.Label contentTypeLbl;
         private System.Windows.Forms.RichTextBox adContentInDescription;
         private System.Windows.Forms.TextBox adContentInName;
-        private System.Windows.Forms.TextBox eventLocationBox;
         private System.Windows.Forms.ComboBox adInContentType;
         private System.Windows.Forms.Button adContentSave;
         private System.Windows.Forms.Label contentDateLbl;
@@ -658,12 +544,6 @@
         private System.Windows.Forms.ComboBox currencyBox;
         private System.Windows.Forms.TextBox feeBox;
         private System.Windows.Forms.Label contentFeeLbl;
-        private System.Windows.Forms.TextBox attendLimBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox postCodeBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox cityBox;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgContent;
         private System.Windows.Forms.Button btnRefContent;
         private System.Windows.Forms.Button btnRemoveContent;
@@ -671,6 +551,5 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox AdSearchEvents;
-        private System.Windows.Forms.Label contentAdLbl;
     }
 }

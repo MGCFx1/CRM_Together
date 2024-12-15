@@ -14,6 +14,7 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
         {
             InitializeComponent();
             eventQueries = new EventQueries(); // Initialize EventQueries
+            LoadAllEventAttendees();
         }
 
         // Method to load all attendees for all events

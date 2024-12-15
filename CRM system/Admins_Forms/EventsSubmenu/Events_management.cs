@@ -167,6 +167,13 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
             }
 
             // Validate required fields
+            if (string.IsNullOrEmpty(event_type))
+            {
+                MessageBox.Show("Event Type is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validate required fields
             if (string.IsNullOrEmpty(schedule))
             {
                 MessageBox.Show("Event Date is needed.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -186,11 +193,11 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
                 return;
             }
 
-            //if (Image.IsNullOrEmpty(selectedImage))
-            //{
-            //    MessageBox.Show("Please upload an image for the event.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (selectedImage == null)
+            {
+                MessageBox.Show("Please upload an image for the content.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (!int.TryParse(attendance_limit, out int result))
             {

@@ -15,8 +15,7 @@ namespace CRM_system.Admins_Forms
 {
     public partial class Admins_Learning : Form
     {
-        //private string selectedImage; // To store the selected image path
-        Image selectedImage;
+        private Image selectedImage;
         private ContentQueries contentQuery; // For handling content-related database queries
         private FeeQueries feeQuery;
 
@@ -88,24 +87,17 @@ namespace CRM_system.Admins_Forms
                 return;
             }
 
-            // Validate required fields
-            //if (string.IsNullOrEmpty((attendance_limit)))
-            //{
-            //    MessageBox.Show("Content attendee limit is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
             if (string.IsNullOrEmpty(publishStatus))
             {
-                MessageBox.Show("Please select a publish status (Public, Private, Draft).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a publish status (Public, Draft).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            //if (Image.IsNullOrEmpty(selectedImage))
-            //{
-            //    MessageBox.Show("Please upload an image for the content.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (selectedImage == null)
+            {
+                MessageBox.Show("Please upload an image for the content.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             // Validate required fields
             if (string.IsNullOrEmpty((currency)))
@@ -130,8 +122,6 @@ namespace CRM_system.Admins_Forms
                 // Clear all input fields on successful upload
                 adContentInName.Text = string.Empty;
                 adContentInDescription.Text = string.Empty;
-                eventLocationBox.Text = string.Empty;
-                attendLimBox.Text = string.Empty;
 
 
                 adInContentType.SelectedIndex = -1; // Reset the combo box
@@ -208,9 +198,6 @@ namespace CRM_system.Admins_Forms
                 // Clear all input fields
                 adContentInName.Text = string.Empty;
                 adContentInDescription.Text = string.Empty;
-                eventLocationBox.Text = string.Empty;
-                attendLimBox.Text = string.Empty;
-
 
                 adInContentType.SelectedIndex = -1; // Reset the Content Type
                 adContentInSchedule.Value = DateTime.Now; // Reset the Content date
