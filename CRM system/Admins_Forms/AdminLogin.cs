@@ -200,5 +200,11 @@ namespace CRM_system
             // Close or hide the current form
             this.Close(); // Or use this.Hide();
         }
+
+        private void Login_Insert_Click(object sender, EventArgs e)
+        {
+            login_email.Text = "admin@together.com";
+            login_password.Text = "admin1234";
+        }
     }
 }

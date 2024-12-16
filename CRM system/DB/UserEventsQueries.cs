@@ -133,6 +133,11 @@ namespace CRM_system.DB
             return events;
         }
 
+        /// <summary>
+        /// Retrieves a list of events joined by a specific user from the database.
+        /// </summary>
+        /// <param name="userId">ID of the user who joined events are to be retrieved.</param>
+        /// /// <returns>A DataTable contains details of the events the user joined.</returns>
         public DataTable GetUserJoinedEvents(int userId)
         {
             var joinedEventsTable = new DataTable();
@@ -236,6 +241,10 @@ namespace CRM_system.DB
             }
         }
 
+        /// <summary>
+        /// Generates an Excel report of all non-admin users, including their details,
+        /// number of events joined, and participation percentage.
+        /// </summary>
         public void GenerateUsersReport()
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -301,7 +310,13 @@ namespace CRM_system.DB
             }
         }
 
-
+        /// <summary>
+        /// Removes a user from a specific event and generates a notification
+        /// to inform the user that they have left the event.
+        /// </summary>
+        /// <param name="userId">The ID of the user to be removed.</param>
+        /// <param name="eventId">The ID of the event the user wants to leave.</param>
+        /// <returns>True if the user is successfully removed and notified; otherwise, false.</returns>
         public bool RemoveUserFromEvent(int userId, int eventId)
         {
             using (var connection = new SQLiteConnection(ConnectionString))

@@ -47,69 +47,6 @@ namespace CRM_system.Admins_Forms.EventsSubmenu
             }
         }
 
-        // Refresh the events list
-        private void btnRefEvents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadEvents();
-                MessageBox.Show("Event list refreshed successfully.", "Refreshed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error refreshing the event list: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Remove selected event
-        private void btnRemoveEvents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgEvents.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Please select an event to remove.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                int selectedEventId = Convert.ToInt32(dgEvents.SelectedRows[0].Cells["Id"].Value);
-
-                var confirmResult = MessageBox.Show("Are you sure you want to remove the selected event?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (confirmResult == DialogResult.No) return;
-
-                if (eventQuery.DeleteEvent(selectedEventId))
-                {
-                    MessageBox.Show("Event removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadEvents();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to remove the event. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error removing event: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Edit selected event
-        private void btnEditEvents_Click(object sender, EventArgs e)
-        {
-            if (dgEvents.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select an event to edit.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int selectedEventId = Convert.ToInt32(dgEvents.SelectedRows[0].Cells["Id"].Value);
-
-            // Open the EditEventForm
-            var editForm = new Admin_Edit_Event(selectedEventId);
-            editForm.ShowDialog(); // Show the form as a modal dialog
-            LoadEvents(); // Refresh the event list after editing
-        }
-
         // Search events
         private void AdSearchEvents_TextChanged_1(object sender, EventArgs e)
         {

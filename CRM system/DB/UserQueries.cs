@@ -432,10 +432,3 @@ namespace CRM_system.DB
         }
     }
 }
-
-
-
-
-
-
-

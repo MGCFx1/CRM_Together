@@ -44,6 +44,8 @@
             this.lblPasswordErr = new System.Windows.Forms.Label();
             this.lblEmailErr = new System.Windows.Forms.Label();
             this.btnBackAd = new System.Windows.Forms.Button();
+            this.Login_Insert = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +67,7 @@
             this.login_register.Cursor = System.Windows.Forms.Cursors.Default;
             this.login_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_register.ForeColor = System.Drawing.Color.White;
-            this.login_register.Location = new System.Drawing.Point(579, 422);
+            this.login_register.Location = new System.Drawing.Point(574, 412);
             this.login_register.Name = "login_register";
             this.login_register.Size = new System.Drawing.Size(76, 13);
             this.login_register.TabIndex = 8;
@@ -91,10 +93,12 @@
             // 
             this.login_btn.BackColor = System.Drawing.Color.Black;
             this.login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.login_btn.FlatAppearance.BorderSize = 0;
+            this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.ForeColor = System.Drawing.Color.White;
             this.login_btn.Image = ((System.Drawing.Image)(resources.GetObject("login_btn.Image")));
-            this.login_btn.Location = new System.Drawing.Point(539, 371);
+            this.login_btn.Location = new System.Drawing.Point(534, 366);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(161, 38);
             this.login_btn.TabIndex = 5;
@@ -239,11 +243,39 @@
             this.btnBackAd.UseVisualStyleBackColor = false;
             this.btnBackAd.Click += new System.EventHandler(this.btnBackAd_Click);
             // 
+            // Login_Insert
+            // 
+            this.Login_Insert.AutoSize = true;
+            this.Login_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.Login_Insert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Login_Insert.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_Insert.ForeColor = System.Drawing.Color.White;
+            this.Login_Insert.Location = new System.Drawing.Point(579, 70);
+            this.Login_Insert.Name = "Login_Insert";
+            this.Login_Insert.Size = new System.Drawing.Size(145, 16);
+            this.Login_Insert.TabIndex = 92;
+            this.Login_Insert.Text = "Auto-Fill Admin Login";
+            this.Login_Insert.Click += new System.EventHandler(this.Login_Insert_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.label1.Location = new System.Drawing.Point(492, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Testing the app?";
+            // 
             // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 540);
+            this.Controls.Add(this.Login_Insert);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBackAd);
             this.Controls.Add(this.lblEmailErr);
             this.Controls.Add(this.lblPasswordErr);
@@ -290,6 +322,8 @@
         private System.Windows.Forms.Label lblPasswordErr;
         private System.Windows.Forms.Label lblEmailErr;
         private System.Windows.Forms.Button btnBackAd;
+        private System.Windows.Forms.Label Login_Insert;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -194,5 +194,16 @@ namespace CRM_system
             landingPage.Show();
             this.Close();
         }
+
+        private void Login_Insert_Click(object sender, EventArgs e)
+        {
+            login_email.Text = "user@together.com";
+            login_password.Text = "user1234";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
