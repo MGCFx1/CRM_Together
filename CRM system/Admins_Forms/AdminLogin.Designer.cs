@@ -58,7 +58,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(799, 543);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // login_register
             // 
@@ -72,7 +71,6 @@
             this.login_register.Size = new System.Drawing.Size(76, 13);
             this.login_register.TabIndex = 8;
             this.login_register.Text = "Admins Only";
-            this.login_register.Click += new System.EventHandler(this.label5_Click);
             // 
             // login_show
             // 
@@ -151,7 +149,6 @@
             this.label2.Size = new System.Drawing.Size(95, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email Address";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // login_close
             // 
@@ -201,7 +198,6 @@
             this.label7.Size = new System.Drawing.Size(169, 25);
             this.label7.TabIndex = 12;
             this.label7.Text = "Welcome Admin";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblPasswordErr
             // 
@@ -297,7 +293,6 @@
             this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

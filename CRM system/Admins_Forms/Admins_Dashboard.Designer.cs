@@ -268,7 +268,6 @@
             this.adMemberCount.Size = new System.Drawing.Size(41, 29);
             this.adMemberCount.TabIndex = 2;
             this.adMemberCount.Text = "35";
-            this.adMemberCount.Click += new System.EventHandler(this.adMemberCount_Click);
             // 
             // label4
             // 
@@ -312,7 +311,6 @@
             this.adEventCount.Size = new System.Drawing.Size(41, 29);
             this.adEventCount.TabIndex = 2;
             this.adEventCount.Text = "35";
-            this.adEventCount.Click += new System.EventHandler(this.adEventCount_Click);
             // 
             // label7
             // 

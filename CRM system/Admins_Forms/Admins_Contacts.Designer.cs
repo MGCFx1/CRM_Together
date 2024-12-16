@@ -127,7 +127,6 @@
             this.adMemberList.RowHeadersWidth = 51;
             this.adMemberList.Size = new System.Drawing.Size(344, 351);
             this.adMemberList.TabIndex = 6;
-            this.adMemberList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adMemberList_CellContentClick);
             // 
             // label1
             // 
@@ -148,7 +147,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 28);
             this.panel2.TabIndex = 10;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox1
             // 
@@ -186,7 +184,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(360, 212);
             this.panel3.TabIndex = 11;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // lblPasswordError
             // 
@@ -236,7 +233,6 @@
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 56;
             this.label4.Text = "Interest";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label9
             // 
@@ -304,7 +300,6 @@
             this.adInterestAdd.Name = "adInterestAdd";
             this.adInterestAdd.Size = new System.Drawing.Size(313, 24);
             this.adInterestAdd.TabIndex = 57;
-            this.adInterestAdd.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // adFullNameAdd
             // 
@@ -572,7 +567,6 @@
             this.Name = "Admins_Contacts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admins_Contacts";
-            this.Load += new System.EventHandler(this.Admins_Contacts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adMemberList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

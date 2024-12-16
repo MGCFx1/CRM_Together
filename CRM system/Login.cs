@@ -200,10 +200,5 @@ namespace CRM_system
             login_email.Text = "user@together.com";
             login_password.Text = "user1234";
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

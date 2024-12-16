@@ -14,6 +14,10 @@ namespace CRM_system.DB
         // Connection string to the SQLite database
         private string ConnectionString = "Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "DB", "crm.db") + ";Version=3;";
 
+        /// <summary>
+        /// Converts an Image to a byte array for database storage.
+        /// Supports JPEG and PNG formats.
+        /// </summary>
         private static byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -35,7 +39,11 @@ namespace CRM_system.DB
             }
         }
 
-        // Converts a byte array to the image.
+        /// <summary>
+        /// Converts a byte array back to an Image object.
+        /// </summary>
+        /// <param name="byteArray">The byte array representing an image.</param>
+        /// <returns>An Image object or null if conversion fails.</returns>
         public static Image ByteArrayToImage(byte[] byteArray)
         {
             try
@@ -52,8 +60,21 @@ namespace CRM_system.DB
             }
         }
 
-
-        // Adds a new event to the database
+        // <summary>
+        /// Adds a new event to the database.
+        /// </summary>
+        /// <param name="name">Event name.</param>
+        /// <param name="description">Event description.</param>
+        /// <param name="location">Location ID.</param>
+        /// <param name="contentType">Event type.</param>
+        /// <param name="event_date">Event date.</param>
+        /// <param name="publishStatus">Event publish status.</param>
+        /// <param name="imagePath">Image for the event.</param>
+        /// <param name="attendance_limit">Attendance limit.</param>
+        /// <param name="fee">Fee ID.</param>
+        /// <param name="user_id">Admin ID managing the event.</param>
+        /// <returns>True if the event was added successfully; otherwise, false.
+        /// </returns>
         public bool AddEvent(string name, string description, int location, string contentType, string event_date, string publishStatus, Image imagePath, int attendance_limit, int fee, int user_id)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -85,7 +106,11 @@ namespace CRM_system.DB
             }
         }
 
-        // Deletes an event by ID
+        /// <summary>
+        /// Deletes an event from the database using its ID.
+        /// </summary>
+        /// <param name="eventId">The unique ID of the event.</param>
+        /// <returns>True if the event was deleted; otherwise, false.</returns>
         public bool DeleteEvent(int eventId)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
@@ -104,7 +129,10 @@ namespace CRM_system.DB
             }
         }
 
-        // Counts the total number of active events in the database
+        /// <summary>
+        /// Retrieves the total count of active events in the database.
+        /// </summary>
+        /// <returns>The number of active events.</returns>
         public int GetActiveEventCount()
         {
             int activeEventCount = 0;
@@ -124,7 +152,10 @@ namespace CRM_system.DB
             return activeEventCount;
         }
 
-        //retrieves all event from the "Events" table and return them as list
+        /// <summary>
+        /// Retrieves all events from the database as a list.
+        /// </summary>
+        /// <returns>A list of Event objects.</returns>
         public List<Models.Event> GetAllEventsAsList()
         {
             var events = new List<Models.Event>();
@@ -216,7 +247,11 @@ namespace CRM_system.DB
             return null;
         }
 
-        //Update Event Details with PopOut Form
+        /// <summary>
+        /// Updates an existing event's details in the database.
+        /// </summary>
+        /// <param name="updatedEvent">The updated event object.</param>
+        /// <returns>True if the update was successful; otherwise, false.</returns>
         public bool UpdateEvent(Event updatedEvent)
         {
             using (var connection = new SQLiteConnection(ConnectionString))

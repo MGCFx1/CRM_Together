@@ -25,6 +25,10 @@ namespace CRM_system.Admins_Forms
             LoadData();
         }
 
+        /// <summary>
+        /// Loads pending user data into the form's panels.
+        /// Displays up to 2 pending users.
+        /// </summary>
         public void LoadData()
         {
             pendingUsers = userQueries.GetUsersByStatus("pending");
@@ -46,6 +50,9 @@ namespace CRM_system.Admins_Forms
             }
         }
 
+        /// <summary>
+        /// Clears and reinitializs the forms components and reloads data.
+        /// </summary>
         public void ReinitializeForm()
         {
             Controls.Clear(); // Clear all controls
@@ -54,6 +61,9 @@ namespace CRM_system.Admins_Forms
             LoadMemberContacts();
         }
 
+        /// <summary>
+        /// Loads all member contacts from the database and binds them to a DataGridView.
+        /// </summary>
         private void LoadMemberContacts()
         {
             try
@@ -91,16 +101,9 @@ namespace CRM_system.Admins_Forms
             }
         }
 
-        private void adMemberSearchbtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adMemberList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+        /// <summary>
+        /// Filters the contact list based on the search text entered by the admin.
+        /// </summary>
         private void adMemberSearch_TextChanged(object sender, EventArgs e)
         {
             try
@@ -130,6 +133,9 @@ namespace CRM_system.Admins_Forms
             }
         }
 
+        /// <summary>
+        /// Refreshes the contact list when the refresh button is clicked.
+        /// </summary>
         private void adMembersRef_Click(object sender, EventArgs e)
         {
             try
@@ -143,6 +149,9 @@ namespace CRM_system.Admins_Forms
             }
         }
 
+        /// <summary>
+        /// Deletes the selected member from the database.
+        /// </summary>
         private void adMembersRemove_Click(object sender, EventArgs e)
         {
             try
@@ -179,16 +188,9 @@ namespace CRM_system.Admins_Forms
         
     }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Adds a new member to the database after validating input fields.
+        /// </summary>
         private void adMemberbtn_Click(object sender, EventArgs e)
         {
             try
@@ -294,20 +296,7 @@ namespace CRM_system.Admins_Forms
             ReinitializeForm();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void Admins_Contacts_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void adMemberbtn_Click_1(object sender, EventArgs e)
         {
@@ -375,6 +364,10 @@ namespace CRM_system.Admins_Forms
                 MessageBox.Show($"Error adding member: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Validates if the provided email format is correct.
+        /// </summary>
         private bool IsValidEmail(string email)
         {
             try

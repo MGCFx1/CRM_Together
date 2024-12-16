@@ -149,16 +149,6 @@ namespace CRM_system.Admins_Forms
             ReinitializeForm();
         }
 
-        private void adEventCount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adMemberCount_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void reportGenBtn_Click(object sender, EventArgs e)
         {
             userEventsQuery.GenerateEventsReport();

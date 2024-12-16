@@ -27,15 +27,6 @@ namespace CRM_system.Admins_Forms
             LoadContent(); // Load events on form load
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             //try
@@ -141,11 +132,6 @@ namespace CRM_system.Admins_Forms
             {
                 MessageBox.Show("Failed to upload content. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error uploading content: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
         }
 
 
@@ -166,18 +152,9 @@ namespace CRM_system.Admins_Forms
                         // Load the selected file into an Image object
                         selectedImage = Image.FromFile(openFileDialog.FileName);
                         Console.WriteLine(selectedImage);
-
-                        // Display the image in a PictureBox
-                        //pictureBox1.Image = selectedImage;
-
                         MessageBox.Show("Image uploaded and saved successfully!");
-
-                        // Display the file name in the Label
-                        //adlblFileName.Text = System.IO.Path.GetFileName(selectedImage);
-
                         // Hide any previous error
                         lblImageError.Visible = false;
-                        //Console.WriteLine($"Image Path: {selectedImage}");
                     }
                 }
             }
@@ -231,47 +208,15 @@ namespace CRM_system.Admins_Forms
                 dgContent.Columns["Title"].HeaderText = "Title";
                 dgContent.Columns["Description"].HeaderText = "Description";
                 dgContent.Columns["ContentType"].HeaderText = "Type";
-                //Add Count for User Content to count the number of members joined
-                //dgContent.Columns["AttendanceLimit"].HeaderText = "Limit";
-                //Add Content Fee by getting the fee from the fee table
                 dgContent.Columns["PublishStatus"].HeaderText = "Status";
                 dgContent.Columns["Currency"].HeaderText = "Currency";
                 dgContent.Columns["Amount"].HeaderText = "Fee";
                 dgContent.Columns["CreatedAt"].HeaderText = "Publish Date";
                 dgContent.Columns["UpdatedAt"].HeaderText = "Last Updated";
                 dgContent.Columns["AdminID"].HeaderText = "Admin";
-
-                // Optional: Hide unwanted columns if necessary
-                //dgContent.Columns["ContentImage"].Visible = false;
                 dgContent.Columns["FeeID"].Visible = false;
                 dgContent.Columns["AdminID"].Visible = false;
                 dgContent.Columns["TierRequirement"].Visible = false;
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error loading content: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-        }
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgContent_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         //Refresh Events button to refresh the content's list
@@ -385,11 +330,6 @@ namespace CRM_system.Admins_Forms
             {
                 MessageBox.Show($"Error searching events: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void adUser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

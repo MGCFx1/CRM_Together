@@ -292,7 +292,6 @@
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 89;
             this.label1.Text = "Testing the app?";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Login_Insert
             // 

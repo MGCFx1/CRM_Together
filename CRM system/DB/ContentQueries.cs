@@ -263,8 +263,6 @@ namespace CRM_system.DB
                     command.Parameters.AddWithValue("@Description", updateContent.Description);
                     command.Parameters.AddWithValue("@Type", updateContent.ContentType);
                     command.Parameters.AddWithValue("@Status", updateContent.PublishStatus);
-                    //command.Parameters.AddWithValue("@Limit", updateContent.AttendanceLimit);
-                    //command.Parameters.AddWithValue("@Date", updateContent.EventDate);
                     command.Parameters.AddWithValue("@UpdatedAt", DateTime.Now); // Use current timestamp
 
                     return command.ExecuteNonQuery() > 0;

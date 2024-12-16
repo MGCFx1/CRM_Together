@@ -101,7 +101,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(428, 555);
             this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // contentFeeLbl
             // 
@@ -187,7 +186,6 @@
             this.adlblFileName.Size = new System.Drawing.Size(98, 17);
             this.adlblFileName.TabIndex = 90;
             this.adlblFileName.Text = "No file chosen";
-            this.adlblFileName.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblImageError
             // 
@@ -285,7 +283,6 @@
             this.adContentInSchedule.Name = "adContentInSchedule";
             this.adContentInSchedule.Size = new System.Drawing.Size(396, 24);
             this.adContentInSchedule.TabIndex = 82;
-            this.adContentInSchedule.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // contentDescLbl
             // 
@@ -340,7 +337,6 @@
             this.contentTypeLbl.Size = new System.Drawing.Size(108, 20);
             this.contentTypeLbl.TabIndex = 76;
             this.contentTypeLbl.Text = "Content Type";
-            this.contentTypeLbl.Click += new System.EventHandler(this.label7_Click);
             // 
             // adContentInDescription
             // 
@@ -415,7 +411,6 @@
             this.dgContent.RowHeadersWidth = 51;
             this.dgContent.Size = new System.Drawing.Size(608, 223);
             this.dgContent.TabIndex = 98;
-            this.dgContent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgContent_CellContentClick);
             // 
             // btnRefContent
             // 

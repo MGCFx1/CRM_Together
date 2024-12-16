@@ -22,16 +22,6 @@ namespace CRM_system
             query = new DB.UserQueries();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (login_show.Checked)
@@ -44,17 +34,13 @@ namespace CRM_system
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        // For login: maybe create a helper file too
+        /// <summary>
+        /// Validates the entered password against the hashed password.
+        /// </summary>
+        /// <param name="password">The entered password.</param>
+        /// <param name="hashedPassword">The stored hashed password.</param>
+        /// <returns>True if the password is valid; otherwise, false.</returns>
         public static bool IsPasswordValid(string password, string hashedPassword)
         {
 
@@ -70,7 +56,11 @@ namespace CRM_system
             return isPasswordValid;
         }
 
-        // To check if a user's email is valid
+        /// <summary>
+        /// Validates whether the input string is a valid email format.
+        /// </summary>
+        /// <param name="email">The email to validate.</param>
+        /// <returns>True if the email is valid; otherwise, false.</returns>
         public static bool IsValidEmail(string email)
         {
             // Regular expression pattern for validating email
@@ -80,12 +70,17 @@ namespace CRM_system
             return Regex.IsMatch(email, emailPattern);
         }
 
+        /// <summary>
+        /// Handles the login button click event.
+        /// Validates email, password, and admin permissions before login.
+        /// </summary>
         private void login_btn_Click(object sender, EventArgs e)
         {
-            Boolean isError = false;
-            string email = login_email.Text;
-            string password = login_password.Text;
+            Boolean isError = false; // Validation flag
 
+            string email = login_email.Text; // Retrieve entered email and password
+            string password = login_password.Text;
+            // Fetch user data from the database based on the entered email
             List<Models.User> usersWithEmail = query.GetUserByEmail(email);
 
 
@@ -96,8 +91,8 @@ namespace CRM_system
                 lblEmailErr.Text = "Email cannot be blank";
                 isError = true;
             }
-
-            else if (!IsValidEmail(email))
+            // Email validation
+            else if (!IsValidEmail(email)) 
             {
                 lblEmailErr.Text = "Sorry, that doesn't seem like a valid email";
                 lblEmailErr.Visible = true;
@@ -122,26 +117,25 @@ namespace CRM_system
                 lblPasswordErr.Text = "Password cannot be blank";
                 isError = true;
             }
-            else if (usersWithEmail.Count > 0 && !IsPasswordValid(password, usersWithEmail[0].Password))
+            else if (usersWithEmail.Count > 0 && !IsPasswordValid(password, usersWithEmail[0].Password)) // Check if the user is an admin
             {
                 lblPasswordErr.Text = "Sorry, incorrect password";
                 lblPasswordErr.Visible = true;
-                isError = true;
+                isError = true; // Exit if any errors were found
             }
             else
             {
                 lblPasswordErr.Visible = false;
             }
 
-            if (usersWithEmail.Count > 0 && usersWithEmail[0].IsAdmin == false)
+            if (usersWithEmail.Count > 0 && usersWithEmail[0].IsAdmin == false) // Successful login - set user session and navigate to Admin Panel
             {
                 lblEmailErr.Text = "Sorry, you are an admin not a regular user.";
                 lblEmailErr.Visible = true;
                 isError = true;
             }
 
-
-            if (isError)
+            if (isError) // Exit if any errors were found
             {
                 return;
             }
@@ -149,17 +143,18 @@ namespace CRM_system
 
             if (usersWithEmail != null && usersWithEmail.Count > 0)
             {
-                UserSession.Name = usersWithEmail[0].Name;
+                UserSession.Name = usersWithEmail[0].Name; // Set the session user name
             }
 
             this.Hide();
             AdminsPanel adminsPanel = new AdminsPanel();
             adminsPanel.Show();
-            //lblEmailErr.Text = "Successful login";
-            //lblEmailErr.Visible = true;
             
         }
 
+        /// <summary>
+        /// Displays a confirmation dialog when the user attempts to close the form.
+        /// </summary>
         private void login_close_Click(object sender, EventArgs e)
         {
             // Display a confirmation dialog
@@ -174,21 +169,17 @@ namespace CRM_system
             // If the user clicks No, do nothing and return to the application
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Sets the PasswordChar property to mask password input.
+        /// </summary>
         private void login_password_TextChanged(object sender, EventArgs e)
         {
-            login_password.PasswordChar = '*';
+            login_password.PasswordChar = '*'; //will change characters ti star *
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Navigates back to the landing page.
+        /// </summary>
         private void btnBackAd_Click(object sender, EventArgs e)
         {
             // Create an instance of the Landing_Page form
@@ -201,6 +192,9 @@ namespace CRM_system
             this.Close(); // Or use this.Hide();
         }
 
+        /// <summary>
+        /// Automatically populates the email and password fields for testing purposes.
+        /// </summary>
         private void Login_Insert_Click(object sender, EventArgs e)
         {
             login_email.Text = "admin@together.com";

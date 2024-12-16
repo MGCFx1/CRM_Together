@@ -315,8 +315,6 @@ namespace CRM_system.DB
             return users;  // Return the list of users
         }
 
-
-
         //Method to get total number of users
         public int GetUserCount()
         {
@@ -338,8 +336,6 @@ namespace CRM_system.DB
 
             return count;
         }
-
-        
 
         //Retrieve all members in a list
         public DataTable GetAllMemberContacts()
